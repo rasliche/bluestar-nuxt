@@ -31,7 +31,7 @@
       reef-aware.
     </p>
 
-    <text-on-scroll>The Briefing</text-on-scroll>
+    <!-- <text-on-scroll>The Briefing</text-on-scroll> -->
     <h2 class="text-xl font-semibold">The Heart of Blue Star - The Briefing</h2>
     <p>
       From 2010 to 2012 two separate research studies were conducted in the
@@ -109,12 +109,12 @@
 </template>
 
 <script>
-import TextOnScroll from '~/components/TextOnScroll.vue'
+// import TextOnScroll from '~/components/TextOnScroll.vue'
 
 export default {
   name: 'AboutBlueStar',
   components: {
-    TextOnScroll
+    // TextOnScroll
   },
   computed: {
     passOrFail() {
