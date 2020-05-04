@@ -1,5 +1,8 @@
 {
   "name": "bluestar-nuxt",
+  "engines": {
+    "node": "12.16.x"
+  },
   "version": "1.0.0",
   "description": "The online training system for Florida Keys National Marine Sanctuary's Blue Star recognition program. This program recognizes diving and fishing charter operators and captains.",
   "author": "Eric Raslich",
