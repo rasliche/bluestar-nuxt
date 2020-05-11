@@ -8,3 +8,9 @@
     <p>Sign the Pledge</p>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Pledge'
+}
+</script>
