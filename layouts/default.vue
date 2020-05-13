@@ -1,7 +1,7 @@
 <template>
   <div class="antialiased text-gray-800 bg-gray-100">
     <the-nav />
-    <nuxt class="max-w-5xl min-h-screen mx-auto" />
+    <nuxt class="min-h-screen" />
     <the-footer />
   </div>
 </template>
