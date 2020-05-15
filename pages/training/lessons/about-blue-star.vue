@@ -130,7 +130,7 @@
       depending on you to be familiar with this framework and properly implement
       the Blue Star Diving program.
     </p>
-    <details class="mx-auto">
+    <details class="mx-auto" open>
       <summary>Citations</summary>
       <ul class="list-disc list-inside space-y-3">
         <li id="kc2012">
