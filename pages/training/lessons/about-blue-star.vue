@@ -42,21 +42,37 @@
       Florida Keys to determine how a pre-dive education briefing can influence
       diver impacts on coral reefs. Research has shown that divers on NOAA Blue
       Star Certified charters “cause significantly less coral damage than do
-      divers from other types of dive shops” (Kreiger & Chadwick, 2012). Dive
-      briefings administered by Blue Star Operators are likely the contributing
-      factor which limits diver contact with the reefs.
+      divers from other types of dive shops”
+      <a
+        href="#kc2012"
+        class="border-b-2 border-blue-500 transition-colors duration-500 hover:bg-blue-500"
+      >
+        (Kreiger & Chadwick, 2012)
+      </a>
+      . Dive briefings administered by Blue Star Operators are likely the
+      contributing factor which limits diver contact with the reefs.
     </p>
     <p class="max-w-6xl my-2">
       On average, recreational SCUBA divers come in contact with live coral
-      eighteen times per dive (Kreiger & Chadwick, 2012). Many touches are
-      caused by fin kicks or loose equipment dragging on the reef (Camp &
-      Fraser, 2012). The incorporation of conservation education into onboard
-      briefings improves customer understanding of environmental threats, and
-      gives them a last minute reminder to be cautious of their behavior while
-      underwater, limiting coral contact. According to Krieger and Chadwick
-      (2012), customers who received dive briefings that meet Blue Star
-      requirements prior to entering the water caused considerably less reef
-      damage than customers who did not.
+      eighteen times per dive
+      <a href="#kc2012">
+        (Kreiger & Chadwick, 2012)
+      </a>
+      . Many touches are caused by fin kicks or loose equipment dragging on the
+      reef
+      <a href="#cf2012">
+        (Camp & Fraser, 2012)
+      </a>
+      . The incorporation of conservation education into onboard briefings
+      improves customer understanding of environmental threats, and gives them a
+      last minute reminder to be cautious of their behavior while underwater,
+      limiting coral contact. According to
+      <a href="#kc2012">
+        (Kreiger & Chadwick, 2012)
+      </a>
+      , customers who received dive briefings that meet Blue Star requirements
+      prior to entering the water caused considerably less reef damage than
+      customers who did not.
     </p>
     <p class="max-w-6xl my-2">
       It is estimated that due to increasingly high rates of recreational diving
