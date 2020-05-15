@@ -18,6 +18,11 @@
       passing this information on to visitors who recreate in the Florida Keys,
       you are playing an important role in helping to protect our reefs.
     </p>
+    <div class="max-w-6xl rounded-md overflow-hidden">
+      <img
+        src="https://res.cloudinary.com/duzmgsio4/image/upload/f_auto,q_auto:eco/v1583011565/fknms-bluestar/dive-boat-mate-briefs-guests.jpg"
+      />
+    </div>
 
     <h2 class="max-w-6xl my-4 text-2xl font-semibold">Why Blue Star?</h2>
     <p class="max-w-6xl my-2">
