@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Sanctuary Regulations and Zones</h1>
-    <p class="italic">
+    <h1 class="max-w-6xl my-8 text-4xl border-b-2 border-blue-800">
+      Sanctuary Regulations and Zones
+    </h1>
+    <p class="max-w-6xl my-2 italic">
       Florida Keys National Marine Sanctuary visitors are invited to dive, swim,
       snorkel, or fish; however, rules and regulations are in place to make sure
       that these activities only happen in ways - and at places - that are
