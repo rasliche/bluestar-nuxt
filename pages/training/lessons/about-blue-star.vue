@@ -112,12 +112,12 @@
     <details class="mx-auto">
       <summary>Citations</summary>
       <ul class="list-disc list-inside space-y-3">
-        <li>
+        <li id="kc2012">
           Recreational diving impacts and the use of pre-dive briefings as a
           management strategy on Florida coral reefs (Joseph R. Krieger and
           Nanette E. Chadwick)
         </li>
-        <li>
+        <li id="cf2012">
           Influence of conservation education dive briefings as a management
           tool on the timing and nature of recreational SCUBA diving impacts on
           coral reefs (Emma Camp and Douglas Fraser)
