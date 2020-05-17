@@ -8,7 +8,16 @@
 </template>
 
 <script>
-export default { name: 'TrainingIndex' }
+export default {
+  name: 'TrainingIndex',
+  head() {
+    return [
+      {
+        title: 'Training'
+      }
+    ]
+  }
+}
 </script>
 
 <style></style>

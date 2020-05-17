@@ -18,7 +18,7 @@ export default {
   head() {
     return [
       {
-        title: 'Training Paths'
+        title: 'All Lessons'
       }
     ]
   }
