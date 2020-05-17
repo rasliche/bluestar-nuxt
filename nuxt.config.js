@@ -50,7 +50,9 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    debug: true
+  },
   /*
    ** Auth module configuration
    ** See https://auth.nuxtjs.org/options
