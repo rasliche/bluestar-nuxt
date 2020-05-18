@@ -5,6 +5,11 @@
       <nuxt-link to="/training/lessons/about-blue-star">
         About Blue Star
       </nuxt-link>
+      <nuxt-link
+        to="/training/lessons/about-florida-keys-national-marine-sanctuary"
+      >
+        About Florida Keys National Marine Sanctuary
+      </nuxt-link>
       <nuxt-link to="/training/lessons/sanctuary-regulations-and-zones">
         Sanctuary Regulations and Zones
       </nuxt-link>
