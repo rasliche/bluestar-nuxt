@@ -184,7 +184,15 @@ export default {
     }
   },
   head() {
-    return [{ title: 'About Blue Star' }]
+    return [
+      { title: 'About Blue Star' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Everything you need to know about the Blue Star program at Florida Keys National Marine Sanctuary.'
+      }
+    ]
   }
 }
 </script>

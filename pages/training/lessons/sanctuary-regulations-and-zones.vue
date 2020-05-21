@@ -30,7 +30,15 @@ export default {
     }
   },
   head() {
-    return [{ title: 'Sanctuary Regulations and Zones' }]
+    return [
+      { title: 'Sanctuary Regulations and Zones' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'All the regulations and zoning a Blue Star participant should know.'
+      }
+    ]
   }
 }
 </script>

@@ -147,7 +147,15 @@ export default {
     }
   },
   head() {
-    return [{ title: 'About Florida Keys National Marine Sanctuary' }]
+    return [
+      { title: 'About Florida Keys National Marine Sanctuary' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Everything you need to know about Florida Keys National Marine Sanctuary to be recognized as a Blue Star operator.'
+      }
+    ]
   }
 }
 </script>
