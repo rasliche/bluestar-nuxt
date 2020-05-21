@@ -57,7 +57,15 @@ module.exports = {
    ** Auth module configuration
    ** See https://auth.nuxtjs.org/options
    */
-  auth: {},
+  auth: {
+    local: {
+      endpoints: {
+        login: { url: '/api/auth/login', method: 'post' }
+      },
+      tokenRequired: false,
+      tokenType: false
+    }
+  },
   /*
    ** Build configuration
    */

@@ -1,6 +1,8 @@
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const session = require('express-session')
+
 const app = express()
 
 // Import and Set Nuxt.js options
@@ -20,8 +22,22 @@ async function start() {
     await builder.build()
   }
 
+  // Middleware
+  app.use(
+    session({
+      name: 'blue-training',
+      secret: 'big-bluestar-secret',
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        maxAge: 2 * 60 * 60 * 1000 // hours * minutes * seconds * milliseconds
+      }
+    })
+  )
+
   // Add route
-  app.use('/api', require('./routes/users'))
+  app.use('/api/users', require('./routes/users'))
+  app.use('/api/auth', require('./routes/auth'))
 
   // Give nuxt middleware to express
   app.use(nuxt.render)

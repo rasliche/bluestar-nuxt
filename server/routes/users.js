@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
-router.get('/users', (req, res, next) => {
-  const users = req.path
+router.get('/', (req, res, next) => {
+  const users = { name: 'eric' }
   res.send(users)
 })
 

@@ -73,7 +73,7 @@
           UserNameHere
         </nuxt-link>
         <nuxt-link
-          to="/"
+          to="/login"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           Login

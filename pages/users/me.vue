@@ -12,11 +12,6 @@ export default {
     const message = 'reached your user dashboard page'
     return { message }
   },
-  data() {
-    return {
-      message: 'default'
-    }
-  },
   head() {
     return [
       {
