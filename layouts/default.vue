@@ -1,19 +1,22 @@
 <template>
   <div class="antialiased text-gray-800 bg-gray-100">
     <the-nav />
-    <nuxt class="min-h-screen mx-2" />
+    <nuxt class="min-h-screen mx-2 mt-2" />
     <the-footer />
+    <notification-container />
   </div>
 </template>
 
 <script>
 import TheNav from '~/components/TheNav.vue'
 import TheFooter from '~/components/TheFooter.vue'
+import { NotificationContainer } from '~/components/BaseComponents'
 
 export default {
   components: {
     TheNav,
-    TheFooter
+    TheFooter,
+    NotificationContainer
   },
   head() {
     return {

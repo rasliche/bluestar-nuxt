@@ -13,6 +13,7 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  auth: 'guest'
 }
 </script>
