@@ -58,6 +58,7 @@
           Training
         </nuxt-link>
         <nuxt-link
+          v-if="this.$auth.hasScope('admin')"
           to="/admin"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
@@ -67,19 +68,30 @@
 
       <div class="w-full inline-block md:items-center md:w-auto">
         <nuxt-link
+          v-if="this.$auth.loggedIn"
           to="/users/me"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
-          UserNameHere
+          {{ this.$auth.user.name }}
         </nuxt-link>
         <nuxt-link
-          to="/"
+          v-if="!this.$auth.loggedIn"
+          to="/login"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           Login
         </nuxt-link>
-        <button
+        <nuxt-link
+          v-if="!this.$auth.loggedIn"
+          to="/register"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
+        >
+          Register
+        </nuxt-link>
+        <button
+          v-if="this.$auth.loggedIn"
+          class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
+          @click="logout"
         >
           Logout
         </button>
@@ -99,6 +111,12 @@ export default {
   watch: {
     $route(to, from) {
       this.isOpen = false
+    }
+  },
+  methods: {
+    logout() {
+      this.$auth.$storage.removeUniversal('auth._token.local')
+      this.$router.push('/')
     }
   }
 }

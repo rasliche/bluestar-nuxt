@@ -27,7 +27,9 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vuelidate' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -57,7 +59,25 @@ module.exports = {
    ** Auth module configuration
    ** See https://auth.nuxtjs.org/options
    */
-  auth: {},
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post', propertyName: false },
+          logout: false,
+          user: { url: '/api/users/me', method: 'get', propertyName: false },
+        },
+        scopeKey: 'roles',
+        // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        // autoFetchUser: true
+      }
+    }
+  },
+  router: {
+    // middleware: ['auth']
+  },
   /*
    ** Build configuration
    */
