@@ -72,7 +72,7 @@
           to="/users/me"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
-          <!-- {{ this.$auth.user.name }} -->
+          {{ this.$auth.user.name }}
         </nuxt-link>
         <nuxt-link
           v-if="!this.$auth.loggedIn"
@@ -91,7 +91,7 @@
         <button
           v-if="this.$auth.loggedIn"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
-          @click="this.$auth.logout()"
+          @click="logout"
         >
           Logout
         </button>
@@ -111,6 +111,12 @@ export default {
   watch: {
     $route(to, from) {
       this.isOpen = false
+    }
+  },
+  methods: {
+    logout() {
+      this.$auth.$storage.removeUniversal('auth._token.local')
+      this.$router.push('/')
     }
   }
 }

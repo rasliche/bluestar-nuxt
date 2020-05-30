@@ -25,19 +25,19 @@ router.post('/', [
   async (req, res, next) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      console.log(errors)
       return res.status(422).send('There was an error processing your registration information on the server. Please try again.')
     }
     try {
+      const salt = await bcrypt.genSalt(10)
+      const hashedPassword = await bcrypt.hash(req.body.password, salt)
+        req.body.password
       const user = new User({
         name: req.body.name,
-        email: req.body.email
+        email: req.body.email,
+        password: hashedPassword
       })
-      const salt = await bcrypt.genSalt(10)
-      user.password = await bcrypt.hash(req.body.password, salt)
-        req.body.password
       await user.save()
-      res.status(201).send('User created.')
+      return res.status(201).send('User created.')
     } catch (e) { // eslint-disable-line no-unused-expressions
       console.log(e)
       return res.status(500).send(`Error creating user ${e}.`)

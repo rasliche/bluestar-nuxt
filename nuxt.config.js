@@ -64,7 +64,7 @@ module.exports = {
       local: {
         endpoints: {
           login: { url: '/api/auth/login', method: 'post', propertyName: false },
-          logout: { url: '/api/auth/logout', method: 'post' },
+          logout: false,
           user: { url: '/api/users/me', method: 'get', propertyName: false },
         },
         scopeKey: 'roles',

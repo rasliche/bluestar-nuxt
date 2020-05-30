@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const User = require('../models/User')
-// const passport = require('passport')
+const bcrypt = require('bcrypt')
 const { check, validationResult } = require('express-validator')
 
 router.post('/login',
@@ -14,24 +14,17 @@ router.post('/login',
   async (req, res, next) => {
     const errors = validationResult(req)
     if(!errors.isEmpty()) {
-      console.log(errors)
-      return res.status(422).send('There was an error processing your login information on the server. Please try again.')
+      return res.status(422).send('There was an error processing your login. Try again.')
     }
 
     const user = await User.findOne({ email: req.body.email })
     if (!user) return res.status(404).send('User not found.')
 
-    try {
-      const token = user.generateAuthToken()
-      return res.send(token)
-    } catch(e) {
-      res.status(500).send('error')
-    }
+    const validPassword = await bcrypt.compare(req.body.password, user.password)
+    if (!validPassword) { return res.status(400).send('Invalid email or password') }
+
+    const token = user.generateAuthToken()
+    return res.send(token)
 })
 
-router.post('/logout', (req, res, next) => {
-  req.logout()
-  console.log('logout route')
-  res.send('logged out')
-})
 module.exports = router
