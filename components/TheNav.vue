@@ -115,7 +115,7 @@ export default {
   },
   methods: {
     logout() {
-      this.$auth.$storage.removeUniversal('auth._token.local')
+      this.$auth.logout()
       this.$router.push('/')
     }
   }

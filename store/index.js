@@ -1,11 +1,8 @@
 const axios = require('axios')
-export const state = () => ({
-  authUser: null
-})
 
 export const mutations = {
   SET_USER(state, user) {
-    state.authUser = user
+    state.user = user
   }
 }
 
@@ -26,10 +23,5 @@ export const actions = {
       }
       throw error
     }
-  },
-
-  async logout({ commit }) {
-    await axios.post('/api/logout')
-    commit('SET_USER', null)
   }
 }

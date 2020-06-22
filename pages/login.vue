@@ -69,7 +69,7 @@ export default {
     BaseInput,
     SimpleSpinner
   },
-  // auth: 'guest',
+  auth: 'guest',
   data() {
     return {
       formFeedback: null,

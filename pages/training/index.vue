@@ -23,7 +23,6 @@
 <script>
 export default {
   name: 'TrainingIndex',
-  // middleware: 'auth',
   head() {
     return [
       {
