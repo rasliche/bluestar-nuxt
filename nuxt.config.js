@@ -1,5 +1,6 @@
 module.exports = {
   mode: 'universal',
+  components: true,
   /*
    ** Headers of the page
    */
@@ -37,7 +38,9 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt/components
+    '@nuxtjs/components'
   ],
   /*
    ** Nuxt.js modules
