@@ -118,6 +118,7 @@ import { ButtonPrimary, BaseInput, SimpleSpinner } from '@/components/BaseUI'
 
 export default {
   name: 'Register',
+  auth: 'guest',
   components: {
     ButtonPrimary,
     BaseInput,

@@ -13,6 +13,7 @@
 
 <script>
 export default {
-  name: 'Pledge'
+  name: 'Pledge',
+  auth: 'guest'
 }
 </script>
