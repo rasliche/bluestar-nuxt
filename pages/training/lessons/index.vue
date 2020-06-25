@@ -1,7 +1,6 @@
 <template>
   <div class="w-full">
-    <h1>Lessons Index</h1>
-    <div class="flex flex-wrap space-around">
+    <div class="flex flex-wrap w-full justify-around">
       <nuxt-link to="/training/lessons/about-blue-star">
         About Blue Star
       </nuxt-link>
@@ -29,5 +28,3 @@ export default {
   }
 }
 </script>
-
-<style></style>

@@ -1,10 +1,8 @@
 <template>
   <div>
-    <h1
-      class="max-w-3xl my-8 text-6xl border-b-2 text-blue-800 border-blue-800"
-    >
+    <PageHeading>
       Choose a Learning Path
-    </h1>
+    </PageHeading>
     <div class="flex flex-wrap space-x-2">
       <div class="w-1/4 h-64 bg-green-200">
         Diving
