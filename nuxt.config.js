@@ -40,7 +40,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt/components
-    '@nuxtjs/components'
+    '@nuxt/components'
   ],
   /*
    ** Nuxt.js modules
