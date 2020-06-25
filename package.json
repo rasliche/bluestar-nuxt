@@ -19,9 +19,9 @@
   "lint-staged": {
     "*.{js,vue}": "npm run lintfix"
   },
-  "husky": {
-  },
+  "husky": {},
   "dependencies": {
+    "@nuxt/components": "^1.0.4",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/pwa": "^3.0.0-0",
@@ -34,7 +34,7 @@
     "express-validator": "^6.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.15",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.13.0",
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
