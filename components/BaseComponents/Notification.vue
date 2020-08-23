@@ -4,7 +4,7 @@
     :class="[
       { 'bg-green-200 text-green-900': notification.type === 'success' },
       { 'bg-yellow-200 text-yellow-900': notification.type === 'warn' },
-      { 'bg-red-200 text-red-900': notification.type === 'error' }
+      { 'bg-red-200 text-red-900': notification.type === 'error' },
     ]"
   >
     <button
@@ -12,7 +12,7 @@
       :class="[
         { 'hover:border-green-600': notification.type === 'success' },
         { 'hover:border-green-600': notification.type === 'warn' },
-        { 'hover:border-green-600': notification.type === 'error' }
+        { 'hover:border-green-600': notification.type === 'error' },
       ]"
       @click="remove(notification)"
     >
@@ -41,16 +41,16 @@ export default {
   props: {
     notification: {
       type: Object,
-      required: true
+      required: true,
     },
     autoDismiss: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
-      timer: null
+      timer: null,
     }
   },
   mounted() {
@@ -64,7 +64,7 @@ export default {
     clearTimeout(this.timer)
   },
   methods: {
-    ...mapActions('notification', ['remove'])
-  }
+    ...mapActions('notification', ['remove']),
+  },
 }
 </script>

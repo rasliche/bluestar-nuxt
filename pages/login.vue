@@ -67,7 +67,7 @@ export default {
   components: {
     ButtonPrimary,
     BaseInput,
-    SimpleSpinner
+    SimpleSpinner,
   },
   auth: 'guest',
   data() {
@@ -78,19 +78,19 @@ export default {
       formTouched: true,
       formResponses: {
         email: null,
-        password: null
-      }
+        password: null,
+      },
     }
   },
   validations: {
     formResponses: {
       email: {
-        required
+        required,
       },
       password: {
-        required
-      }
-    }
+        required,
+      },
+    },
   },
   methods: {
     // ...mapActions('notification', ['add']),
@@ -111,7 +111,7 @@ export default {
         //   data: { token, ...userData }
         // } =
         await this.$auth.loginWith('local', {
-          data: this.formResponses
+          data: this.formResponses,
         })
         clearTimeout(this.spinnerTimer)
         // this.add({
@@ -130,15 +130,15 @@ export default {
         this.uiState = 'idle'
         this.formFeedback = e.response.data
       }
-    }
+    },
   },
   head() {
     return [
       {
-        title: 'Login'
-      }
+        title: 'Login',
+      },
     ]
-  }
+  },
 }
 </script>
 

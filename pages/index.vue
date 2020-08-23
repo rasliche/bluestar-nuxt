@@ -21,6 +21,6 @@
 <script>
 export default {
   name: 'Home',
-  auth: false
+  auth: false,
 }
 </script>

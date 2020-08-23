@@ -24,9 +24,9 @@ export default {
   head() {
     return [
       {
-        title: 'Training'
-      }
+        title: 'Training',
+      },
     ]
-  }
+  },
 }
 </script>

@@ -27,7 +27,7 @@ export default {
   computed: {
     passOrFail() {
       return true
-    }
+    },
   },
   head() {
     return [
@@ -36,10 +36,10 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'All the regulations and zoning a Blue Star participant should know.'
-      }
+          'All the regulations and zoning a Blue Star participant should know.',
+      },
     ]
-  }
+  },
 }
 </script>
 

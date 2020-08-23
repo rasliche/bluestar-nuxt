@@ -22,9 +22,9 @@ export default {
   head() {
     return [
       {
-        title: 'All Lessons'
-      }
+        title: 'All Lessons',
+      },
     ]
-  }
+  },
 }
 </script>

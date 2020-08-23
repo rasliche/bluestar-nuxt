@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="prose">
     <h1
       class="max-w-3xl my-8 text-6xl border-b-2 text-blue-800 border-blue-800"
     >
@@ -176,12 +176,12 @@ export default {
   name: 'AboutBlueStar',
   components: {
     Citations,
-    CitationsSource
+    CitationsSource,
   },
   computed: {
     passOrFail() {
       return true
-    }
+    },
   },
   head() {
     return [
@@ -190,9 +190,9 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Everything you need to know about the Blue Star program at Florida Keys National Marine Sanctuary.'
-      }
+          'Everything you need to know about the Blue Star program at Florida Keys National Marine Sanctuary.',
+      },
     ]
-  }
+  },
 }
 </script>

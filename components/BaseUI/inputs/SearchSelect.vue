@@ -70,12 +70,12 @@ import { OnClickOutside } from '@/components/BaseComponents'
 export default {
   name: 'SearchSelect',
   components: {
-    OnClickOutside
+    OnClickOutside,
   },
   props: {
     label: {
       type: String,
-      default: ''
+      default: '',
     },
     value: {},
     options: {
@@ -87,25 +87,25 @@ export default {
         'green',
         'blue',
         'indigo',
-        'violet'
-      ]
+        'violet',
+      ],
     },
     filterFunction: {
       type: Function,
-      default: (x) => x
-    }
+      default: (x) => x,
+    },
   },
   data() {
     return {
       isOpen: false,
       search: '',
-      highlightedIndex: 0
+      highlightedIndex: 0,
     }
   },
   computed: {
     filteredOptions() {
       return this.filterFunction(this.search, this.options)
-    }
+    },
   },
   beforeDestroy() {
     if (this.popper) this.popper.destroy()
@@ -123,7 +123,7 @@ export default {
     async setupPopper() {
       if (this.popper === undefined) {
         this.popper = createPopper(this.$refs.button, this.$refs.dropdown, {
-          placement: 'bottom'
+          placement: 'bottom',
         })
       } else {
         await this.popper.update()
@@ -145,7 +145,7 @@ export default {
     },
     scrollToHighlighted() {
       this.$refs.options.children[this.highlightedIndex].scrollIntoView({
-        block: 'nearest'
+        block: 'nearest',
       })
     },
     highlight(index) {
@@ -163,7 +163,7 @@ export default {
     },
     highlightNext() {
       this.highlight(this.highlightedIndex + 1)
-    }
-  }
+    },
+  },
 }
 </script>

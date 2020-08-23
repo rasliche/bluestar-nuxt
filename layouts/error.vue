@@ -16,8 +16,8 @@ export default {
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     statusCode() {
@@ -25,13 +25,13 @@ export default {
     },
     message() {
       return this.error.message
-    }
+    },
   },
   head() {
     return {
-      title: this.message
+      title: this.message,
     }
-  }
+  },
 }
 </script>
 

@@ -32,16 +32,16 @@ export default {
   props: {
     show: {
       type: Boolean,
-      default: false
+      default: false,
     },
     preventBackgroundScrolling: {
       type: Boolean,
-      default: true
+      default: true,
     },
     closeButton: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   watch: {
     show: {
@@ -54,8 +54,8 @@ export default {
           this.preventBackgroundScrolling &&
             document.body.style.removeProperty('overflow')
         }
-      }
-    }
+      },
+    },
   },
   mounted() {
     // should change this back to created if errors
@@ -72,7 +72,7 @@ export default {
   methods: {
     cancel() {
       this.$emit('close')
-    }
-  }
+    },
+  },
 }
 </script>

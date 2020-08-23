@@ -16,7 +16,7 @@ export default {
   components: {
     TheNav,
     TheFooter,
-    NotificationContainer
+    NotificationContainer,
   },
   head() {
     return {
@@ -26,11 +26,11 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            "Where you can find all the information about Florida Keys National Marine Sanctuary's Blue Star program and take online training."
-        }
-      ]
+            "Where you can find all the information about Florida Keys National Marine Sanctuary's Blue Star program and take online training.",
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

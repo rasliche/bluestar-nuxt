@@ -14,16 +14,16 @@ export default {
     } catch (e) {
       error({
         statusCode: 503,
-        message: 'Could not load users at this time.'
+        message: 'Could not load users at this time.',
       })
     }
   },
   head() {
     return [
       {
-        title: 'Admin Dashboard'
-      }
+        title: 'Admin Dashboard',
+      },
     ]
-  }
+  },
 }
 </script>

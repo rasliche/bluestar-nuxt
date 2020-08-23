@@ -13,7 +13,7 @@ import ButtonBase from '@/components/BaseUI/buttons/ButtonBase'
 export default {
   name: 'ButtonPrimary',
   components: {
-    ButtonBase
-  }
+    ButtonBase,
+  },
 }
 </script>

@@ -20,28 +20,28 @@ export default {
   name: 'BaseToggle',
   props: {
     value: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   computed: {
     backgroundStyles() {
       return {
         'bg-green-500': this.value,
-        'bg-red-500': !this.value
+        'bg-red-500': !this.value,
       }
     },
     toggleIndicatorStyles() {
       return {
         'translate-x-8': this.value,
-        'translate-x-0': !this.value
+        'translate-x-0': !this.value,
       }
-    }
+    },
   },
   methods: {
     toggle() {
       this.$emit('input', !this.value)
-    }
-  }
+    },
+  },
 }
 </script>
 

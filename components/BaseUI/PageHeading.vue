@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  name: 'PageHeading'
+  name: 'PageHeading',
 }
 </script>

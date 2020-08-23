@@ -14,6 +14,6 @@
 <script>
 export default {
   name: 'Pledge',
-  auth: 'guest'
+  auth: 'guest',
 }
 </script>

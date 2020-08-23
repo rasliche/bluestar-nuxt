@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'CardBase'
+  name: 'CardBase',
 }
 </script>
 

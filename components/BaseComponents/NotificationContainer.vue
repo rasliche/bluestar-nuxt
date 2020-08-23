@@ -18,10 +18,10 @@ import { Notification } from '@/components/BaseComponents'
 export default {
   name: 'NotificationContainer',
   components: {
-    Notification
+    Notification,
   },
   computed: {
-    ...mapState('notification', ['notifications'])
-  }
+    ...mapState('notification', ['notifications']),
+  },
 }
 </script>

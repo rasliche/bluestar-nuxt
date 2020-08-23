@@ -10,7 +10,7 @@ import ButtonBase from '@/components/BaseUI/buttons/ButtonBase'
 export default {
   name: 'ButtonSecondary',
   components: {
-    ButtonBase
-  }
+    ButtonBase,
+  },
 }
 </script>

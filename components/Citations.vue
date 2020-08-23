@@ -31,19 +31,19 @@ export default {
   props: {
     summary: {
       type: String,
-      default: 'Details'
-    }
+      default: 'Details',
+    },
   },
   data() {
     return {
-      open: true
+      open: true,
     }
   },
   methods: {
     toggleOpen() {
       this.open = !this.open
-    }
-  }
+    },
+  },
 }
 </script>
 

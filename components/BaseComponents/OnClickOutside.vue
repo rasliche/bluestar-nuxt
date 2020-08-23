@@ -4,8 +4,8 @@ export default {
   props: {
     do: {
       type: Function,
-      required: true
-    }
+      required: true,
+    },
   },
   mounted() {
     const listener = (e) => {
@@ -19,6 +19,6 @@ export default {
   },
   render() {
     return this.$slots.default[0]
-  }
+  },
 }
 </script>

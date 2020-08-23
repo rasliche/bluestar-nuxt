@@ -3,7 +3,7 @@ const axios = require('axios')
 export const mutations = {
   SET_USER(state, user) {
     state.user = user
-  }
+  },
 }
 
 export const actions = {
@@ -23,5 +23,5 @@ export const actions = {
       }
       throw error
     }
-  }
+  },
 }

@@ -1,11 +1,13 @@
 module.exports = {
-  mode: 'universal',
-  components: true,
+  mode: 'universal', // Default, not needed
+  target: 'server', // Default, not needed
+  telemetry: true, // Default is to ask in CLI, set to false if you want
+  components: true, // Default, not needed?
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || 'Blue Star Online Training',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,7 +22,11 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { 
+    color: 'green',
+    height: '5px',
+    continuous: true
+  },
   /*
    ** Global CSS
    */
@@ -49,7 +55,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/auth',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxt/content'
   ],
   /*
    ** Axios module configuration
@@ -79,7 +86,7 @@ module.exports = {
     }
   },
   router: {
-    middleware: ['auth']
+    // middleware: ['auth']
   },
   /*
    ** Build configuration
@@ -94,7 +101,10 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }

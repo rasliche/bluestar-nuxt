@@ -9,9 +9,9 @@ export default {
   head() {
     return [
       {
-        title: 'User Page'
-      }
+        title: 'User Page',
+      },
     ]
-  }
+  },
 }
 </script>

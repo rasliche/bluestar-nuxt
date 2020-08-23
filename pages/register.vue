@@ -112,7 +112,7 @@ import {
   required,
   minLength,
   maxLength,
-  sameAs
+  sameAs,
 } from 'vuelidate/lib/validators'
 import { ButtonPrimary, BaseInput, SimpleSpinner } from '@/components/BaseUI'
 
@@ -122,7 +122,7 @@ export default {
   components: {
     ButtonPrimary,
     BaseInput,
-    SimpleSpinner
+    SimpleSpinner,
   },
   // auth: 'guest',
   data() {
@@ -135,11 +135,11 @@ export default {
         name: null,
         email: null,
         password: null,
-        passwordCopy: null
+        passwordCopy: null,
         // shopChoice: null,
         // shopPassword: null,
         // operators: []
-      }
+      },
     }
   },
   validations: {
@@ -147,22 +147,22 @@ export default {
       name: {
         required,
         minLength: minLength(1),
-        maxLength: maxLength(255)
+        maxLength: maxLength(255),
       },
       email: {
         required,
         minLength: minLength(5),
-        maxLength: maxLength(255)
+        maxLength: maxLength(255),
       },
       password: {
         required,
-        minLength: minLength(6)
+        minLength: minLength(6),
       },
       passwordCopy: {
         required,
-        sameAsPassword: sameAs('password')
-      }
-    }
+        sameAsPassword: sameAs('password'),
+      },
+    },
   },
   methods: {
     // ...mapActions('notification', ['add']),
@@ -174,14 +174,14 @@ export default {
         this.formTouched === false &&
         this.uiState !== 'waiting'
       ) {
-        this.spinnerTimer = setTimeout(function() {
+        this.spinnerTimer = setTimeout(function () {
           this.uiState = 'waiting'
         }, 750)
         try {
           // const { token, ...userData } =
           await this.$axios.post('/api/users', this.formResponses)
           await this.$auth.loginWith('local', {
-            data: this.formResponses
+            data: this.formResponses,
           })
           clearTimeout(this.spinnerTimer)
           // this.add({
@@ -195,15 +195,15 @@ export default {
           this.formFeedback = e.response.data
         }
       }
-    }
+    },
   },
   head() {
     return [
       {
-        title: 'Register'
-      }
+        title: 'Register',
+      },
     ]
-  }
+  },
 }
 </script>
 

@@ -8,18 +8,18 @@ import { Paginate } from '@/components/BaseComponents/'
 export default {
   name: 'PaginateBar',
   components: {
-    Paginate
+    Paginate,
   },
   props: {
     list: {
       type: Array,
-      required: true
+      required: true,
     },
     perPage: {
       type: Number,
-      default: 10
-    }
-  }
+      default: 10,
+    },
+  },
 }
 </script>
 

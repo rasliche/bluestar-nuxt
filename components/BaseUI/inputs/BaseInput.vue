@@ -26,11 +26,11 @@ export default {
   props: {
     label: {
       type: String,
-      default: ''
+      default: '',
     },
     value: {
-      type: [String, Number]
-    }
+      type: [String, Number],
+    },
     // errors: {
     //   type: Array,
     //   default: () => []
@@ -40,15 +40,15 @@ export default {
     listeners() {
       return {
         ...this.$listeners,
-        input: this.updateValue
+        input: this.updateValue,
       }
-    }
+    },
   },
   methods: {
     updateValue(e) {
       this.$emit('input', e.target.value)
-    }
-  }
+    },
+  },
 }
 </script>
 
