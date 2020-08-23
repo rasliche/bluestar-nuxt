@@ -48,7 +48,7 @@
 
     <div
       :class="isOpen ? 'block' : 'hidden'"
-      class="md:block w-full flex-grow px-2 pb-4 md:pb-0 md:flex md:items-center md:w-auto"
+      class="md:block w-full flex-grow px-2 pb-4 md:pb-0 flex md:items-center md:w-auto"
     >
       <div class="md:flex-grow">
         <nuxt-link
