@@ -15,11 +15,11 @@ export default {
   },
   head() {
     return [
-      { title: 'A Blog Post' },
+      { title: this.article.title },
       {
         hid: 'description',
         name: 'description',
-        content: 'A Blog post here.',
+        content: this.article.description,
       },
     ]
   },
