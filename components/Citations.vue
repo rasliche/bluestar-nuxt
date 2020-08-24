@@ -1,6 +1,9 @@
 <template>
   <div>
-    <span class="inline-flex" @click="toggleOpen">
+    <span
+      class="inline-flex pr-2 cursor-pointer hover:bg-green-200 rounded transition-colors duration-500"
+      @click="toggleOpen"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
