@@ -1,5 +1,5 @@
 <template>
-  <div class="prose">
+  <div class="">
     <h1
       class="max-w-3xl my-8 text-6xl border-b-2 text-blue-800 border-blue-800"
     >
@@ -63,7 +63,7 @@
       divers from other types of dive shops”
       <a
         href="#kc2012"
-        class="border-b-2 border-blue-500 transition-colors duration-500 hover:bg-blue-500"
+        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
       >
         (Kreiger & Chadwick, 2012)
       </a>
@@ -75,7 +75,7 @@
       eighteen times per dive
       <a
         href="#kc2012"
-        class="border-b-2 border-blue-500 transition-colors duration-500 hover:bg-blue-500"
+        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
       >
         (Kreiger & Chadwick, 2012)
       </a>
@@ -83,7 +83,7 @@
       reef
       <a
         href="#cf2012"
-        class="border-b-2 border-blue-500 transition-colors duration-500 hover:bg-blue-500"
+        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
       >
         (Camp & Fraser, 2012)
       </a>
@@ -93,7 +93,7 @@
       limiting coral contact. According to
       <a
         href="#kc2012"
-        class="border-b-2 border-blue-500 transition-colors duration-500 hover:bg-blue-500"
+        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
       >
         (Kreiger & Chadwick, 2012)
       </a>
