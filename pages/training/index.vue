@@ -24,13 +24,30 @@
         >
           About Florida Keys National Marine Sanctuary
         </nuxt-link>
-        <nuxt-link to="/training/lessons/sanctuary-regulations-and-zones">
-          Sanctuary Regulations and Zones
+        <nuxt-link to="/training/lessons/coral-reefs">
+          Coral Reefs
         </nuxt-link>
         <nuxt-link to="/training/lessons/coral-disease">
-          Sanctuary Regulations and Zones
+          Coral Disease
         </nuxt-link>
-        <nuxt-link to="/training/lessons/coral-reefs"> </nuxt-link>
+        <nuxt-link to="/training/lessons/coral-threats">
+          Coral Threats
+        </nuxt-link>
+        <nuxt-link to="/training/lessons/cultural-resources">
+          Cultural Resources
+        </nuxt-link>
+        <nuxt-link to="/training/lessons/lionfish">
+          Lionfish
+        </nuxt-link>
+        <nuxt-link to="/training/lessons/mangroves-and-seagrass">
+          Mangroves and Seagrass
+        </nuxt-link>
+        <nuxt-link to="/training/lessons/marine-debris">
+          Marine Debris
+        </nuxt-link>
+        <nuxt-link to="/training/lessons/reef-etiquette">
+          Reef Etiquette
+        </nuxt-link>
         <nuxt-link to="/training/lessons/sanctuary-regulations-and-zones">
           Sanctuary Regulations and Zones
         </nuxt-link>
