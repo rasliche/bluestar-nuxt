@@ -1,17 +1,13 @@
 <template>
   <div>
     <PageHeading>
-      All Blog Posts
+      All Articles
     </PageHeading>
-    <div class="flex flex-wrap space-x-2">
-      <nuxt-link
-        v-for="article in articles"
-        :key="article.slug"
-        :to="`/blog/${article.slug}`"
-      >
-        {{ article.title }}
-      </nuxt-link>
-    </div>
+    <ol class="list-decimal list-inside" reversed>
+      <li v-for="article in articles" :key="article.slug">
+        <nuxt-link :to="`/blog/${article.slug}`">{{ article.title }}</nuxt-link>
+      </li>
+    </ol>
   </div>
 </template>
 
@@ -21,7 +17,7 @@ export default {
   async asyncData({ $content }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'slug', 'author'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .fetch()
 
     return {
