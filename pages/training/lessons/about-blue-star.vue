@@ -1,8 +1,6 @@
 <template>
   <div class="">
-    <PageHeading
-      class="max-w-3xl my-8 text-6xl border-b-2 text-blue-800 border-blue-800"
-    >
+    <PageHeading>
       About Blue Star
     </PageHeading>
     <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
