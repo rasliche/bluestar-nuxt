@@ -1,169 +1,449 @@
 <template>
   <div class="">
-    <h1
-      class="max-w-3xl my-8 text-6xl border-b-2 text-blue-800 border-blue-800"
-    >
-      About Blue Star
-    </h1>
+    <PageHeading>Coral Reefs</PageHeading>
     <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
-      What is Blue Star?
+      Intro
     </h2>
     <p class="max-w-3xl leading-relaxed my-2">
-      The Blue Star program, established by the Florida Keys National Marine
-      Sanctuary, is a voluntary recognition program saluting charter boat
-      operators who promote responsible and sustainable diving, snorkeling and
-      fishing practices, helping keep Florida Keys ecosystems healthy for
-      generations to come.
+      Florida Keys National Marine Sanctuary protects the most extensive living
+      coral reef system in North America. These reefs are intricately tied to
+      our area’s economy, attracting tourists for diving, snorkeling, and other
+      recreational opportunities and providing homes for many commercially
+      important fish species.
     </p>
+
     <p class="max-w-3xl leading-relaxed my-2">
-      As a Blue Star partner, your business has voluntarily agreed to educate
-      customers about the coral reef ecosystem, the sanctuary, diving and
-      snorkeling etiquette, and/or sustainable fishing best practices. By
-      passing this information on to visitors who recreate in the Florida Keys,
-      you are playing an important role in helping to protect our reefs.
+      In this section, you will learn about the biology of corals, about coral
+      reefs, and why reefs are important to the economy.
+    </p>
+
+    <!-- These links didn't work
+https://www.flickr.com/photos/onms/31041347558/sizes/m/
+https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
+
+    <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
+      Coral Biology and Feeding
+    </h2>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      Corals are a unique species that are made up of thousands of tiny animals
+      called polyps. A coral polyp is an invertebrate that ranges from the size
+      of a pinhead to up to a foot in diameter. Each polyp has a saclike body
+      and a mouth encircled by stinging tentacles. Polyps use calcium carbonate
+      from seawater to build a hard skeleton to protect their delicate bodies.
     </p>
 
     <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://res.cloudinary.com/duzmgsio4/image/upload/f_auto,q_auto:eco/v1583011565/fknms-bluestar/dive-boat-mate-briefs-guests.jpg"
-      />
+      <img src="https://oceanservice.noaa.gov/facts/coral-madeof.jpg" />
       <p class="text-sm">
-        A Blue Star guide at Keys Diver briefs guests on best practices for
-        snorkeling and protecting coral reefs.
+        Coral polyps form a living mat over a calcium carbonate skeleton.
         <span class="font-semibold">
-          Photo Credit: FKNMS/Marlies Tumolo
+          Photo Credit: NOAA
+        </span>
+      </p>
+    </div>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      The polyps engage in a symbiotic relationship with a type of algae called
+      zooxanthellae that creates food for the polyp. In turn, the polyps provide
+      the algae with carbon dioxide and a protective home. Polyps are also able
+      to actively feed themselves; at night, polyps come out of their skeletons
+      and stretch their long, stinging tentacles to capture tiny floating
+      animals called zooplankton. The prey is pulled into the polyps’ mouths and
+      digested in their stomachs.
+    </p>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      In order to survive, corals rely on specific conditions. They need clear
+      water so that the zooxanthellae have access to sunlight. They also need
+      warm water, and generally live in areas where water temperatures are
+      between 68-90 degrees F. Because corals are sensitive to pollution and
+      sediments, the water must be clean and maintain a specific salinity.
+    </p>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      This video will explain more about what corals are and the symbiotic
+      relationships that are necessary for survival:
+    </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <video controls class="w-auto h-auto">
+        <source
+          src="https://oceantoday.noaa.gov/fullmoon-coralandalgae/1011c_otfm-thecoralandthealgae-lg.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <p class="text-sm">
+        In one way of thinking, corals are part animal, vegetable, and mineral.
+        How is that possible?
+        <span class="font-semibold">
+          Video Credit: NOAA/Ocean Today
         </span>
       </p>
     </div>
 
     <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
-      Why Blue Star?
+      Reproduction
     </h2>
+
     <p class="max-w-3xl leading-relaxed my-2">
-      Florida Keys coral reefs are a main draw for your customers. The reefs of
-      the Florida Keys are stressed. And when reef users are uninformed or
-      irresponsible, they can, and often do, make these stresses even worse by
-      damaging coral. That’s bad news.
+      Because corals can’t move around the ocean floor, they have to find
+      another way to mate. They do so through coral spawning, a mass event where
+      coral larvae are released and fertilized within the body of a polyp or in
+      the water.
     </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://nmsflowergarden.blob.core.windows.net/flowergarden-prod/media/archive/image_library/expedition/coralspawn13/franksispawninggps2.jpg"
+      />
+      <p class="text-sm">
+        Orbicella franksi spawning at Flower Garden Banks National Marine
+        Sanctuary. These corals are also found at Florida Keys National Marine
+        Sanctuary.
+        <span class="font-semibold">
+          Photo Credit: FGBNMS/Schmahl
+        </span>
+      </p>
+    </div>
+
     <p class="max-w-3xl leading-relaxed my-2">
-      The good news is that, as a Blue Star partner, you have the opportunity to
-      teach visitors about the reef and how to safely interact with it. The
-      information that you provide could change visitors’ behaviors to be
-      reef-aware.
+      This video will describe more about coral reproduction:
+    </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <video controls class="w-auto h-auto">
+        <source
+          src="https://oceantoday.noaa.gov/coralspawning/otkn_907_coralspawning_sm.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <p class="text-sm">
+        Corals spawning.
+        <span class="font-semibold">
+          Video Credit: NOAA/Ocean Today
+        </span>
+      </p>
+    </div>
+
+    <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
+      Coral Reefs
+    </h2>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://coralreef.noaa.gov/media/images/recife_coral_reef.jpg"
+      />
+      <p class="text-sm">
+        A reef rises to near the surface of the water.
+        <span class="font-semibold">
+          Photo Credit: NOAA/Coral Reef Conservation Program
+        </span>
+      </p>
+    </div>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      Coral reefs are massive structures made of limestone deposited by coral
+      polyps. Often referred to as the “rainforests of the sea,” coral reefs
+      support approximately 25 percent of all known marine species. Reefs
+      provide homes for more than 4,000 species of fish, 700 species of coral,
+      and thousands of other plants and animals.
     </p>
 
     <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
-      The Heart of Blue Star - The Briefing
+      Reef Builders
     </h2>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://coralreef.noaa.gov/aboutcrcp/news/featuredstories/mar15/resources/elkhorncoral_sefsc_750.jpg"
+      />
+      <p class="text-sm">
+        Elkhorn coral (Acropora palmata).
+        <span class="font-semibold">
+          Photo Credit: NOAA Fisheries
+        </span>
+      </p>
+    </div>
+
     <p class="max-w-3xl leading-relaxed my-2">
-      From 2010 to 2012 two separate research studies were conducted in the
-      Florida Keys to determine how a pre-dive education briefing can influence
-      diver impacts on coral reefs. Research has shown that divers on NOAA Blue
-      Star Certified charters “cause significantly less coral damage than do
-      divers from other types of dive shops”
-      <a
-        href="#kc2012"
-        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
-      >
-        (Kreiger & Chadwick, 2012)
-      </a>
-      . Dive briefings administered by Blue Star Operators are likely the
-      contributing factor which limits diver contact with the reefs.
+      The architects of coral reefs are hard corals. Unlike soft corals, hard
+      corals have stony skeletons made out of limestone that are produced by
+      coral polyps. When polyps die, their skeletons are left behind and used as
+      foundations for new polyps. An actual coral branch or mound is composed of
+      layers of skeletons covered by a thin layer of living polyps.
     </p>
     <p class="max-w-3xl leading-relaxed my-2">
-      On average, recreational SCUBA divers come in contact with live coral
-      eighteen times per dive
-      <a
-        href="#kc2012"
-        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
-      >
-        (Kreiger & Chadwick, 2012)
-      </a>
-      . Many touches are caused by fin kicks or loose equipment dragging on the
-      reef
-      <a
-        href="#cf2012"
-        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
-      >
-        (Camp & Fraser, 2012)
-      </a>
-      . The incorporation of conservation education into onboard briefings
-      improves customer understanding of environmental threats, and gives them a
-      last minute reminder to be cautious of their behavior while underwater,
-      limiting coral contact. According to
-      <a
-        href="#kc2012"
-        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
-      >
-        (Kreiger & Chadwick, 2012)
-      </a>
-      , customers who received dive briefings that meet Blue Star requirements
-      prior to entering the water caused considerably less reef damage than
-      customers who did not.
-    </p>
-    <p class="max-w-3xl leading-relaxed my-2">
-      It is estimated that due to increasingly high rates of recreational diving
-      on sites in Key Largo alone, over 80% of live coral colonies have been
-      damaged and some heavily dived sites have seen a reduction in live coral
-      to less than 11% of the total cover. Given that the proportion of damaged
-      corals on each reef increases tremendously with estimated rates of
-      recreational SCUBA diving on those sites, diver education with the goal of
-      reducing reef contact is essential to ensuring tourism rates are both
-      economically and environmentally sustainable. The effort of Blue Star
-      Operators to train their staff and promote environmental stewardship is a
-      monumental success in the conservation of the Florida Keys National Marine
-      Sanctuary.
-    </p>
-    <p class="max-w-3xl leading-relaxed my-2">
-      The Blue Star program is one way that you can show customers – people who
-      were drawn to the area because of the environment in the first place –
-      that you, and the business that you work for, care about the ecosystem and
-      are committed to doing your part to protect it. Please take the time to
-      memorize each component of the Blue Star briefing. You can incorporate
-      these components into your current briefing. Feel free to add your own
-      style while making sure you include each required section. You are
-      required to give the Blue Star briefing on every trip that you take.
+      If a coral reef is likened to a bustling city, then a coral colony is like
+      a single apartment building with many rooms and hallways that house
+      different marine species.
     </p>
 
     <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
-      Blue Star Requirements - Understanding the Framework
+      Types of Coral Reefs
     </h2>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img src="https://oceanservice.noaa.gov/facts/most-coral.jpg" />
+      <p class="text-sm">
+        Schools of colorful pennantfish, pyramid, and milletseed butterflyfish
+        live on an atoll reef in the Northwestern Hawaiian Islands.
+        <span class="font-semibold">
+          Photo Credit: NOS/Ocean Facts
+        </span>
+      </p>
+    </div>
+
     <p class="max-w-3xl leading-relaxed my-2">
-      Blue Star operators have made a commitment to train their staff and
-      customers to be better environmental stewards. As part of the program,
-      staff who work at Blue Star recognized dive shops are required to complete
-      this online training each year on issues affecting coral reefs, sanctuary
-      regulations and coral reef etiquette. In turn, staff must educate their
-      customers on these topics. This includes showing students a Blue Star
-      video during training classes and conducting a Blue Star dive briefing on
-      each trip that you take. Blue Star Diving Operators must offer
-      conservation-related dive courses and participate in activities such as
-      fish counts and reef clean-ups.
+      Coral reefs are classified into three types: fringing reefs, atolls, and
+      barrier reefs.
     </p>
+
     <p class="max-w-3xl leading-relaxed my-2">
-      Once a business has gone through the initial evaluation and is recognized
-      as a Blue Star partner, they will be reevaluated each year, to ensure that
-      the Blue Star criteria are still being followed.
+      The most common type of reef is the fringing reef. Fringing reefs grow
+      near the coastline around islands and land masses, and are separated from
+      the shore by narrow, shallow lagoons. Atolls form when a fringing reef
+      continues to grow upward from a volcanic island that has sunk entirely
+      below sea level. Atolls are usually circular in shape with an open lagoon
+      in the center. Similar to fringing reefs, barrier reefs also border a
+      shoreline. However, they are separated by deeper, wider lagoons.
     </p>
+
     <p class="max-w-3xl leading-relaxed my-2">
-      You should have a copy of the current year Blue Star Diving framework,
-      which outlines the specifics of what each operator is required to do to be
-      “Blue Star recognized.” As a staff member at a Blue Star operation, we are
-      depending on you to be familiar with this framework and properly implement
-      the Blue Star Diving program.
+      NOAA has a lot of great resources. Check out some of these links to learn
+      more about the three types of reefs:
+      <a
+        href="https://coral.org/coral-reefs-101/coral-reef-ecology/types-of-coral-reef-formations/"
+        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
+      >
+        Types of Coral Reef Formations </a
+      >,
+      <a
+        href="https://oceanservice.noaa.gov/facts/threecorals.html"
+        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
+      >
+        Three Coral Formations </a
+      >, and
+      <a
+        href="https://oceanservice.noaa.gov/education/tutorial_corals/coral04_reefs.html"
+        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
+      >
+        Coral Reefs </a
+      >.
     </p>
+
+    <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
+      In the Florida Keys
+    </h2>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img src="https://floridakeys.noaa.gov/about/banner_reef.jpg" />
+      <p class="text-sm">
+        Aerial photo of a Florida Keys reef.
+        <span class="font-semibold">
+          Photo Credit: NOAA/Florida Keys National Marine Sanctuary
+        </span>
+      </p>
+    </div>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      Florida is the only state in the continental United States to have
+      extensive shallow coral reefs near its coasts. The Florida Keys are home
+      to the third-largest living coral barrier reef system in the world,
+      extending from Soldier Key in Biscayne Bay to the Tortugas Banks. The
+      tract stretches for nearly 150 miles in length and is about four miles
+      wide. All but the northernmost extent of the reef tract lies within the
+      boundaries of Florida Keys National Marine Sanctuary.
+    </p>
+
+    <h2 class="max-w-3xl mt-4 mb-1 text-2xl text-blue-800 font-semibold">
+      Value of Coral Reefs
+    </h2>
+
+    <h3 class="max-w-3xl mt-4 mb-1 text-lg text-blue-800 font-semibold">
+      A Healthy Economy
+    </h3>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      From tourism to marine recreation and sport fishing, coral reefs play an
+      important role in the economies of countries all around the world. By one
+      estimate, coral reefs provide economic goods and services worth about $375
+      billion each year. NOAA suggests that coral reefs in southeast Florida
+      have an asset value of $8.5 billion, generating $4.4 billion in local
+      sales, $2 billion in local income, and 70,400 full and part-time jobs.
+    </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://sanctuaries.noaa.gov/media/img/20180921-dolphinfish-1000.jpg"
+      />
+      <p class="text-sm">
+        Todd Anderson and Gina Crook from Dallas, Texas, hold a dolphinfish they
+        caught on a Boneafide Charter Company fishing tripe. Boneafide is Blue
+        Star Fishing Guide operator.
+        <span class="font-semibold">
+          Photo Credit: Bonafide Charter Company
+        </span>
+      </p>
+    </div>
+
+    <!-- 404
+https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
+
+    <h3 class="max-w-3xl mt-4 mb-1 text-lg text-blue-800 font-semibold">
+      Animals that Live Nowhere Else
+    </h3>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      Covering less than one percent of the ocean floor, coral reefs support an
+      estimated 25 percent of all known marine species. And the variety of
+      species living on coral reefs is greater than almost anywhere else in the
+      world. Scientists estimate that more than one million species of plants
+      and animals are associated with coral reef ecosystems.
+    </p>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      With its extensive reef tract, Florida Keys National Marine Sanctuary
+      protects more than 50 species of coral, including the federally protected
+      Staghorn and Elkhorn corals. The sanctuary is also home to more than 500
+      species of fish and countless other types of marine life.
+    </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://live.staticflickr.com/7074/27703864280_f505f839c6_o.jpg"
+      />
+      <p class="text-sm">
+        Nassau groupers like this one live in Florida Keys National Marine
+        Sanctuary are known to rest on the seafloor where they blend in with
+        their surroundings.
+        <span class="font-semibold">
+          Photo Credit: NOAA/Alicia Farrer
+        </span>
+      </p>
+    </div>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://live.staticflickr.com/24/31136703570_1de0e04632_o.jpg"
+      />
+      <p class="text-sm">
+        During winter, manatees migrate to Florida Keys National Marine
+        Sanctuary in search of warm, shallow waters to escape winter's chill.
+        Because manatees tend to hang near the shoreline, munching pounds of
+        seagrass, boat strikes have long been a threat to manatee population. By
+        keeping our eyes out, motors up, and boat speeds low, we can all do our
+        part to help protect these lovable creatures.
+        <span class="font-semibold">
+          Photo Credit: USGS/Bob Bonde
+        </span>
+      </p>
+    </div>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://live.staticflickr.com/7204/27243126745_04efbf8ce2_o.jpg"
+      />
+      <p class="text-sm">
+        Did you know salt water fish, like this townsend angelfish from Florida
+        Keys National Marine Sanctuary, have to drink seawater constantly? It is
+        because they are always losing water from inside their bodies through
+        their skin and gills.
+        <span class="font-semibold">
+          Photo Credit: NOAA/Steve Lonhart
+        </span>
+      </p>
+    </div>
+
+    <h3 class="max-w-3xl mt-4 mb-1 text-lg text-blue-800 font-semibold">
+      Fishing
+    </h3>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      The fish that grow and live on coral reefs are a significant food source
+      for people worldwide. In the United States, about half of all federally
+      managed fisheries depend on coral reefs. NOAA’s National Marine Fisheries
+      Service estimates the annual commercial value of U.S. fisheries from coral
+      reefs to be over $100 million. Reef-based recreational fisheries generate
+      over $100 million annually in the United States.
+    </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img
+        src="https://www.noaa.gov/sites/default/files/styles/scale_crop_1120x534_2x/public/thumbnails/image/PHOTO-commercial%20shrimp%20vessel-NOAA-101216-1125x535-Landscape.jpg"
+      />
+      <p class="text-sm">
+        A commercial trawler with gear deployed.
+        <span class="font-semibold">
+          Photo Credit: NOAA
+        </span>
+      </p>
+    </div>
+
+    <h3 class="max-w-3xl mt-4 mb-1 text-lg text-blue-800 font-semibold">
+      Beach Protection
+    </h3>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      The rough surfaces and complex structures of healthy coral reefs can
+      absorb up to 90 percent of the energy created by wind-generated waves. By
+      breaking up the force of waves before they reach the coast, coral reefs
+      serve as a buffer, protecting inshore areas from pounding waves.
+      Coastlines protected by reefs are more stable, in terms of erosion, than
+      those without. Reefs are also a source of sand in natural beach
+      replenishment.
+    </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img src="https://scx2.b-cdn.net/gfx/news/hires/2018/whyscientist.jpg" />
+      <p class="text-sm">
+        Coral reefs are some of the most diverse ecosystems in the world.
+        <span class="font-semibold">
+          Photo Credit: NOAA Fisheries
+        </span>
+      </p>
+    </div>
+
+    <h3 class="max-w-3xl mt-4 mb-1 text-lg text-blue-800 font-semibold">
+      Medicine Cabinets of the Sea
+    </h3>
+
+    <p class="max-w-3xl leading-relaxed my-2">
+      Since corals are stationary animals, many have evolved chemical defenses
+      to protect themselves from predators. Scientists continue to research the
+      medicinal potential of these substances. Plants and animals from reefs are
+      important sources of new medicines being developed to treat cancer,
+      arthritis, bacterial infections, Alzheimer’s disease, heart disease,
+      viruses, and other diseases. In the future, coral reef ecosystems could
+      also represent an important source of nutritional supplements, pesticides,
+      cosmetics, and other commercial products.
+    </p>
+
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <video controls class="w-auto h-auto">
+        <source
+          src="https://oceantoday.noaa.gov/medicinesfromthesea/otfm_205_medicinesfromthesea-lg.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <p class="text-sm">
+        Medicines from the Sea (Bonus 3)
+        <span class="font-semibold">
+          Video Credit: NOAA/Ocean Today
+        </span>
+      </p>
+    </div>
 
     <Citations :summary="'Citations'" class="max-w-3xl mt-8">
-      <CitationsSource :anchor="'kc2012'">
-        Recreational diving impacts and the use of pre-dive briefings as a
-        management strategy on Florida coral reefs (Joseph R. Krieger and
-        Nanette E. Chadwick)
+      <CitationsSource :anchor="'noaa'">
+        NOAA. What is a coral reef made of? National Ocean Service website,
+        https://oceanservice.noaa.gov/facts/coralmadeof.html, 11/15/19.
       </CitationsSource>
-      <CitationsSource :anchor="'cf2012'">
+      <!-- <CitationsSource :anchor="'cf2012'">
         Influence of conservation education dive briefings as a management tool
         on the timing and nature of recreational SCUBA diving impacts on coral
         reefs (Emma Camp and Douglas Fraser)
-      </CitationsSource>
+      </CitationsSource> -->
     </Citations>
   </div>
 </template>
@@ -173,10 +453,99 @@ import Citations from '~/components/Citations.vue'
 import CitationsSource from '~/components/CitationsSource.vue'
 
 export default {
-  name: 'AboutBlueStar',
+  name: 'CoralReefs',
   components: {
     Citations,
     CitationsSource,
+  },
+  data() {
+    return {
+      quiz: `Quiz
+[Correct answer in bold; when correct answer is chosen, a congrats message should pop up (“You are correct!”). Text that should pop up if an incorrect answer is chosen appears in brackets.]
+
+1. Corals are:
+	a. animals
+	b. plants
+	c. rocks
+
+[Not quite! What we typically call a “coral” is in fact composed of thousands of tiny, fragile animals call polyps. Unlike plants, coral polyps do not make their own food. And unlike rocks, corals are in fact alive.]
+
+
+2. Many reef-building corals get their food from tiny algae called:
+	a. diatoms
+	b. chloroplants
+	c. zooxanthellae
+	d. seaweed
+
+
+[Not quite! Corals have a unique relationship, called a symbiosis, with tiny algae called zooxanthellae. The zooxanthellae live in the tissue of coral polyps, supplying the coral with food generated by photosynthesis.]
+
+
+3. Coral polyps can catch and digest prey.
+	a. True
+	b. False
+
+[Not quite! Each coral polyp has a saclike body and a tiny mouth that is circled by long, stinging tentacles. At night, polyps come out of their skeletons to feed, turning a reef into a hungry wall of mouths. Tentacles capture tiny floating animals and bring them to the polyps’ mouths for digestion in the polyps’ stomachs.]
+
+
+4. What is the process of fertilizing coral larvae in the water called?
+	a. exterior fertilization
+	b. spawning
+	c. cloning
+	d. none of the above
+
+[Not quite! One way that corals reproduce is by spawning, whereby polyps release up to one million eggs into the sea. The fertilized eggs settle on hard surfaces, where they change into polyps and begin to grow, eventually forming a new colony.]
+
+
+5. What conditions do corals need to survive?
+	a. Clear water
+	b. Warm water
+	c. Saltwater
+	d. All of the above
+
+[Not quite! Corals don’t live everywhere because they require very specific conditions to survive. They need clear water, to allow sunlight to reach zooxanthellae so these algae can make food. Corals also need waters that are between 68-90ºF, are clean and free of sediments, and are salty, with a certain balance in the ratio of salt to water.]
+
+
+6. Coral reefs are home to what percentage of the world’s marine life?
+	a. 5%
+	b. 10%
+	c. 25%
+	d. 50%
+	e. 98%
+
+[Not quite! Often referred to as the “rainforests of the sea,” coral reefs support approximately 25 percent of all known marine species.]
+
+
+7. Hard corals have skeletons made out of:
+	a. bone
+	b. limestone
+	c. dead plants
+	d. sandstone
+
+[Not quite! Hard corals are the architects of coral reefs. Their stony skeletons are made out of limestone (calcium carbonate) that is produced by coral polyps.]
+
+
+8. What are the three types of coral reefs?
+	a. Barrier reefs, fringing reefs, and atolls
+	b. Barrier reefs, fringing reefs, and bank reefs
+	c. Fringing reefs, atolls, and submerged reefs
+	d. Atolls, barrier reefs, and volcanic reefs
+
+[Not quite! Coral reefs are generally classified into three types: barrier reefs, fringing reefs, and atolls. Barrier reefs and atolls both have lagoons, while fringing reefs are considered ‘immature’ because a lagoon has not yet had time to form in their backreef.]
+
+
+9. Approximately how long is the Florida reef tract?
+	a. 50 miles
+	b. 100 miles
+	c. 150 miles
+	d. 200 miles
+
+[Not quite! The Florida reef tract extends for approximately 150 miles, from Soldier Key in Biscayne Bay to the Tortugas Banks. All by the northernmost extent of the reef tract is protected by Florida Keys National Marine Sanctuary.]
+
+
+10. What are some of the benefits provided by coral reefs? Name two.
+	[Answer: diversity of marine life, shoreline protection, homes for commercially and recreationally important fish, supports tourism industry, provide medicinal benefits)`,
+    }
   },
   computed: {
     passOrFail() {
@@ -185,12 +554,12 @@ export default {
   },
   head() {
     return [
-      { title: 'About Blue Star' },
+      { title: 'Coral Reefs' },
       {
         hid: 'description',
         name: 'description',
         content:
-          'Everything you need to know about the Blue Star program at Florida Keys National Marine Sanctuary.',
+          'Learn about the coral reefs that exist in the Florida Keys National Marine Sanctuary.',
       },
     ]
   },
