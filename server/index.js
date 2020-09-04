@@ -69,7 +69,6 @@ async function start() {
   // passport.serializeUser(User.serializeUser())
   // passport.deserializeUser(User.deserializeUser())
 
-
   // Add route
   app.use('/api/auth', require('./routes/auth'))
   app.use('/api/users', require('./routes/users'))

@@ -30,9 +30,7 @@
       <p class="text-sm">
         A Blue Star guide at Keys Diver briefs guests on best practices for
         snorkeling and protecting coral reefs.
-        <span class="font-semibold">
-          Photo Credit: FKNMS/Marlies Tumolo
-        </span>
+        <span class="font-semibold"> Photo Credit: FKNMS/Marlies Tumolo </span>
       </p>
     </div>
 

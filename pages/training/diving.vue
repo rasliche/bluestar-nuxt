@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeading>
-      Diving Topics
-    </PageHeading>
+    <PageHeading> Diving Topics </PageHeading>
     <div class="flex flex-wrap w-full justify-around">
       <nuxt-link to="/training/lessons/about-blue-star">
         About Blue Star
@@ -12,9 +10,7 @@
       >
         About Florida Keys National Marine Sanctuary
       </nuxt-link>
-      <nuxt-link to="/training/lessons/coral-reefs">
-        Coral Reefs
-      </nuxt-link>
+      <nuxt-link to="/training/lessons/coral-reefs"> Coral Reefs </nuxt-link>
       <nuxt-link to="/training/lessons/coral-disease">
         Coral Disease
       </nuxt-link>
@@ -24,9 +20,7 @@
       <nuxt-link to="/training/lessons/cultural-resources">
         Cultural Resources
       </nuxt-link>
-      <nuxt-link to="/training/lessons/lionfish">
-        Lionfish
-      </nuxt-link>
+      <nuxt-link to="/training/lessons/lionfish"> Lionfish </nuxt-link>
       <nuxt-link to="/training/lessons/mangroves-and-seagrass">
         Mangroves and Seagrass
       </nuxt-link>

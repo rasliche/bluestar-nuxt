@@ -37,9 +37,7 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       <img src="https://oceanservice.noaa.gov/facts/coral-madeof.jpg" />
       <p class="text-sm">
         Coral polyps form a living mat over a calcium carbonate skeleton.
-        <span class="font-semibold">
-          Photo Credit: NOAA
-        </span>
+        <span class="font-semibold"> Photo Credit: NOAA </span>
       </p>
     </div>
 
@@ -76,9 +74,7 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       <p class="text-sm">
         In one way of thinking, corals are part animal, vegetable, and mineral.
         How is that possible?
-        <span class="font-semibold">
-          Video Credit: NOAA/Ocean Today
-        </span>
+        <span class="font-semibold"> Video Credit: NOAA/Ocean Today </span>
       </p>
     </div>
 
@@ -103,9 +99,7 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
         Orbicella franksi spawning at Flower Garden Banks National Marine
         Sanctuary. These corals are also found at Florida Keys National Marine
         Sanctuary.
-        <span class="font-semibold">
-          Photo Credit: FGBNMS/Schmahl
-        </span>
+        <span class="font-semibold"> Photo Credit: FGBNMS/Schmahl </span>
       </p>
     </div>
 
@@ -122,9 +116,7 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       </video>
       <p class="text-sm">
         Corals spawning.
-        <span class="font-semibold">
-          Video Credit: NOAA/Ocean Today
-        </span>
+        <span class="font-semibold"> Video Credit: NOAA/Ocean Today </span>
       </p>
     </div>
 
@@ -166,9 +158,7 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       </div>
       <p class="text-sm">
         Elkhorn coral (Acropora palmata).
-        <span class="font-semibold">
-          Photo Credit: NOAA Fisheries
-        </span>
+        <span class="font-semibold"> Photo Credit: NOAA Fisheries </span>
       </p>
     </div>
 
@@ -196,9 +186,7 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       <p class="text-sm">
         Schools of colorful pennantfish, pyramid, and milletseed butterflyfish
         live on an atoll reef in the Northwestern Hawaiian Islands.
-        <span class="font-semibold">
-          Photo Credit: NOS/Ocean Facts
-        </span>
+        <span class="font-semibold"> Photo Credit: NOS/Ocean Facts </span>
       </p>
     </div>
 
@@ -331,9 +319,7 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
         Nassau groupers like this one live in Florida Keys National Marine
         Sanctuary are known to rest on the seafloor where they blend in with
         their surroundings.
-        <span class="font-semibold">
-          Photo Credit: NOAA/Alicia Farrer
-        </span>
+        <span class="font-semibold"> Photo Credit: NOAA/Alicia Farrer </span>
       </p>
     </div>
 
@@ -350,9 +336,7 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
         seagrass, boat strikes have long been a threat to manatee population. By
         keeping our eyes out, motors up, and boat speeds low, we can all do our
         part to help protect these lovable creatures.
-        <span class="font-semibold">
-          Photo Credit: USGS/Bob Bonde
-        </span>
+        <span class="font-semibold"> Photo Credit: USGS/Bob Bonde </span>
       </p>
     </div>
 
@@ -367,9 +351,7 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
         Keys National Marine Sanctuary, have to drink seawater constantly? It is
         because they are always losing water from inside their bodies through
         their skin and gills.
-        <span class="font-semibold">
-          Photo Credit: NOAA/Steve Lonhart
-        </span>
+        <span class="font-semibold"> Photo Credit: NOAA/Steve Lonhart </span>
       </p>
     </div>
 
@@ -394,9 +376,7 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       </div>
       <p class="text-sm">
         A commercial trawler with gear deployed.
-        <span class="font-semibold">
-          Photo Credit: NOAA
-        </span>
+        <span class="font-semibold"> Photo Credit: NOAA </span>
       </p>
     </div>
 
@@ -422,9 +402,7 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       </div>
       <p class="text-sm">
         Coral reefs are some of the most diverse ecosystems in the world.
-        <span class="font-semibold">
-          Photo Credit: NOAA Fisheries
-        </span>
+        <span class="font-semibold"> Photo Credit: NOAA Fisheries </span>
       </p>
     </div>
 
@@ -452,9 +430,7 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       </video>
       <p class="text-sm">
         Medicines from the Sea (Bonus 3)
-        <span class="font-semibold">
-          Video Credit: NOAA/Ocean Today
-        </span>
+        <span class="font-semibold"> Video Credit: NOAA/Ocean Today </span>
       </p>
     </div>
 

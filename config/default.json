@@ -1,0 +1,12 @@
+{
+    "name": "FKNMS Blue Star Online Training",
+    "jwtPrivateKey": "bluestarsecretkey",
+    "mongoURI": "",
+    "db": {
+        "mongo_username": "",
+        "mongo_password": "",
+        "mongo_hostname": "mongodb://localhost",
+        "mongo_port": "27017",
+        "mongo_db": "bluestar"
+    }
+}

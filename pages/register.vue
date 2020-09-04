@@ -88,9 +88,7 @@
         <div class="flex items-center justify-around">
           <ButtonPrimary type="submit" :disabled="uiState !== 'ready'">
             <SimpleSpinner v-if="uiState === 'waiting'"></SimpleSpinner>
-            <template v-else>
-              Register
-            </template>
+            <template v-else> Register </template>
           </ButtonPrimary>
           <a
             href="#"

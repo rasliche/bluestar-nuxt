@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeading>
-      All Articles
-    </PageHeading>
+    <PageHeading> All Articles </PageHeading>
     <ol class="list-decimal list-inside" reversed>
       <li v-for="article in articles" :key="article.slug">
         <nuxt-link :to="`/blog/${article.slug}`">{{ article.title }}</nuxt-link>

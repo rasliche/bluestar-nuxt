@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeading>
-      Choose a Learning Path
-    </PageHeading>
+    <PageHeading> Choose a Learning Path </PageHeading>
     <div class="flex space-x-2">
       <nuxt-link to="/training/diving" class="w-1/4 h-64 bg-green-200">
         Diving

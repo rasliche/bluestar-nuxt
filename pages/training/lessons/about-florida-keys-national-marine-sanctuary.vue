@@ -31,9 +31,7 @@
       <p class="text-sm">
         Start your week off right with a tour of Florida Keys National Marine
         Sanctuary.
-        <span class="font-semibold">
-          Video Credit: ONMS/Earth Is Blue
-        </span>
+        <span class="font-semibold"> Video Credit: ONMS/Earth Is Blue </span>
       </p>
     </div>
 
@@ -47,9 +45,7 @@
       />
       <p class="text-sm">
         This photo needs to be changed
-        <span class="font-semibold">
-          Photo Credit: FKNMS/Marlies Tumolo
-        </span>
+        <span class="font-semibold"> Photo Credit: FKNMS/Marlies Tumolo </span>
       </p>
     </div>
 

@@ -39,9 +39,7 @@
         <div class="flex items-center justify-around">
           <ButtonPrimary type="submit" :disabled="uiState !== 'idle'">
             <SimpleSpinner v-if="uiState === 'pending'"></SimpleSpinner>
-            <template v-else>
-              Login
-            </template>
+            <template v-else> Login </template>
           </ButtonPrimary>
           <a
             href="#"

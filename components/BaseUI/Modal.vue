@@ -3,7 +3,7 @@
     <div
       v-show="show"
       class="fixed inset-0 p-8"
-      style="background-color: rgba(0, 0, 0, 0.6);"
+      style="background-color: rgba(0, 0, 0, 0.6)"
     >
       <div class="mx-auto mt-8 p-2 rounded-lg bg-white max-w-xl shadow-2xl">
         <div class="pb-3 bg-blue-100 text-center">
@@ -14,9 +14,7 @@
 
         <div v-if="closeButton" class="flex justify-between text-center">
           <slot name="buttons"></slot>
-          <ButtonSecondary @click="cancel">
-            Close
-          </ButtonSecondary>
+          <ButtonSecondary @click="cancel"> Close </ButtonSecondary>
         </div>
       </div>
     </div>

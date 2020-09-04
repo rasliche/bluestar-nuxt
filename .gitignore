@@ -60,7 +60,7 @@ typings/
 .env
 
 # config environment variables files
-config/
+config/development.json
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
