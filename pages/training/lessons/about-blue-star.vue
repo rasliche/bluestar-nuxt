@@ -21,10 +21,12 @@
       you are playing an important role in helping to protect our reefs.
     </p>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://res.cloudinary.com/duzmgsio4/image/upload/f_auto,q_auto:eco/v1583011565/fknms-bluestar/dive-boat-mate-briefs-guests.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://res.cloudinary.com/duzmgsio4/image/upload/f_auto,q_auto:eco/v1583011565/fknms-bluestar/dive-boat-mate-briefs-guests.jpg"
+        />
+      </div>
       <p class="text-sm">
         A Blue Star guide at Keys Diver briefs guests on best practices for
         snorkeling and protecting coral reefs.
