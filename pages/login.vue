@@ -56,17 +56,10 @@
 </template>
 
 <script>
-// import { mapActions } from 'vuex'
 import { required } from 'vuelidate/lib/validators'
-import { ButtonPrimary, BaseInput, SimpleSpinner } from '@/components/BaseUI'
 
 export default {
   name: 'Login',
-  components: {
-    ButtonPrimary,
-    BaseInput,
-    SimpleSpinner,
-  },
   auth: 'guest',
   data() {
     return {

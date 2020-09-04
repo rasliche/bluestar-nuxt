@@ -8,16 +8,7 @@
 </template>
 
 <script>
-import TheNav from '~/components/TheNav.vue'
-import TheFooter from '~/components/TheFooter.vue'
-import { NotificationContainer } from '~/components/BaseComponents'
-
 export default {
-  components: {
-    TheNav,
-    TheFooter,
-    NotificationContainer,
-  },
   head() {
     return {
       titleTemplate: '%s - FKNMS Blue Star Online',
