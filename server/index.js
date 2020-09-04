@@ -29,7 +29,7 @@ async function start() {
   // Connect to MongooDB using Mongoose
   try {
     await mongoose.connect(config.get('mongoURI'), {
-      connectTimeoutMS: 10000,
+      connectTimeoutMS: 3000,
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true
@@ -40,7 +40,7 @@ async function start() {
     })
   } catch (e) {
     consola.error({
-      message: 'Error connecting to MongoDB',
+      message: `Error connecting to MongoDB: ${e.message}`,
       badge: true
     })
     process.exit(1)
