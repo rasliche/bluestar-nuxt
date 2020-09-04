@@ -93,10 +93,12 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       the water.
     </p>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://nmsflowergarden.blob.core.windows.net/flowergarden-prod/media/archive/image_library/expedition/coralspawn13/franksispawninggps2.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://nmsflowergarden.blob.core.windows.net/flowergarden-prod/media/archive/image_library/expedition/coralspawn13/franksispawninggps2.jpg"
+        />
+      </div>
       <p class="text-sm">
         Orbicella franksi spawning at Flower Garden Banks National Marine
         Sanctuary. These corals are also found at Florida Keys National Marine
@@ -130,10 +132,12 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       Coral Reefs
     </h2>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://coralreef.noaa.gov/media/images/recife_coral_reef.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://coralreef.noaa.gov/media/images/recife_coral_reef.jpg"
+        />
+      </div>
       <p class="text-sm">
         A reef rises to near the surface of the water.
         <span class="font-semibold">
@@ -154,10 +158,12 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       Reef Builders
     </h2>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://coralreef.noaa.gov/aboutcrcp/news/featuredstories/mar15/resources/elkhorncoral_sefsc_750.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://coralreef.noaa.gov/aboutcrcp/news/featuredstories/mar15/resources/elkhorncoral_sefsc_750.jpg"
+        />
+      </div>
       <p class="text-sm">
         Elkhorn coral (Acropora palmata).
         <span class="font-semibold">
@@ -183,8 +189,10 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       Types of Coral Reefs
     </h2>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img src="https://oceanservice.noaa.gov/facts/most-coral.jpg" />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img src="https://oceanservice.noaa.gov/facts/most-coral.jpg" />
+      </div>
       <p class="text-sm">
         Schools of colorful pennantfish, pyramid, and milletseed butterflyfish
         live on an atoll reef in the Northwestern Hawaiian Islands.
@@ -236,8 +244,10 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       In the Florida Keys
     </h2>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img src="https://floridakeys.noaa.gov/about/banner_reef.jpg" />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img src="https://floridakeys.noaa.gov/about/banner_reef.jpg" />
+      </div>
       <p class="text-sm">
         Aerial photo of a Florida Keys reef.
         <span class="font-semibold">
@@ -273,10 +283,12 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       sales, $2 billion in local income, and 70,400 full and part-time jobs.
     </p>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://sanctuaries.noaa.gov/media/img/20180921-dolphinfish-1000.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://sanctuaries.noaa.gov/media/img/20180921-dolphinfish-1000.jpg"
+        />
+      </div>
       <p class="text-sm">
         Todd Anderson and Gina Crook from Dallas, Texas, hold a dolphinfish they
         caught on a Boneafide Charter Company fishing tripe. Boneafide is Blue
@@ -309,10 +321,12 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       species of fish and countless other types of marine life.
     </p>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://live.staticflickr.com/7074/27703864280_f505f839c6_o.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://live.staticflickr.com/7074/27703864280_f505f839c6_o.jpg"
+        />
+      </div>
       <p class="text-sm">
         Nassau groupers like this one live in Florida Keys National Marine
         Sanctuary are known to rest on the seafloor where they blend in with
@@ -323,10 +337,12 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       </p>
     </div>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://live.staticflickr.com/24/31136703570_1de0e04632_o.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://live.staticflickr.com/24/31136703570_1de0e04632_o.jpg"
+        />
+      </div>
       <p class="text-sm">
         During winter, manatees migrate to Florida Keys National Marine
         Sanctuary in search of warm, shallow waters to escape winter's chill.
@@ -340,10 +356,12 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       </p>
     </div>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://live.staticflickr.com/7204/27243126745_04efbf8ce2_o.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://live.staticflickr.com/7204/27243126745_04efbf8ce2_o.jpg"
+        />
+      </div>
       <p class="text-sm">
         Did you know salt water fish, like this townsend angelfish from Florida
         Keys National Marine Sanctuary, have to drink seawater constantly? It is
@@ -368,10 +386,12 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       over $100 million annually in the United States.
     </p>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img
-        src="https://www.noaa.gov/sites/default/files/styles/scale_crop_1120x534_2x/public/thumbnails/image/PHOTO-commercial%20shrimp%20vessel-NOAA-101216-1125x535-Landscape.jpg"
-      />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://www.noaa.gov/sites/default/files/styles/scale_crop_1120x534_2x/public/thumbnails/image/PHOTO-commercial%20shrimp%20vessel-NOAA-101216-1125x535-Landscape.jpg"
+        />
+      </div>
       <p class="text-sm">
         A commercial trawler with gear deployed.
         <span class="font-semibold">
@@ -394,8 +414,12 @@ https://www.flickr.com/photos/onms/27699704390/in/album-72157657763892082/ -->
       replenishment.
     </p>
 
-    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
-      <img src="https://scx2.b-cdn.net/gfx/news/hires/2018/whyscientist.jpg" />
+    <div class="max-w-3xl my-8">
+      <div class="rounded-md overflow-hidden">
+        <img
+          src="https://scx2.b-cdn.net/gfx/news/hires/2018/whyscientist.jpg"
+        />
+      </div>
       <p class="text-sm">
         Coral reefs are some of the most diverse ecosystems in the world.
         <span class="font-semibold">
