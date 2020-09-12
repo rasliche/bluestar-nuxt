@@ -14,14 +14,16 @@ export default {
     return { article }
   },
   head() {
-    return [
-      { title: 'A Blog Post' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'A Blog post here.',
-      },
-    ]
+    return {
+      title: 'A Blog Post',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'A Blog post here.',
+        },
+      ],
+    }
   },
 }
 </script>
