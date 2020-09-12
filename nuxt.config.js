@@ -70,6 +70,7 @@ module.exports = {
    ** See https://auth.nuxtjs.org/options
    */
   auth: {
+    scopeKey: 'roles',
     strategies: {
       local: {
         endpoints: {
@@ -77,7 +78,6 @@ module.exports = {
           logout: false,
           user: { url: '/api/users/me', method: 'get', propertyName: false },
         },
-        scopeKey: 'roles',
         // tokenRequired: true,
         // tokenType: 'bearer',
         // globalToken: true,
@@ -86,7 +86,7 @@ module.exports = {
     }
   },
   router: {
-    // middleware: ['auth']
+    middleware: ['auth']
   },
   /*
    ** Build configuration
