@@ -14,6 +14,19 @@
 <script>
 export default {
   name: 'Pledge',
-  auth: 'guest',
+  auth: false,
+  head() {
+    return {
+      title: 'Blue Star Pledge',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Sign a pledge showing you understand and are willing to do what it takes to protect the Florida Keys coral reef ecosystem.',
+        },
+      ],
+    }
+  },
 }
 </script>
