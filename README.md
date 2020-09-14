@@ -45,3 +45,21 @@ $ npm run start
 ```
 
 For a detailed explanation on the framework, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Docker Setup
+Note: Linux users may need to run these commands with `sudo` if your user account is not in the `docker` group. To fix this, run: `sudo usermod -aG docker $USER`, log out and log back in. [docker-compose](https://docs.docker.com/compose/) is required.
+### Step 1: Docker Credentials
+Edit `docker-compose.yml` and change the passwords to something more secure:
+```bash
+MONGO_INITDB_ROOT_PASSWORD: <new_password>
+MONGO_INITDB_PASSWORD: <another_new_password>
+```
+Then, change the connection url to match the password in `MONGO_INITDB_PASSWORD`:
+```bash
+MONGO_URI: "mongodb://bluestar:<another_new_password>@mongo_db:27017/bluestar"
+```
+### Step 2: Build and Run
+```bash
+docker-compose build
+docker-compose up
+```
