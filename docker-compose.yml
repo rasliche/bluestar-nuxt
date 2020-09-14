@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  bluestar:
+    build: .
+    image: ghcr.io/rasliche/bluestar-nuxt:1.0.0
+    restart: always
+    ports:
+      - "3000:3000"
+    command:
+      "npm run start"
+    networks: 
+      - bluestar-net
+    environment:
+      # Change username and password to db user and password
+      MONGO_URI: "mongodb://bluestar:example@mongo_db:27017/bluestar"
+    restart: unless-stopped
+    depends_on:
+      - mongo_db
+
+  mongo_db:
+    image: mongo
+    restart: always
+    environment:
+      # TODO: Use secrets instead of this...
+      # CHANGE THESE!!!
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: bluestar
+      MONGO_INITDB_USERNAME: bluestar
+      MONGO_INITDB_PASSWORD: example
+      MONGO_INITDB_DATABASE: bluestar
+    networks:
+      - bluestar-net
+    volumes:
+      - ./docker-mongo-init.sh:/docker-entrypoint-initdb.d/init-mongo.sh
+
+networks:
+  bluestar-net:
