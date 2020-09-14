@@ -21,7 +21,7 @@ module.exports = {
   },
   privateRuntimeConfig: {
     axios: {
-      // baseURL: process.env.BASE_URL
+      baseURL: process.env.BASE_URL
     }
   },
   /*
@@ -69,7 +69,7 @@ module.exports = {
    */
   axios: {
     debug: true,
-    baseURL: 'bluestar-nuxt.herokuapp.com'
+    // baseURL: 'bluestar-nuxt.herokuapp.com'
   },
   /*
    ** Auth module configuration
