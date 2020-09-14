@@ -68,7 +68,8 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    debug: true
+    debug: true,
+    baseURL: 'bluestar-nuxt.herokuapp.com'
   },
   /*
    ** Auth module configuration
