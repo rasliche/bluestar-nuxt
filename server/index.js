@@ -19,7 +19,9 @@ async function start() {
 
   const host = process.env.HOST || nuxt.options.server.host
   const port = process.env.PORT || nuxt.options.server.port
-
+  console.log(host)
+  console.log(port)
+  
   await nuxt.ready()
   // Build only in dev mode
   if (nuxtConfig.dev) {
@@ -84,4 +86,5 @@ async function start() {
     badge: true
   })
 }
+
 start()
