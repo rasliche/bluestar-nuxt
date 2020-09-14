@@ -1,6 +1,9 @@
 {
     "name": "FKNMS Blue Star Online Training",
+    "host": "localhost",
+    "port": "3000",
     "jwtPrivateKey": "bluestarsecretkey",
+    "adminRegisterPassword":"admin",
     "mongoURI": "",
     "db": {
         "mongo_username": "",
