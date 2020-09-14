@@ -22,11 +22,11 @@ module.exports = {
   /*
    ** Runtime Configuration
    */
-  // publicRuntimeConfig: {
-  //   axios: {
-  //     browserBaseURL: process.env.BASE_URL
-  //   }
-  // },
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BASE_URL
+    }
+  },
 
   // privateRuntimeConfig: {
   //   axios: {
