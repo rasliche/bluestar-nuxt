@@ -2,6 +2,7 @@
     "name": "APP_NAME",
     "host": "HOST",
     "port": "PORT",
+    "baseURL": "BASE_URL",
     "jwtPrivateKey": "JWT_PRIVATE_KEY",
     "adminRegisterPassword": "ADMIN_REGISTER_PASSWORD",
     "mongoURI": "MONGO_URI"

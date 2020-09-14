@@ -22,17 +22,17 @@ module.exports = {
   /*
    ** Runtime Configuration
    */
-  publicRuntimeConfig: {
-    axios: {
-      browserBaseURL: process.env.BASE_URL
-    }
-  },
+  // publicRuntimeConfig: {
+  //   axios: {
+  //     browserBaseURL: process.env.BASE_URL
+  //   }
+  // },
 
-  privateRuntimeConfig: {
-    axios: {
-      baseURL: process.env.BASE_URL
-    }
-  },
+  // privateRuntimeConfig: {
+  //   axios: {
+  //     baseURL: process.env.BASE_URL
+  //   }
+  // },
   /*
    ** Customize the progress-bar color
    */
