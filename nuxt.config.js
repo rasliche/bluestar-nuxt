@@ -78,7 +78,7 @@ module.exports = {
    */
   axios: {
     debug: true,
-    baseURL: process.env.BASE_URL
+    // baseURL: process.env.BASE_URL
   },
   /*
    ** Auth module configuration
