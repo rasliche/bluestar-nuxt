@@ -19,6 +19,15 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  /*
+   ** Runtime Configuration
+   */
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BASE_URL
+    }
+  },
+
   privateRuntimeConfig: {
     axios: {
       baseURL: process.env.BASE_URL
@@ -69,7 +78,7 @@ module.exports = {
    */
   axios: {
     debug: true,
-    // baseURL: 'bluestar-nuxt.herokuapp.com'
+    baseURL: process.env.BASE_URL
   },
   /*
    ** Auth module configuration
