@@ -33,7 +33,6 @@ services:
       MONGO_INITDB_DATABASE: bluestar
       MONGO_INITDB_USERNAME: bluestar
       MONGO_INITDB_PASSWORD: example
-      MONGO_INITDB_DATABASE: bluestar
     networks:
       - bluestar-net
     volumes:
