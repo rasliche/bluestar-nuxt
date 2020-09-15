@@ -63,7 +63,8 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    debug: true
+    debug: true,
+    baseURL: process.env.BASE_URL || undefined
   },
   /*
    ** Auth module configuration
