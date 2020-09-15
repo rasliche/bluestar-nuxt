@@ -8,7 +8,7 @@ services:
     ports:
       - "3000:3000"
     command:
-      "npm run start"
+      "npm run dev"
     networks: 
       - bluestar-net
     environment:
@@ -17,6 +17,10 @@ services:
     restart: unless-stopped
     depends_on:
       - mongo_db
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/src/app
 
   mongo_db:
     image: mongo
