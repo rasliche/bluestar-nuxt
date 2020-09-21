@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'universal', // Default, not needed
-  target: 'server', // Default, not needed
+  target: 'static', // Default, not needed
   telemetry: true, // Default is to ask in CLI, set to false if you want
   components: true, // Default, not needed?
   /*
@@ -87,7 +87,7 @@ module.exports = {
     }
   },
   router: {
-    middleware: ['auth']
+    // middleware: ['auth']
   },
   /*
    ** Build configuration
