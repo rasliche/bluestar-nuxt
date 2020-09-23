@@ -10,7 +10,7 @@ const User = require('../models/User')
 function cookieExtractor(req) {
   let token = null
   if (req && req.cookies) {
-    token = req.cookies['jwt']
+    token = req.cookies['auth']
   }
   return token
 };
