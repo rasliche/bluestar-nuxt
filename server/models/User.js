@@ -71,7 +71,9 @@ userSchema.methods.generateAuthToken = function() {
     {
       _id: this._id,
       name: this.name,
-      email: this.email
+      email: this.email,
+      iss: 'bluestar',
+      aud: 'bluestar'
     },
     config.get('jwtPrivateKey'), // secret
     { expiresIn: '2h' }
