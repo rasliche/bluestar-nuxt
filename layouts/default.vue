@@ -1,10 +1,12 @@
 <template>
-  <div class="antialiased text-gray-800 bg-gray-100">
-    <the-nav />
-    <nuxt class="min-h-screen mx-2 mt-2" />
-    <the-footer />
-    <notification-container />
-  </div>
+  <client-only placeholder="Loading...">
+    <div class="antialiased text-gray-800 bg-gray-100">
+      <the-nav />
+      <nuxt class="min-h-screen mx-2 mt-2" />
+      <the-footer />
+      <notification-container />
+    </div>
+  </client-only>
 </template>
 
 <script>
