@@ -1,6 +1,7 @@
 const JwtStrategy = require('passport-jwt').Strategy
 const config = require('config')
 const User = require('../models/User')
+const ExtractJwt = require('passport-jwt').ExtractJwt
 
 /**
  * Extracts JWT from cookie
@@ -16,7 +17,7 @@ function cookieExtractor(req) {
 };
 
 module.exports = new JwtStrategy({
-  jwtFromRequest: cookieExtractor,
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: config.get('jwtPrivateKey'),
   issuer: 'bluestar', //TODO: replace with real url
   audience: 'bluestar', //TODO: replace with real url
