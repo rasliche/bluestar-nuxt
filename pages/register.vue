@@ -171,7 +171,7 @@ export default {
         }, 750)
         try {
           // const { token, ...userData } =
-          await this.$axios.post('/api/users', this.formResponses)
+          await this.$axios.post('/user/register', this.formResponses)
           await this.$auth.loginWith('local', {
             data: this.formResponses,
           })

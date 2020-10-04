@@ -75,19 +75,19 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/api/auth/login', method: 'post', propertyName: false },
+          login: { url: '/auth/login', method: 'post', propertyName: false },
           logout: false,
-          user: { url: '/api/users/me', method: 'get', propertyName: false },
+          user: { url: '/user/me', method: 'get', propertyName: false },
         },
         // tokenRequired: true,
         // tokenType: 'bearer',
         // globalToken: true,
-        // autoFetchUser: true
+        //autoFetchUser: true
       }
     }
   },
   router: {
-    // middleware: ['auth']
+    middleware: ['auth']
   },
   /*
    ** Build configuration
