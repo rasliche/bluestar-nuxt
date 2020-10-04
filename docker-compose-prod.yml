@@ -2,19 +2,36 @@ version: "3"
 
 services:
   bluestar:
-    build: .
+    build:
+      context: .
+      args:
+        BASE_URL: "http://localhost:3001"
     image: ghcr.io/rasliche/bluestar-nuxt:1.0.0
     restart: always
     ports:
-      - "3000:3000"
+      - "3000:80"
+    networks: 
+      - bluestar-net
+    environment:
+      BASE_URL: "http://localhost:3001"
+    restart: unless-stopped
+    depends_on:
+      - mongo_db
+
+  bluestar_server:
+    build: ./server
+    image: ghcr.io/rasliche/bluestar-nuxt-server:1.0.0
+    restart: always
+    ports:
+      - "3001:3001"
     command:
-      "npm run start"
+      "npm start"
     networks: 
       - bluestar-net
     environment:
       # Change username and password to db user and password
       MONGO_URI: "mongodb://bluestar:example@mongo_db:27017/bluestar"
-      NODE_ENV: "production"
+      CLIENT_URL: "http://localhost:3000"
     restart: unless-stopped
     depends_on:
       - mongo_db
