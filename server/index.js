@@ -5,11 +5,13 @@ const consola = require('consola')
 const config = require('config');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 const userRoute = require('./routes/users')
 const authRoute = require('./routes/auth')
 
 const jwtStrategy = require('./strategies/jwt')
+const getJwt = require('./strategies/getjwt')
 
 const app = express();
 
@@ -33,9 +35,13 @@ mongoose.connect(config.get('mongoURI'), {
     process.exit(1) //TODO: handle better
   })
 
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:3000'
+}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser());
+app.use(getJwt)
 
 app.use(passport.initialize())
 passport.use('BlueStarAuth', jwtStrategy);
