@@ -4,15 +4,20 @@ services:
   bluestar:
     build:
       context: .
+      dockerfile: Dockerfile-dev
       args:
         BASE_URL: "http://localhost:3001"
-    image: ghcr.io/rasliche/bluestar-nuxt:1.0.0
+    image: ghcr.io/rasliche/bluestar-nuxt-dev:1.0.0
     restart: always
     ports:
       - "3000:80"
     networks: 
       - bluestar-net
     restart: unless-stopped
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/src/app
 
   bluestar_server:
     build: ./server
