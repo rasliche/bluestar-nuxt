@@ -1,6 +1,5 @@
 module.exports = {
-  mode: 'universal', // Default, not needed
-  target: 'server', // Default, not needed
+  ssr: false,
   telemetry: true, // Default is to ask in CLI, set to false if you want
   components: true, // Default, not needed?
   /*
