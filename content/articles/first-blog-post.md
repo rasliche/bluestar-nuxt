@@ -17,6 +17,6 @@ Blue Star is a recognition program by the Florida Keys National Marine Sanctuary
 - Research backed marketing ideas and resources
 - Tools to help manage your yearly requirements and renewals
 
-### VIsitors
+### Visitors
 - Learn more about the Blue Star program
 - Sign a pledge showing your support for coral reef ecosystem conservation

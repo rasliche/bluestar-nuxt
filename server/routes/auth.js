@@ -24,7 +24,7 @@ router.post('/login',
     if (!validPassword) { return res.status(400).send('Invalid email or password') }
 
     const token = user.generateAuthToken()
-    return res.send(token)
+    res.send(token)
 })
 
 module.exports = router

@@ -1,4 +1,4 @@
-const axios = require('axios')
+// const axios = require('axios')
 
 export const mutations = {
   SET_USER(state, user) {
@@ -8,7 +8,7 @@ export const mutations = {
 
 export const actions = {
   // nuxtServerInit is called by Nuxt.js before server-rendering every page
-  nuxtServerInit({ commit }, { req }) {
+  /* nuxtServerInit({ commit }, { req }) {
     if (req.session && req.session.user) {
       commit('SET_USER', req.session.user)
     }
@@ -23,5 +23,5 @@ export const actions = {
       }
       throw error
     }
-  },
+  }, */
 }

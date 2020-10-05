@@ -1,87 +1,60 @@
-const config = require('config')
 const express = require('express')
-const consola = require('consola')
-const { Nuxt, Builder } = require('nuxt')
-const bodyParser = require('body-parser')
-// const session = require('express-session')
-// const passport = require('passport')
 const mongoose = require('mongoose')
+const passport = require('passport')
+const consola = require('consola')
+const config = require('config');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
-const app = express()
+const userRoute = require('./routes/users')
+const authRoute = require('./routes/auth')
 
-// Import and Set Nuxt.js options
-const nuxtConfig = require('../nuxt.config.js')
-nuxtConfig.dev = process.env.NODE_ENV !== 'production'
+const jwtStrategy = require('./strategies/jwt')
+const getJwt = require('./strategies/getjwt')
 
-async function start() {
-  // Init Nuxt.js
-  const nuxt = new Nuxt(nuxtConfig)
+const app = express();
 
-  const host = process.env.HOST || nuxt.options.server.host
-  const port = process.env.PORT || nuxt.options.server.port
-
-  await nuxt.ready()
-  // Build only in dev mode
-  if (nuxtConfig.dev) {
-    const builder = new Builder(nuxt)
-    await builder.build()
-  }
-
-  // Connect to MongooDB using Mongoose
-  try {
-    await mongoose.connect(config.get('mongoURI'), {
-      connectTimeoutMS: 3000,
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useUnifiedTopology: true
-    })
+mongoose.connect(config.get('mongoURI'), {
+  connectTimeoutMS: 3000,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+})
+  .then(() => {
     consola.ready({
       message: 'Connected to MongoDB',
       badge: true
     })
-  } catch (e) {
+  })
+  .catch(error => {
     consola.error({
       message: `Error connecting to MongoDB: ${e.message}`,
       badge: true
     })
-    process.exit(1)
-  }
+    process.exit(1) //TODO: handle better
+  })
 
-  // Middleware
-  app.use(bodyParser.json())
-  app.use(bodyParser.urlencoded({ extended: false }))
-  // app.use(
-  //   session({
-  //     name: 'blue-training',
-  //     secret: 'big-bluestar-secret',
-  //     resave: false,
-  //     saveUninitialized: false,
-  //     cookie: {
-  //       maxAge: 2 * 60 * 60 * 1000 // hours * minutes * seconds * milliseconds
-  //     }
-  //   })
-  // )
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:3000'
+}))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser());
+app.use(getJwt)
 
-  // setup passport
-  // app.use(passport.initialize())
-  // app.use(passport.session())
-  // User static methods provided by passport-local-mongoose
-  // passport.use(User.createStrategy())
-  // passport.serializeUser(User.serializeUser())
-  // passport.deserializeUser(User.deserializeUser())
+app.use(passport.initialize())
+passport.use('BlueStarAuth', jwtStrategy);
 
-  // Add route
-  app.use('/api/auth', require('./routes/auth'))
-  app.use('/api/users', require('./routes/users'))
+app.use('/user', userRoute)
+app.use('/auth', authRoute)
 
-  // Give nuxt middleware to express
-  app.use(nuxt.render)
+const host = process.env.HOST || '0.0.0.0'
+const port = process.env.PORT || 3001
 
-  // Listen the server
-  app.listen(port, host)
+app.listen(port, host, () => {
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
     badge: true
   })
-}
-start()
+})

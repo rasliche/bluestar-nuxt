@@ -2,15 +2,15 @@ const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const { check, validationResult } = require('express-validator')
 const User = require('../models/User')
-const authenticated = require('../middleware/authenticated')
+const BlueStarAuth = require('../strategies/BlueStarAuth')
 
-router.get('/me', [authenticated], (req, res, next) => {
-  const { name, email, roles } = req.user
-  res.send({ name, email, roles })
+router.get('/me', BlueStarAuth, (req, res) => {
+  const {name, email, roles} = req.user
+  res.send({name, email, roles})
 })
 
 // Register a new user
-router.post('/', [
+router.post('/register', [
   check('name')
     .exists(),
   check('email')
