@@ -1,0 +1,14 @@
+{
+    "name": "APP_NAME",
+    "port": "PORT",
+    "jwtPrivateKey": "JWT_PRIVATE_KEY",
+    "adminRegisterPassword": "ADMIN_REGISTER_PASSWORD",
+    "mongoURI": "MONGO_URI",
+    "db": {
+        "mongo_db": "MONGO_DB",
+        "mongo_hostname": "MONGO_HOSTNAME",
+        "mongo_username": "MONGO_USERNAME",
+        "mongo_password": "MONGO_PASSWORD",
+        "mongo_port": "MONGO_PORT"
+    }
+}

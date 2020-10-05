@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'universal', // Default, not needed
-  target: 'server', // Default, not needed
+  target: 'static', // Default, not needed
   telemetry: true, // Default is to ask in CLI, set to false if you want
   components: true, // Default, not needed?
   /*
@@ -75,14 +75,14 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/api/auth/login', method: 'post', propertyName: false },
+          login: { url: '/auth/login', method: 'post', propertyName: false },
           logout: false,
-          user: { url: '/api/users/me', method: 'get', propertyName: false },
+          user: { url: '/user/me', method: 'get', propertyName: false },
         },
         // tokenRequired: true,
         // tokenType: 'bearer',
         // globalToken: true,
-        // autoFetchUser: true
+        //autoFetchUser: true
       }
     }
   },
