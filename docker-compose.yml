@@ -10,7 +10,7 @@ services:
     image: ghcr.io/rasliche/bluestar-nuxt-dev:1.0.0
     restart: always
     ports:
-      - "3000:80"
+      - "3000:3000"
     networks: 
       - bluestar-net
     restart: unless-stopped
