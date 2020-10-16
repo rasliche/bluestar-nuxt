@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>My Dashboard</h1>
+    <PageHeading>My Dashboard</PageHeading>
     {{ this.$auth.user }}
   </div>
 </template>
