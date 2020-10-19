@@ -27,4 +27,8 @@ router.post('/login',
     res.send(token)
 })
 
+router.post('/admin', async (req, res, next) => {
+  res.send('admin registered')
+})
+
 module.exports = router
