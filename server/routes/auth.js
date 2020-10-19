@@ -3,13 +3,12 @@ const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const { check, validationResult } = require('express-validator')
 
-router.post('/login',
-  [
-    check('email')
-      .isEmail()
-      .normalizeEmail(),
-    check('password')
-      .isLength({ min: 6 })
+router.post('/login', [
+  check('email')
+    .isEmail()
+    .normalizeEmail(),
+  check('password')
+    .isLength({ min: 6 })
   ],
   async (req, res, next) => {
     const errors = validationResult(req)
