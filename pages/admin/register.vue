@@ -3,10 +3,10 @@
     <form
       class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       method="POST"
-      @submit.prevent="registerUser"
+      @submit.prevent="registerAdminUser"
     >
       <h1 class="text-lg font-semibold text-blue-900 text-center pb-3">
-        Register
+        Register Admin
       </h1>
       <BaseInput
         v-model="$v.formResponses.name.$model"
@@ -174,7 +174,7 @@ export default {
   },
   methods: {
     // ...mapActions('notification', ['add']),
-    async registerUser() {
+    async registerAdminUser() {
       this.formTouched = !this.$v.formResponses.$anyDirty
       this.errors = this.$v.formResponses.$anyError
       if (
