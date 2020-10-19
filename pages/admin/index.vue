@@ -7,15 +7,19 @@
 <script>
 export default {
   name: 'Admin',
-  async asyncData({ $axios, error }) {
+  data() {
+    return {
+      users: [],
+    }
+  },
+  async created() {
     try {
-      const users = await $axios.$get('/api/users')
-      return { users }
+      this.users = await this.$axios.$get('/users')
     } catch (e) {
-      error({
-        statusCode: 503,
-        message: 'Could not load users at this time.',
-      })
+      // error({
+      //   statusCode: 503,
+      //   message: 'Could not load users at this time.',
+      // })
     }
   },
   head() {
