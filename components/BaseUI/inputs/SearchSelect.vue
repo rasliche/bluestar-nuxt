@@ -65,7 +65,7 @@
 
 <script>
 import { createPopper } from '@popperjs/core'
-import { OnClickOutside } from '@/components/BaseComponents'
+import OnClickOutside from '@/components/BaseComponents/OnClickOutside.vue'
 
 export default {
   name: 'SearchSelect',
@@ -92,7 +92,7 @@ export default {
     },
     filterFunction: {
       type: Function,
-      default: (x) => x,
+      default: (y, x) => x,
     },
   },
   data() {
