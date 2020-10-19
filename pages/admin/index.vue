@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <SearchSelect v-model="user" label="All Users" :options="userNames" />
+    </div>
     {{ users }}
   </div>
 </template>
@@ -10,7 +13,13 @@ export default {
   data() {
     return {
       users: [],
+      user: null,
     }
+  },
+  computed: {
+    userNames() {
+      return this.users.map((u) => u.name)
+    },
   },
   async created() {
     try {
