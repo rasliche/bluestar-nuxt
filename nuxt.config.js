@@ -108,6 +108,9 @@ module.exports = {
           }
         })
       }
-    }
-  }
+    },
+    cache: true,
+    hardSource: true,
+    parallel: true,
+  },
 }
