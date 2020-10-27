@@ -1,9 +1,15 @@
 <template>
   <div>
     <div>
-      <SearchSelect v-model="user" label="All Users" :options="userNames" />
+      <div class="max-w-lg">
+        <SearchSelect v-model="user" label="All Users" :options="userNames" />
+      </div>
     </div>
-    {{ users }}
+    <div class="space-y-3">
+      <div v-for="user in users" :key="user.id">
+        {{ user }}
+      </div>
+    </div>
   </div>
 </template>
 
