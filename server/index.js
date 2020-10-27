@@ -46,7 +46,7 @@ app.use(getJwt)
 app.use(passport.initialize())
 passport.use('BlueStarAuth', jwtStrategy);
 
-app.use('/user', userRoute)
+app.use('/users', userRoute)
 app.use('/auth', authRoute)
 
 const host = process.env.HOST || '0.0.0.0'

@@ -35,6 +35,7 @@ services:
       # Change username and password to db user and password
       MONGO_URI: "mongodb://bluestar:example@mongo_db:27017/bluestar"
       CLIENT_URL: "http://localhost:3000"
+      BS_ADMIN_PASSWORD: "bluestar"
     restart: unless-stopped
     depends_on:
       - mongo_db

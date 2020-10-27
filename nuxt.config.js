@@ -77,7 +77,7 @@ module.exports = {
         endpoints: {
           login: { url: '/auth/login', method: 'post', propertyName: false },
           logout: false,
-          user: { url: '/user/me', method: 'get', propertyName: false },
+          user: { url: '/users/me', method: 'get', propertyName: false },
         },
         // tokenRequired: true,
         // tokenType: 'bearer',
