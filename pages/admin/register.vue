@@ -3,10 +3,10 @@
     <form
       class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       method="POST"
-      @submit.prevent="registerUser"
+      @submit.prevent="registerAdminUser"
     >
       <h1 class="text-lg font-semibold text-blue-900 text-center pb-3">
-        Register
+        Register Admin
       </h1>
       <BaseInput
         v-model="$v.formResponses.name.$model"
@@ -74,6 +74,18 @@
           </span>
         </p>
       </BaseInput>
+      <!-- Admin Specific -->
+      <BaseInput
+        v-model="$v.formResponses.adminPassword.$model"
+        label="Admin Password"
+        type="password"
+      >
+        <p v-if="errors" class="absolute bottom-0 inset-x-0">
+          <span v-if="!$v.formResponses.adminPassword.required" class="error">
+            This field is required.
+          </span>
+        </p>
+      </BaseInput>
       <!-- SHOP SEARCH MULTI SELECT -->
       <!-- <section class="relative px-4 pb-8 flex">
         <label for="shopChoice" class="w-1/2 text-right pr-2">Choose a Shop to Join:</label>
@@ -128,6 +140,7 @@ export default {
         email: null,
         password: null,
         passwordCopy: null,
+        adminPassword: null,
         // shopChoice: null,
         // shopPassword: null,
         // operators: []
@@ -154,11 +167,14 @@ export default {
         required,
         sameAsPassword: sameAs('password'),
       },
+      adminPassword: {
+        required,
+      },
     },
   },
   methods: {
     // ...mapActions('notification', ['add']),
-    async registerUser() {
+    async registerAdminUser() {
       this.formTouched = !this.$v.formResponses.$anyDirty
       this.errors = this.$v.formResponses.$anyError
       if (
@@ -171,7 +187,7 @@ export default {
         }, 750)
         try {
           // const { token, ...userData } =
-          await this.$axios.post('/users/register', this.formResponses)
+          await this.$axios.post('/auth/admin', this.formResponses)
           await this.$auth.loginWith('local', {
             data: this.formResponses,
           })
@@ -192,7 +208,7 @@ export default {
   head() {
     return [
       {
-        title: 'Register',
+        title: 'Admin Register',
       },
     ]
   },

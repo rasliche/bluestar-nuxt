@@ -1,5 +1,4 @@
 module.exports = {
-  mode: 'universal', // Default, not needed
   target: 'static', // Default, not needed
   telemetry: true, // Default is to ask in CLI, set to false if you want
   components: true, // Default, not needed?
@@ -77,7 +76,7 @@ module.exports = {
         endpoints: {
           login: { url: '/auth/login', method: 'post', propertyName: false },
           logout: false,
-          user: { url: '/user/me', method: 'get', propertyName: false },
+          user: { url: '/users/me', method: 'get', propertyName: false },
         },
         // tokenRequired: true,
         // tokenType: 'bearer',
@@ -108,6 +107,9 @@ module.exports = {
           }
         })
       }
-    }
-  }
+    },
+    cache: true,
+    hardSource: true,
+    parallel: true,
+  },
 }
