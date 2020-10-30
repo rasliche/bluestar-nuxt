@@ -24,32 +24,32 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // operators: [{
-  //     operator: {
-  //         type: mongoose.Schema.Types.ObjectId,
-  //         ref: 'Operator'
-  //     },
-  //     canManage: {
-  //         type: Boolean,
-  //         default: false,
-  //     }
-  // }],
-  // lessonScores: [
-  //   {
-  //     name: {
-  //       type: String,
-  //       required: true
-  //     },
-  //     score: {
-  //       type: Number,
-  //       default: 0
-  //     },
-  //     date: {
-  //       type: Date,
-  //       default: () => Date.now()
-  //     }
-  //   }
-  // ],
+  operators: [{
+      operator: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Operator'
+      },
+      canManage: {
+          type: Boolean,
+          default: false,
+      }
+  }],
+  lessonScores: [
+    {
+      name: {
+        type: String,
+        required: true
+      },
+      score: {
+        type: Number,
+        default: 0
+      },
+      date: {
+        type: Date,
+        default: () => Date.now()
+      }
+    }
+  ],
   roles: {
     admin: {
       type: Boolean,

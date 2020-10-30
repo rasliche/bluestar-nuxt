@@ -10,10 +10,23 @@
       </div>
     </div>
     <div>
-      <h2>Completed Lessons</h2>
-      <ul>
-        <li></li>
-      </ul>
+      <h2 class="text-xl">Completed Lessons</h2>
+      <div
+        v-if="
+          this.$auth.user.lessonScores &&
+          this.$auth.user.lessonScores.length > 0
+        "
+      >
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+      <div v-else>
+        <p>
+          You haven't completed any quizzes yet! Head over to
+          <nuxt-link to="/training">Training</nuxt-link> and get started.
+        </p>
+      </div>
     </div>
     {{ this.$auth.user }}
   </div>
