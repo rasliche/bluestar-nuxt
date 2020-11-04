@@ -2,7 +2,6 @@
     "name": "APP_NAME",
     "port": "PORT",
     "jwtPrivateKey": "JWT_PRIVATE_KEY",
-    "adminRegisterPassword": "ADMIN_REGISTER_PASSWORD",
     "mongoURI": "MONGO_URI",
     "db": {
         "mongo_db": "MONGO_DB",
