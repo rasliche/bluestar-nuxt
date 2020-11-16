@@ -33,9 +33,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~/plugins/vuelidate' }
-  ],
+  plugins: ['~/plugins/vuelidate', '~/plugins/quizPlugin'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -103,8 +101,19 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options: {
-            fix: true
-          }
+            fix: true,
+          },
+        })
+        config.module.rules.push({
+          test: /\.ya?ml$/,
+          type: 'json',
+          use: 'yaml-loader',
+          // include: /(content\/quizzes)/,
+        })
+        config.module.rules.push({
+          test: /\.json$/,
+          loader: 'json-loader',
+          include: /(content\/quizzes)/,
         })
       }
     },

@@ -22,5 +22,8 @@
 export default {
   name: 'Home',
   auth: false,
+  mounted() {
+    console.log(this.$quizzes)
+  },
 }
 </script>
