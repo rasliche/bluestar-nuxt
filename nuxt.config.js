@@ -109,33 +109,7 @@ module.exports = {
             fix: true,
           },
         })
-        config.module.rules.push({
-          test: /\.ya?ml$/,
-          type: 'json',
-          use: 'yaml-loader',
-          // include: /(content\/quizzes)/,
-        })
-        config.module.rules.push({
-          test: /\.json$/,
-          loader: 'json-loader',
-          include: /(content\/quizzes)/,
-        })
       }
-      /* config.module.rules.push({
-        test: /.\.yaml$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].json',
-              context: 'content',
-            },
-          },
-          {
-            loader: 'yaml-loader',
-          },
-        ],
-      }) */
     },
     cache: true,
     hardSource: true,
