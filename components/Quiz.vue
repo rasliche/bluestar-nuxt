@@ -5,17 +5,17 @@
     </p>
     <div v-if="!done" class="quiz-content flex flex-col">
       <p class="quiz-question block text-center">
-        {{ questions[questionIndex].question }}
+        {{ quiz.questions[questionIndex].question }}
       </p>
       <hr />
       <button
-        v-for="(answer, index) in questions[questionIndex].answers"
+        v-for="(answer, index) in quiz.questions[questionIndex].answers"
         :key="index"
         class="quiz-answer-choice block text-center btn"
         :style="{ color: currentAnswerChoice == index ? 'blue' : 'inherit' }"
         @click="answerChoicePressed(index)"
       >
-        {{ answer }}
+        {{ answer.text }}
       </button>
       <button
         class="quiz-submit block text-center btn btn-blue"
@@ -31,13 +31,15 @@
       </p>
       <p class="text-3xl">
         {{
-          finalGrade >= minimumScore
+          finalGrade >= quiz.minimumScore
             ? 'Good Job!'
-            : `You need ${Math.round(minimumScore * 100)}% or higher to pass`
+            : `You need ${Math.round(
+                quiz.minimumScore * 100
+              )}% or higher to pass`
         }}
       </p>
       <button
-        v-if="finalGrade < minimumScore"
+        v-if="finalGrade < quiz.minimumScore"
         class="retry-button btn btn-blue"
         @click="reset"
       >
@@ -51,38 +53,43 @@
 export default {
   name: 'Quiz',
   props: {
-    quizID: {
-      type: Number,
-      default: -1,
-    },
-    questions: {
-      type: Array,
+    quiz: {
+      type: Object,
       default: () => {
-        return [
-          {
-            question:
-              '[SAMPLE QUESTION] Which of these is not a programming language?',
-            answers: ['JavaScript', 'C++', 'HTML', 'Rust'],
-            correct: 2,
-          },
-          {
-            question:
-              '[SAMPLE QUESTION] A 64-bit Intel processor can have, at most, 4 pebibytes of physical memory.',
-            answers: ['True', 'False'],
-            correct: 0,
-          },
-          {
-            question:
-              '[SAMPLE QUESTION] The POSIX function for creating new processes is:',
-            answers: ['pthread_init', 'fork', 'mmap', 'sem_init'],
-            correct: 1,
-          },
-        ]
+        return {
+          quizID: -1,
+          minimumScore: 0.75,
+          questions: [
+            {
+              question:
+                '[SAMPLE QUESTION] Which of these is not a programming language?',
+              answers: [
+                { text: 'JavaScript' },
+                { text: 'C++' },
+                { text: 'HTML', correct: true },
+                { text: 'Rust' },
+              ],
+              correct: 2,
+            },
+            {
+              question:
+                '[SAMPLE QUESTION] A 64-bit Intel processor can have, at most, 4 pebibytes of physical memory.',
+              answers: [{ text: 'True', correct: true }, { text: 'False' }],
+              correct: 0,
+            },
+            {
+              question:
+                '[SAMPLE QUESTION] The POSIX function for creating new processes is:',
+              answers: [
+                { text: 'pthread_init' },
+                { text: 'fork', correct: true },
+                { text: 'mmap' },
+                { text: 'sem_init' },
+              ],
+            },
+          ],
+        }
       },
-    },
-    minimumScore: {
-      type: Number,
-      default: 0.75,
     },
   },
   data() {
@@ -97,7 +104,7 @@ export default {
   },
   computed: {
     questionCount() {
-      return this.questions.length
+      return this.quiz.questions.length
     },
     lastQuestion() {
       return this.questionIndex + 1 === this.questionCount
@@ -106,7 +113,7 @@ export default {
   methods: {
     submitButtonPressed() {
       // eslint-disable-next-line prettier/prettier
-      if (this.currentAnswerChoice === this.questions[this.questionIndex].correct) {
+      if (this.quiz.questions[this.questionIndex].answers[this.currentAnswerChoice].correct) {
         this.correctAnswers++
       }
       if (!this.lastQuestion) {

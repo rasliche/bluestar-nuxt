@@ -1,19 +1,19 @@
 quizID: -1
 minimumScore: 0.75
 questions:
-  - question: "[SAMPLE QUESTION] Which of these is not a programming language?"
+  - question: "[SAMPLE QUESTION!] Which of these is not a programming language?"
     answers:
       - text: JavaScript
       - text: C++
       - text: HTML
         correct: true
       - text: Rust
-  - question: "[SAMPLE QUESTION] A 64-bit Intel processor can have, at most, 4 pebibytes of physical memory."
+  - question: "[SAMPLE QUESTION!] A 64-bit Intel processor can have, at most, 4 pebibytes of physical memory."
     answers:
       - text: "True"
         correct: true
       - text: "False"
-  - question: "[SAMPLE QUESTION] The POSIX function for creating new processes is:"
+  - question: "[SAMPLE QUESTION!] The POSIX function for creating new processes is:"
     answers:
       - text: pthread_init
       - text: fork
