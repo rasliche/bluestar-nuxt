@@ -57,6 +57,7 @@
     "lint-staged": "^10.5.0",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
-    "vue-jest": "^4.0.0-rc.0"
+    "vue-jest": "^4.0.0-rc.0",
+    "yaml-loader": "^0.6.0"
   }
 }

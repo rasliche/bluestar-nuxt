@@ -109,6 +109,17 @@ module.exports = {
             fix: true,
           },
         })
+        config.module.rules.push({
+          test: /\.ya?ml$/,
+          type: 'json',
+          use: 'yaml-loader',
+          // include: /(content\/quizzes)/,
+        })
+        config.module.rules.push({
+          test: /\.json$/,
+          loader: 'json-loader',
+          include: /(content\/quizzes)/,
+        })
       }
       /* config.module.rules.push({
         test: /.\.yaml$/,
