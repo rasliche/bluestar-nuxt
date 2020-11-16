@@ -13,18 +13,18 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { 
+  loading: {
     color: 'green',
     height: '5px',
-    continuous: true
+    continuous: true,
   },
   /*
    ** Global CSS
@@ -33,9 +33,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~/plugins/vuelidate' }
-  ],
+  plugins: ['~/plugins/vuelidate', '~/plugins/quizPlugin'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -45,7 +43,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt/components
-    '@nuxt/components'
+    '@nuxt/components',
   ],
   /*
    ** Nuxt.js modules
@@ -55,7 +53,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/pwa',
-    '@nuxt/content'
+    '@nuxt/content',
   ],
   /*
    ** Axios module configuration
@@ -63,7 +61,7 @@ module.exports = {
    */
   axios: {
     debug: true,
-    baseURL: process.env.BASE_URL || undefined
+    baseURL: process.env.BASE_URL || undefined,
   },
   /*
    ** Auth module configuration
@@ -82,11 +80,11 @@ module.exports = {
         // tokenType: 'bearer',
         // globalToken: true,
         //autoFetchUser: true
-      }
-    }
+      },
+    },
   },
   router: {
-    middleware: ['auth']
+    middleware: ['auth'],
   },
   /*
    ** Build configuration
@@ -96,6 +94,11 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.ya?ml$/,
+        use: 'js-yaml-loader',
+        include: /(content\/quizzes)/,
+      })
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -103,10 +106,25 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options: {
-            fix: true
-          }
+            fix: true,
+          },
         })
       }
+      /* config.module.rules.push({
+        test: /.\.yaml$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].json',
+              context: 'content',
+            },
+          },
+          {
+            loader: 'yaml-loader',
+          },
+        ],
+      }) */
     },
     cache: true,
     hardSource: true,
