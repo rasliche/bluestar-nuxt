@@ -22,5 +22,12 @@
 export default {
   name: 'Home',
   auth: false,
+  head() {
+    return {
+      script: [
+        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
+      ],
+    }
+  },
 }
 </script>
