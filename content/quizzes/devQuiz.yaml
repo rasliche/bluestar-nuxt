@@ -1,5 +1,5 @@
 quizID: -1
-minimumScore: 0.75
+minimumScore: 75
 questions:
   - question: "[SAMPLE QUESTION!] Which of these is not a programming language?"
     answers:

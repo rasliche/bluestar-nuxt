@@ -31,15 +31,13 @@
       </p>
       <p class="text-3xl">
         {{
-          finalGrade >= quiz.minimumScore
+          finalGrade >= quiz.minimumScore / 100
             ? 'Good Job!'
-            : `You need ${Math.round(
-                quiz.minimumScore * 100
-              )}% or higher to pass`
+            : `You need ${Math.round(quiz.minimumScore)}% or higher to pass`
         }}
       </p>
       <button
-        v-if="finalGrade < quiz.minimumScore"
+        v-if="finalGrade < quiz.minimumScore / 100"
         class="retry-button btn btn-blue"
         @click="reset"
       >
@@ -58,7 +56,7 @@ export default {
       default: () => {
         return {
           quizID: -1,
-          minimumScore: 0.75,
+          minimumScore: 75,
           questions: [
             {
               question:
