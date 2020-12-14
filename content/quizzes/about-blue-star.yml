@@ -8,6 +8,8 @@ questions:
         text: A voluntary recognition program
       - correct: false
         text: A pay to play scheme
+      - correct: false
+        text: A way to show off your diving and fishing skills
     question: What is Blue Star?
   - question: This is a Test question
     answers:
