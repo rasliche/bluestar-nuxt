@@ -1,0 +1,3 @@
+[submodule "bluestar-content"]
+    path = content/lessons
+    url = git@github.com:Florida-Keys-National-Marine-Sanctuary/bluestar-content.git
