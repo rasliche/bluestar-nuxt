@@ -1,5 +1,7 @@
 <template>
   <div>
+    <PageHeading>Admin</PageHeading>
+    <nuxt-link to="/cms">Edit Content</nuxt-link>
     <div>
       <div class="max-w-lg">
         <SearchSelect v-model="user" label="All Users" :options="userNames" />
