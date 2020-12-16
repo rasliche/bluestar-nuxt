@@ -7,6 +7,8 @@ local_backend: true
 media_folder: static/img
 public_folder: /img
 
+site_url: https://romantic-montalcini-b4ef44.netlify.app
+
 collections:
   - name: 'quiz'
     label: 'Quiz'
