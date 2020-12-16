@@ -8,19 +8,5 @@ questions:
       - correct: true
         text: A voluntary recognition program
       - correct: false
-        text: "3"
-      - correct: false
-        text: "1"
-      - correct: false
-        text: "2"
+        text: A way to show off your diving skills
     question: What is Blue Star?
-  - question: AADSFSf
-    answers:
-      - correct: true
-        text: cos(x)
-      - correct: false
-        text: asin(x)
-      - correct: false
-        text: tan(x)
-      - correct: false
-        text: atan(x)
