@@ -1,6 +1,9 @@
 <template>
   <div>
     <div>
+      <nuxt-link to="/cms">Content Editor</nuxt-link>
+    </div>
+    <div>
       <div class="max-w-lg">
         <SearchSelect v-model="user" label="All Users" :options="userNames" />
       </div>
