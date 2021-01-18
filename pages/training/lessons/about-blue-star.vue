@@ -149,6 +149,10 @@
       the Blue Star Diving program.
     </p>
 
+    <div class="max-w-3xl">
+      <LazyQuiz :quiz="this.$quizzes['about-blue-star']" />
+    </div>
+
     <Citations :summary="'Citations'" class="max-w-3xl mt-8">
       <CitationsSource :anchor="'kc2012'">
         Recreational diving impacts and the use of pre-dive briefings as a
