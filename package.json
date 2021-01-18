@@ -6,6 +6,13 @@
   "version": "1.0.0",
   "description": "The online training system for Florida Keys National Marine Sanctuary's Blue Star recognition program. This program recognizes diving and fishing charter operators and captains.",
   "author": "Eric Raslich",
+  "contributors": [
+    {
+      "name": "Jason Ball",
+      "email": "jason@jasonball.dev",
+      "url": "https://jasonball.dev"
+    }
+  ],
   "private": true,
   "scripts": {
     "dev": "nuxt",
