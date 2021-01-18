@@ -38,7 +38,7 @@ router.post('/admin',[
     .exists()
     .custom((value, { req }) => value === req.body.password),
   check('adminPassword')
-    .equals(process.env.BS_ADMIN_PASSWORD)
+    .equals(process.env.ADMIN_REGISTER_PASSWORD)
     // TODO pluck an admin password from env and check for it here
   ], 
   async (req, res, next) => {
