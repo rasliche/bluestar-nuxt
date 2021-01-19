@@ -10,7 +10,7 @@
       >
         About Florida Keys National Marine Sanctuary
       </nuxt-link>
-      <nuxt-link to="/training/lessons/coral-reefs"> Coral Reefs </nuxt-link>
+      <nuxt-link to="/training/lessons/coral-reefs">Coral Reefs</nuxt-link>
       <nuxt-link to="/training/lessons/coral-disease">
         Coral Disease
       </nuxt-link>
@@ -20,7 +20,7 @@
       <nuxt-link to="/training/lessons/cultural-resources">
         Cultural Resources
       </nuxt-link>
-      <nuxt-link to="/training/lessons/lionfish"> Lionfish </nuxt-link>
+      <nuxt-link to="/training/lessons/lionfish">Lionfish</nuxt-link>
       <nuxt-link to="/training/lessons/mangroves-and-seagrass">
         Mangroves and Seagrass
       </nuxt-link>
