@@ -1,4 +1,4 @@
-quizID: -1
+uuid: -1
 minimumScore: 75
 questions:
   - question: "[SAMPLE QUESTION!] Which of these is not a programming language?"
