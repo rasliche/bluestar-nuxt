@@ -1,7 +1,9 @@
 <template>
   <div class="quiz border border-blue-800 rounded-t-md rounded-b-md">
     <p class="quiz-header">
-      Quiz ({{ questionIndex + 1 }}/{{ questionCount }})
+      Quiz ({{ questionIndex + 1 }}/{{ questionCount }}){{
+        highScore * 100 >= quiz.minimumScore ? ': COMPLETED' : ''
+      }}
     </p>
     <div v-if="!done" class="quiz-content flex flex-col">
       <p class="quiz-question block text-center">
@@ -36,11 +38,10 @@
             : `You need ${Math.round(quiz.minimumScore)}% or higher to pass`
         }}
       </p>
-      <button
-        v-if="finalGrade < quiz.minimumScore / 100"
-        class="retry-button btn btn-blue"
-        @click="reset"
-      >
+      <p>
+        <em>Your best score was {{ `${Math.round(highScore * 100)}%` }}</em>
+      </p>
+      <button class="retry-button btn btn-blue" @click="reset">
         Try Again
       </button>
     </div>
@@ -55,7 +56,7 @@ export default {
       type: Object,
       default: () => {
         return {
-          quizID: -1,
+          uuid: -1,
           minimumScore: 75,
           questions: [
             {
@@ -98,6 +99,7 @@ export default {
       readyForNextQuestion: false,
       done: false,
       finalGrade: 0,
+      highScore: 0,
     }
   },
   computed: {
@@ -107,6 +109,16 @@ export default {
     lastQuestion() {
       return this.questionIndex + 1 === this.questionCount
     },
+  },
+  mounted() {
+    this.$axios.get(`/quiz/results/get/${this.quiz.uuid}`).then(({ data }) => {
+      if (data && data.score) {
+        this.highScore = data.score
+        this.finalGrade = data.score
+        this.questionIndex = this.questionCount - 1
+        this.done = true
+      }
+    })
   },
   methods: {
     submitButtonPressed() {
@@ -121,6 +133,7 @@ export default {
       } else {
         this.done = true
         this.finalGrade = this.correctAnswers / this.questionCount
+        this.grade()
       }
     },
     answerChoicePressed(answerIndex) {
@@ -134,6 +147,18 @@ export default {
       this.questionIndex = 0
       this.finalGrade = 0
       this.done = false
+    },
+    grade() {
+      this.$axios
+        .post('/quiz/results/add', {
+          uuid: this.quiz.uuid,
+          score: this.finalGrade,
+        })
+        .then(({ data }) => {
+          if (data && data.score) {
+            this.highScore = data.score
+          }
+        })
     },
   },
 }

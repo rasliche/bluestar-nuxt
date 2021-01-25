@@ -9,6 +9,7 @@ const cors = require('cors');
 
 const userRoute = require('./routes/users')
 const authRoute = require('./routes/auth')
+const quizRoute = require('./routes/quiz')
 
 const jwtStrategy = require('./strategies/jwt')
 const getJwt = require('./strategies/getjwt')
@@ -38,8 +39,8 @@ mongoose.connect(config.get('mongoURI'), {
 app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:3000'
 }))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.json())
+app.use(express.urlencoded())
 app.use(cookieParser());
 app.use(getJwt)
 
@@ -48,6 +49,7 @@ passport.use('BlueStarAuth', jwtStrategy);
 
 app.use('/users', userRoute)
 app.use('/auth', authRoute)
+app.use('/quiz', quizRoute)
 
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3001

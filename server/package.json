@@ -2,12 +2,19 @@
   "name": "bluestar-nuxt-server",
   "version": "1.0.0",
   "description": "",
+  "author": "Eric Raslich",
+  "contributors": [
+    {
+      "name": "Jason Ball",
+      "email": "jason@jasonball.dev",
+      "url": "https://jasonball.dev"
+    }
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
