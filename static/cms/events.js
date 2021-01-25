@@ -12,6 +12,7 @@
         },
         body: JSON.stringify({
           uuid: entry.get('data').get('uuid'),
+          minimumScore: entry.get('data').get('minimumScore')
         }),
       })
     },

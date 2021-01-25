@@ -1,6 +1,7 @@
 const express = require('express')
 const Quiz = require('../models/Quiz')
 const QuizResult = require('../models/QuizResult')
+const BlueStarAuth = require('../strategies/BlueStarAuth')
 
 const router = express.Router()
 
@@ -18,9 +19,9 @@ router.get('/results', async (req, res) => {
 
 // Add or update a quiz
 router.post('/add', (req, res) => {
-  if (req.body && req.body.uuid) {
-    // Get the UUID from the request
-    const { uuid } = req.body
+  if (req.body && req.body.uuid && req.body.minimumScore) {
+    // Get the UUID and minScore from the request
+    const { uuid, minimumScore } = req.body
 
     // Create a new quiz and add its UUID
     Quiz.find({ uuid }).exec(async (err, quizzes) => {
@@ -35,6 +36,7 @@ router.post('/add', (req, res) => {
 
       // Update field(s)
       quiz.uuid = uuid
+      quiz.minimumScore = minimumScore
 
       // Save it
       await quiz.save()
@@ -52,10 +54,11 @@ router.post('/add', (req, res) => {
 })
 
 // Add or update a quiz result
-router.post('/results/add', async (req, res) => {
-  if (req.body && req.body.uuid && req.body.score && req.body.user) {
+router.post('/results/add', BlueStarAuth, async (req, res) => {
+  if (req.body && req.body.uuid && req.body.score != undefined) {
     // Get the quiz uuid, score, and user id from the request
-    const { uuid, score, user } = req.body
+    const { uuid, score } = req.body
+    const user = req.user.id
 
     // Get the quiz from the DB
     const quizzes = await Quiz.find({ uuid }).limit(1)
@@ -72,7 +75,10 @@ router.post('/results/add', async (req, res) => {
     const result = results[0]
 
     // Update fields
-    result.score = score
+    if (score >= result.score) {
+      result.dateCompleted = new Date()
+    }
+    result.score = Math.max(result.score, score)
     result.quiz = quiz.id
     result.user = user
 
@@ -86,6 +92,7 @@ router.post('/results/add', async (req, res) => {
     return res.status(400).json({
       error: true,
       message: 'Quiz UUID, score, and user id required',
+      body: req.body
     })
   }
 })
@@ -129,9 +136,10 @@ router.get('/results/for-quiz/:quiz', async (req, res) => {
 })
 
 // Return quiz result for a quiz and user
-router.get('/results/get/:user/:quiz', async (req, res) => {
-  if (req.params && req.params.user && req.params.quiz) {
-    const { quiz: uuid, user } = req.params
+router.get('/results/get/:quiz', BlueStarAuth, async (req, res) => {
+  if (req.params && req.params.quiz) {
+    const { quiz: uuid } = req.params
+    const user = req.user.id
     let results = await QuizResult.find({ user }).populate({
       path: 'quiz',
       match: { uuid },

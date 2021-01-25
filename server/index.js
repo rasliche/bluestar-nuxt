@@ -39,8 +39,8 @@ mongoose.connect(config.get('mongoURI'), {
 app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:3000'
 }))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.json())
+app.use(express.urlencoded())
 app.use(cookieParser());
 app.use(getJwt)
 

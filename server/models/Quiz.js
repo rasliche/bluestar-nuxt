@@ -25,6 +25,12 @@ const quizSchema = new Schema({
     ref: 'Lesson',
     required: false, // TODO: enforce this
   },
+  minimumScore: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 100
+  }
 })
 
 quizSchema.query.byUUID = (uuid) => {

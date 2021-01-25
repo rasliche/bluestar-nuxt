@@ -10,6 +10,7 @@ const quizResultSchema = new Schema({
   score: {
     type: Number,
     required: true,
+    default: 0
   },
   quiz: {
     type: ObjectId,
@@ -21,6 +22,11 @@ const quizResultSchema = new Schema({
     ref: 'User',
     required: true,
   },
+  dateCompleted: {
+    type: Date,
+    required: true,
+    default: new Date()
+  }
 })
 
 module.exports = model('QuizResult', quizResultSchema)
