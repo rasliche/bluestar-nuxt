@@ -20,7 +20,7 @@ export default {
   async asyncData({ $content, params, error }) {
     let lesson
     try {
-      lesson = await $content('lessons', params.slug).fetch()
+      lesson = await $content('training/lessons', params.slug).fetch()
     } catch (e) {
       error({ message: 'Lesson not found' })
     }

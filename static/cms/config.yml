@@ -13,7 +13,7 @@ collections:
   - name: 'lesson'
     label: 'Lessons'
     label_singular: Lesson
-    folder: 'content/lessons'
+    folder: 'content/training/lessons'
     format: 'frontmatter'
     create: true
     slug: "{{slug}}"
