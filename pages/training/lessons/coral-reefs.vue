@@ -17,7 +17,13 @@
       reefs, and why reefs are important to the economy.
     </p>
 
-    <img src="~/assets/images/coral-reef.svg" />
+    <div class="max-w-3xl my-8 rounded-md overflow-hidden">
+      <img src="~/assets/images/coral-reef.svg" />
+      <!-- <p class="text-sm">
+        Coral polyps form a living mat over a calcium carbonate skeleton.
+        <span class="font-semibold"> Photo Credit: NOAA </span>
+      </p> -->
+    </div>
 
     <!-- These links didn't work
 https://www.flickr.com/photos/onms/31041347558/sizes/m/
