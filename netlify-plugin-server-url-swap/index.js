@@ -2,7 +2,7 @@ const fs = require('fs')
 
 module.exports = {
     onPreBuild: () => {
-        const filename = '../static/cms/index.html'
+        const filename = '/static/cms/index.html'
         const serverUrlRegex = /(?<=SERVER_URL = ).*$/g
         const replacementServerUrl = process.env.BASE_URL
 
