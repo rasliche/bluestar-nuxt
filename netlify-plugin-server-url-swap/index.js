@@ -3,7 +3,7 @@ const fs = require('fs')
 module.exports = {
     onPostBuild: () => {
         const filename = './static/cms/index.html'
-        const serverUrlRegex = /(?<=SERVER_URL = ).*$/g
+        const serverUrlRegex = /(?<=SERVER_URL = ).*/g
         const replacementServerUrl = process.env.BASE_URL
 
         console.log('Server URL Swap onPostBuild hook fired')
@@ -12,7 +12,7 @@ module.exports = {
             if (err) {
                 return console.log(err)
             }
-            let result = data.replace(serverUrlRegex, replacementServerUrl)
+            let result = data.replace(serverUrlRegex, `${replacementServerUrl}`)
 
             fs.writeFileSync(filename, result, 'utf8', function(err) {
                 if (err) return console.log(err)
