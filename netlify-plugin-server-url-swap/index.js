@@ -1,12 +1,12 @@
 const fs = require('fs')
 
 module.exports = {
-    onPreBuild: () => {
+    onPostBuild: () => {
         const filename = './static/cms/index.html'
         const serverUrlRegex = /(?<=SERVER_URL = ).*$/g
         const replacementServerUrl = process.env.BASE_URL
 
-        console.log('Server URL Swap onPreBuild hook fired')
+        console.log('Server URL Swap onPostBuild hook fired')
         console.log(`Grabbing BASE_URL: ${process.env.BASE_URL}`)
         fs.readFileSync(filename, 'utf8', function(err, data) {
             if (err) {
