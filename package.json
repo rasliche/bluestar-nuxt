@@ -30,10 +30,10 @@
   "dependencies": {
     "@babel/core": "^7.12.10",
     "@nuxt/components": "^1.2.5",
-    "@nuxt/content": "^1.11.1",
+    "@nuxt/content": "^1.12.0",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.5",
-    "@nuxtjs/pwa": "^3.3.4",
+    "@nuxtjs/pwa": "^3.3.5",
     "@popperjs/core": "^2.6.0",
     "@tailwindcss/typography": "^0.2.0",
     "bcryptjs": "^2.4.3",
@@ -43,7 +43,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.9.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.13",
+    "mongoose": "^5.11.14",
     "nuxt": "^2.14.12",
     "vuelidate": "^0.7.6"
   },
