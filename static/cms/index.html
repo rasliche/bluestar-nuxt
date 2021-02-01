@@ -16,7 +16,9 @@
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script src="/cms/netlify-cms-widget-uuid.js"></script>
     <script src="/cms/events.js"></script>
+    <script src="/cms/components.js"></script>
     <script type="text/javascript">
+    CMS.registerPreviewStyle('https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css')
     CMS.registerWidget('uuid', netlifyCmsWidgetUuid.UuidControl, netlifyCmsWidgetUuid.UuidPreview);
     </script>
 

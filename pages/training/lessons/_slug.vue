@@ -42,6 +42,6 @@ export default {
 }
 
 .nuxt-content img {
-  @apply my-8 rounded-md overflow-hidden mx-auto;
+  @apply rounded-md overflow-hidden mx-auto;
 }
 </style>
