@@ -45,7 +45,7 @@ router.post('/register', [
 })
 
 router.get('/', async (req, res, next) => {
-  const users = await User.find({})
+  const users = await User.find().select("-password")
   res.send(users)
 })
 

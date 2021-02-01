@@ -17,6 +17,8 @@
       reefs, and why reefs are important to the economy.
     </p>
 
+    <img src="~/assets/coral-reef.svg" />
+
     <!-- These links didn't work
 https://www.flickr.com/photos/onms/31041347558/sizes/m/
 https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->

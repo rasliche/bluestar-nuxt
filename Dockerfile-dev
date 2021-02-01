@@ -1,13 +1,15 @@
-FROM node:alpine as build
+FROM node:alpine
 
 # ENV NODE_ENV production
 ENV HOST "0.0.0.0"
+ARG BASE_URL
 
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-COPY . /usr/src/app
+# COPY . /usr/src/app
 RUN npm install
+# RUN npm run generate
 
-EXPOSE 3001
+EXPOSE 3000
 
-CMD npm start
+CMD npm run dev

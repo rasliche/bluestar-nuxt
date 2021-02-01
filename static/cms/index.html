@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlueStar CMS</title>
+    <!-- Include the script that enables Netlify Identity on this page. -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <script>
+      // GLOBALS:
+      var SERVER_URL = "https://bluestar-dev.herokuapp.com/"
+    </script>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script src="/cms/netlify-cms-widget-uuid.js"></script>
+    <script src="/cms/events.js"></script>
+    <script src="/cms/components.js"></script>
+    <script type="text/javascript">
+    CMS.registerPreviewStyle('https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css')
+    CMS.registerWidget('uuid', netlifyCmsWidgetUuid.UuidControl, netlifyCmsWidgetUuid.UuidPreview);
+    </script>
+
+  </body>
+</html>

@@ -1,5 +1,4 @@
 module.exports = {
-  mode: 'universal', // Default, not needed
   target: 'static', // Default, not needed
   telemetry: true, // Default is to ask in CLI, set to false if you want
   components: true, // Default, not needed?
@@ -14,18 +13,18 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { 
+  loading: {
     color: 'green',
     height: '5px',
-    continuous: true
+    continuous: true,
   },
   /*
    ** Global CSS
@@ -34,9 +33,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~/plugins/vuelidate' }
-  ],
+  plugins: ['~/plugins/vuelidate', '~/plugins/quizPlugin'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -46,7 +43,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt/components
-    '@nuxt/components'
+    '@nuxt/components',
   ],
   /*
    ** Nuxt.js modules
@@ -56,15 +53,23 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/pwa',
-    '@nuxt/content'
+    '@nuxt/content',
   ],
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
     debug: true,
-    baseURL: process.env.BASE_URL || undefined
+    baseURL: process.env.BASE_URL || undefined,
   },
   /*
    ** Auth module configuration
@@ -77,17 +82,17 @@ module.exports = {
         endpoints: {
           login: { url: '/auth/login', method: 'post', propertyName: false },
           logout: false,
-          user: { url: '/user/me', method: 'get', propertyName: false },
+          user: { url: '/users/me', method: 'get', propertyName: false },
         },
         // tokenRequired: true,
         // tokenType: 'bearer',
         // globalToken: true,
         //autoFetchUser: true
-      }
-    }
+      },
+    },
   },
   router: {
-    middleware: ['auth']
+    middleware: ['auth'],
   },
   /*
    ** Build configuration
@@ -97,6 +102,11 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.ya?ml$/,
+        use: 'js-yaml-loader',
+        include: /(content\/quizzes)/,
+      })
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -104,10 +114,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options: {
-            fix: true
-          }
+            fix: true,
+          },
         })
       }
-    }
-  }
+    },
+    cache: true,
+    hardSource: true,
+    parallel: true,
+  },
 }

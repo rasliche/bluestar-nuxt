@@ -82,6 +82,7 @@ dist
 
 # IDE / Editor
 .idea
+.vscode
 
 # Service worker
 sw.*
@@ -94,3 +95,5 @@ sw.*
 
 db_password.txt
 db_root_password.txt
+notes-to-self.md
+content/lessons
