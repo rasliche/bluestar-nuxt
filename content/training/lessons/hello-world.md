@@ -4,7 +4,9 @@
 title: Hello World
 quiz: sample-quiz
 ---
-![A coral reef](/img/explore_banner.jpg "Coral Reef")
+<div class="image-caption my-8 rounded-md"><div class="rounded-md overflow-hidden"><img src="/img/explore_banner.jpg" /></div><p class="text-sm text-center">This is a caption&nbsp;<span class="font-semibold">This is a credit</span></p></div>
+
+<div class="video-caption my-8 rounded-md"><video controls class="w-auto h-auto"><source src="https://oceantoday.noaa.gov/medicinesfromthesea/otfm_205_medicinesfromthesea-lg.mp4"/></video><p class="text-sm text-center">This is a caption&nbsp;<span class="font-semibold">This is a Credit</span></p></div>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero et ex tristique pellentesque. Sed ut tincidunt leo. Nulla porttitor ipsum eu ligula luctus, vel faucibus ex ornare. Etiam iaculis imperdiet eros ac tristique. Duis ut sagittis erat, nec imperdiet eros. Aenean sagittis dictum tortor, in finibus neque imperdiet quis. Proin mollis, felis sit amet suscipit lobortis, eros velit accumsan lacus, vitae aliquet erat lectus ac ipsum. Donec placerat ipsum molestie augue rutrum, vel convallis orci euismod. Donec nec magna ornare turpis aliquam tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum id quam venenatis viverra. Donec sit amet auctor quam. In gravida leo leo, in vehicula neque venenatis a. In rutrum tempus dui sed malesuada.
 
