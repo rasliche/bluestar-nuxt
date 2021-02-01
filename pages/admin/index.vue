@@ -9,7 +9,7 @@ export default {
   name: 'Admin',
   data() {
     return {
-      users: []
+      users: [],
     }
   },
   async created() {
