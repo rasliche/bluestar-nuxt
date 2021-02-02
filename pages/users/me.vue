@@ -1,21 +1,24 @@
 <template>
   <div>
     <PageHeading>My Dashboard</PageHeading>
-    <p>
-      You are logged in as
-      <span class="font-semibold">{{ this.$auth.user.name }}</span> using the
-      <span class="font-mono bg-blue-100 rounded px-1">{{
-        this.$auth.user.email
-      }}</span>
-      email address.
-    </p>
 
-    <div>
+    <div class="max-w-4xl">
+      <p>
+        You are logged in as
+        <span class="font-semibold">{{ this.$auth.user.name }}</span> using the
+        <span class="font-mono bg-blue-100 rounded px-1">{{
+          this.$auth.user.email
+        }}</span>
+        email address.
+      </p>
+    </div>
+
+    <div class="max-w-4xl">
       <PageHeading>Training Record</PageHeading>
       <LessonList></LessonList>
     </div>
 
-    <div>
+    <div class="max-w-4xl">
       <PageHeading>Continuing Education</PageHeading>
       <div>
         <p></p>

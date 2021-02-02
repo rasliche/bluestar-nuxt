@@ -22,10 +22,13 @@ export default {
   },
   methods: {
     createShop() {
+      this.newShop = {
+        name: null,
+        access_code: null,
+        programs: null,
+      }
       console.log('Creating a new form...')
     },
   },
 }
 </script>
-
-<style></style>
