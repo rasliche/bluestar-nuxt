@@ -1,7 +1,8 @@
 <template>
   <div>
+    <PageHeading>Admin Dashboard</PageHeading>
     <div>
-      <div class="max-w-lg">
+      <div class="max-w-xl px-8">
         <SearchSelect v-model="user" label="All Users" :options="userNames" />
       </div>
     </div>
