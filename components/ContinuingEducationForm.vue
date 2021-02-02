@@ -1,11 +1,12 @@
 <template>
   <div>
     <form method="post" @submit.prevent="createContinuingEducationRecord()">
-      <BaseInput v-model="newShop.name" label="Name"></BaseInput>
-      <BaseInput v-mode="newShop.access_code" label="Access Code"></BaseInput>
+      <BaseInput v-model="newRecord.name" label="Name"></BaseInput>
+      <BaseInput v-mode="newRecord.date" label="Date"></BaseInput>
+      <BaseInput v-mode="newRecord.description" label="Description"></BaseInput>
       <!-- <BaseInput></BaseInput> -->
       <ButtonPrimary @click.prevent="createContinuingEducationRecord()"
-        >Create</ButtonPrimary
+        >Create Record</ButtonPrimary
       >
     </form>
   </div>
@@ -15,19 +16,17 @@
 export default {
   data() {
     return {
-      newShop: {
+      newRecord: {
         name: null,
-        access_code: null,
-        programs: null,
+        date: null,
+        description: null,
       },
     }
   },
   methods: {
-    createShop() {
+    createContinuingEducationRecord() {
       console.log('Creating a new form...')
     },
   },
 }
 </script>
-
-<style></style>

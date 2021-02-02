@@ -17,6 +17,9 @@
 
     <div>
       <PageHeading>Continuing Education</PageHeading>
+      <div>
+        <p></p>
+      </div>
       <ContinuingEducationForm></ContinuingEducationForm>
     </div>
     <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
