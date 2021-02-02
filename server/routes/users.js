@@ -5,8 +5,8 @@ const User = require('../models/User')
 const BlueStarAuth = require('../strategies/BlueStarAuth')
 
 router.get('/me', BlueStarAuth, (req, res) => {
-  const {name, email, roles} = req.user
-  res.send({name, email, roles})
+  const {name, email, roles, _id} = req.user
+  res.send({name, email, roles, _id})
 })
 
 // Register a new user
