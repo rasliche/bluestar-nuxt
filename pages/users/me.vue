@@ -3,7 +3,7 @@
     <PageHeading>My Dashboard</PageHeading>
 
     <div class="max-w-4xl">
-      <p>
+      <p class="">
         You are logged in as
         <span class="font-semibold">{{ this.$auth.user.name }}</span> using the
         <span class="font-mono bg-blue-100 rounded px-1">{{
@@ -11,6 +11,13 @@
         }}</span>
         email address.
       </p>
+      <nuxt-link
+        v-if="this.$auth.user.roles.admin"
+        to="/admin"
+        class="mt-4 p-3 bg-yellow-200 rounded text-yellow-800 inline-block"
+      >
+        🌟 You are an Admin.
+      </nuxt-link>
     </div>
 
     <div class="max-w-4xl">
