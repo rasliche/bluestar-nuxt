@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 1,
     maxlength: 255,
-    trim: true
+    trim: true,
   },
   email: {
     type: String,
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
     minlength: 5,
-    maxlength: 255
+    maxlength: 255,
   },
   password: {
     type: String,
@@ -53,9 +53,13 @@ const userSchema = new mongoose.Schema({
   roles: {
     admin: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+    manager: {
+      type: Boolean,
+      default: false,
+    },
+  },
 })
 
 // userSchema.plugin(passportLocalMongoose, {
@@ -66,14 +70,14 @@ const userSchema = new mongoose.Schema({
 // Method on User object that signs and returns a JSON Web Token
 // Token contains User._id and is no longer valid after 2 hours.
 
-userSchema.methods.generateAuthToken = function() {
+userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
     {
       _id: this._id,
       name: this.name,
       email: this.email,
       iss: 'bluestar',
-      aud: 'bluestar'
+      aud: 'bluestar',
     },
     config.get('jwtPrivateKey'), // secret
     { expiresIn: '2h' }
