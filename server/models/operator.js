@@ -5,18 +5,18 @@ const operatorSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    maxlength: 50
+    maxlength: 50,
   },
-  password: {
+  accessCode: {
     type: String,
-    default: 'floridakeys'
+    default: 'floridakeys',
   },
   programs: [String],
   managers: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    }
+      ref: 'User',
+    },
   ],
   annualRecognition: [
     {
@@ -27,20 +27,20 @@ const operatorSchema = new mongoose.Schema({
           {
             title: String,
             description: String,
-            date: Date
-          }
+            date: Date,
+          },
         ],
         inPersonEvaluation: {
           date: Date,
           passed: Boolean,
           evaluator: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-          }
-        }
-      }
-    }
-  ]
+            ref: 'User',
+          },
+        },
+      },
+    },
+  ],
 })
 
 module.exports.Operator = mongoose.model('Operator', operatorSchema)

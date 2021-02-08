@@ -11,11 +11,11 @@ router.get('/me', BlueStarAuth, (req, res) => {
   res.send({ name, email, roles, _id })
 })
 
-router.get('/is-admin', BlueStarAdminAuth, (req, res) => {
+router.get('/is-admin', BlueStarAdminAuth, (_req, res) => {
   res.send('OK')
 })
 
-router.get('/is-manager', BlueStarManagerAuth, (req, res) => {
+router.get('/is-manager', BlueStarManagerAuth, (_req, res) => {
   res.send('OK')
 })
 
@@ -30,7 +30,7 @@ router.post(
       .exists()
       .custom((value, { req }) => value === req.body.password),
   ],
-  async (req, res, next) => {
+  async (req, res, _next) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
       return res
@@ -57,7 +57,7 @@ router.post(
   }
 )
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (_req, res, _next) => {
   const users = await User.find().select('-password')
   res.send(users)
 })
