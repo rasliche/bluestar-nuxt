@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeading class="border-none">Admin Dashboard</PageHeading>
+    <PageHeading>Admin Dashboard</PageHeading>
     <div>
       <div class="max-w-xl px-8">
         <ul class="h-64 shadow-inner">

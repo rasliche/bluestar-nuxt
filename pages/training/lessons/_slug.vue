@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto max-w-4xl px-4">
     <PageHeading>{{ lesson.title }}</PageHeading>
     <nuxt-content :document="lesson" />
     <Quiz
