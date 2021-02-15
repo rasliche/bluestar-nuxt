@@ -1,8 +1,12 @@
 <template>
   <div>
     <form method="post" @submit.prevent="createShop()">
-      <BaseInput v-model="newShop.name" label="Name"></BaseInput>
-      <BaseInput v-mode="newShop.access_code" label="Access Code"></BaseInput>
+      <BaseInput v-model="newShop.name" type="text" label="Name"></BaseInput>
+      <BaseInput
+        v-model="newShop.accessCode"
+        type="text"
+        label="Access Code"
+      ></BaseInput>
       <!-- <BaseInput></BaseInput> -->
       <ButtonPrimary @click.prevent="createShop()">Create</ButtonPrimary>
     </form>
@@ -15,17 +19,23 @@ export default {
     return {
       newShop: {
         name: null,
-        access_code: null,
+        accessCode: null,
         programs: null,
       },
     }
   },
   methods: {
+    resetNewShop() {
+      this.newShop = {
+        name: null,
+        accessCode: null,
+        programs: null,
+      }
+    },
     createShop() {
-      console.log('Creating a new form...')
+      const { name, accessCode, programs } = this.newShop
+      console.log('Creating a new business...', { name, accessCode, programs })
     },
   },
 }
 </script>
-
-<style></style>
