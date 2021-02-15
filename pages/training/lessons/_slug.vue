@@ -13,6 +13,7 @@
 import Quiz from '../../../components/Quiz.vue'
 import PageHeading from '../../../components/BaseUI/PageHeading.vue'
 export default {
+  name: 'LessonSlug',
   components: {
     Quiz,
     PageHeading,
@@ -39,6 +40,10 @@ export default {
 
 .nuxt-content h2 {
   @apply mt-4 mb-1 text-2xl text-blue-800 font-semibold;
+}
+
+.nuxt-content h3 {
+  @apply mt-4 mb-1 text-xl text-blue-800 font-semibold;
 }
 
 .nuxt-content img {
