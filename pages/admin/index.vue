@@ -1,10 +1,15 @@
 <template>
   <div>
-    <PageHeading>Admin Dashboard</PageHeading>
+    <PageHeading class="border-none">Admin Dashboard</PageHeading>
     <div>
       <div class="max-w-xl px-8">
-        <SearchSelect v-model="user" label="All Users" :options="userNames" />
-        <ButtonPrimary>Show</ButtonPrimary>
+        <ul class="h-64 shadow-inner">
+          <li v-for="user in users" :key="user._id">
+            <nuxt-link :to="`/users/${user._id}`">{{ user.name }}</nuxt-link>
+          </li>
+        </ul>
+        <!-- <SearchSelect v-model="user" label="All Users" :options="userNames" /> -->
+        <!-- <ButtonPrimary>Show</ButtonPrimary> -->
       </div>
     </div>
     <div class="border-t-4 border-gray-300">
@@ -29,7 +34,7 @@ export default {
   data() {
     return {
       users: [],
-      user: null,
+      // user: null,
     }
   },
   computed: {
