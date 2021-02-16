@@ -3,7 +3,7 @@
     <PageHeading>Admin Dashboard</PageHeading>
     <div>
       <div class="max-w-xl px-8">
-        <ul class="h-64 shadow-inner">
+        <ul class="h-64 overflow-x-hidden overflow-y-scroll shadow-inner">
           <li v-for="user in users" :key="user._id">
             <nuxt-link :to="`/users/${user._id}`">{{ user.name }}</nuxt-link>
           </li>
@@ -12,6 +12,7 @@
         <!-- <ButtonPrimary>Show</ButtonPrimary> -->
       </div>
     </div>
+
     <div class="border-t-4 border-gray-300">
       <div class="max-w-xl px-8">
         <span class="font-bold text-sm text-blue-800">
@@ -20,11 +21,6 @@
         <CreateBusinessForm></CreateBusinessForm>
       </div>
     </div>
-    <!-- <div class="space-y-3">
-      <div v-for="user in users" :key="user.id">
-        {{ user }}
-      </div>
-    </div> -->
   </div>
 </template>
 
