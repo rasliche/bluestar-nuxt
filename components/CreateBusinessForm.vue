@@ -34,6 +34,10 @@ export default {
     },
     createShop() {
       const { name, accessCode, programs } = this.newShop
+      this.$store.dispatch('notification/add', {
+        type: 'success',
+        text: `Created ${name}.`,
+      })
       console.log('Creating a new business...', { name, accessCode, programs })
     },
   },
