@@ -1,6 +1,14 @@
 <template>
   <div class="flex flex-wrap">
     <nuxt-link
+      v-for="lesson in lessons"
+      :key="lesson.slug"
+      class="border-black border-2 rounded py-3 px-4 m-4 font-semibold transition-colors ease-in-out duration-300 bg-blue-200 text-blue-900 hover:bg-black hover:text-blue-100"
+      :to="lesson.path"
+    >
+      {{ lesson.title }}
+    </nuxt-link>
+    <!-- <nuxt-link
       class="border-black border-2 rounded py-3 px-4 m-4 font-semibold transition-colors ease-in-out duration-300 bg-blue-200 text-blue-900 hover:bg-black hover:text-blue-100"
       to="/training/lessons/about-blue-star"
     >
@@ -65,6 +73,25 @@
       to="/training/lessons/sanctuary-regulations-and-zones"
     >
       Sanctuary Regulations and Zones
-    </nuxt-link>
+    </nuxt-link> -->
   </div>
 </template>
+
+<script>
+export default {
+  name: 'LessonList',
+  data() {
+    return {
+      lessons: [],
+    }
+  },
+  async created() {
+    this.lessons = await this.$content('training/lessons')
+      .only(['path', 'title', 'slug'])
+      .fetch()
+      .catch((error) => {
+        error({ statusCode: 404, message: 'Lessons not found!' })
+      })
+  },
+}
+</script>

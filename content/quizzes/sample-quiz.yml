@@ -2,17 +2,65 @@
 # DO NOT EDIT!
 title: About Blue Star
 minScore: 75
-minimumScore: 75
+uuid: 991afe48-c585-4d37-a24c-d9465367efc6
+minimumScore: 80
 questions:
   - answers:
-      - correct: true
-        text: A voluntary recognition program
       - correct: false
-        text: A way to show off your diving skills
-    question: What is Blue Star?
-  - question: Who administers Blue Star?
+        text: prevent diving and snorkeling in sanctuary waters
+      - correct: true
+        text: recognize companies that work to reduce the impact of divers and
+          snorkelers on coral reefs of the Florida Keys
+      - correct: false
+        text: provide money to businesses that dive and snorkel in sanctuary waters
+    question: "The Blue Star program was established to:"
+  - question: Damage to reefs from diving and snorkeling can be prevented.
     answers:
       - correct: true
-        text: Florida Keys National Marine Sanctuary
+        text: "True"
       - correct: false
-        text: Florida Fish and Wildlife Conservation Commission
+        text: "False"
+  - question: Blue Star is a voluntary program.
+    answers:
+      - correct: true
+        text: "True"
+      - correct: false
+        text: "False"
+  - question: "As a Blue Star partner, your dive shop has voluntarily agreed to:"
+    answers:
+      - correct: false
+        text: educate customers about the coral reef ecosystem
+      - correct: false
+        text: educate customers about the Florida Keys National Marine Sanctuary
+      - correct: false
+        text: educate customers about proper diving and snorkeling etiquette
+      - correct: true
+        text: all of the above
+  - question: Coral reefs in the Florida Keys are not under any stress and therefore
+      it is not important to protect them.
+    answers:
+      - correct: false
+        text: "True"
+      - correct: true
+        text: "False"
+  - question: A Blue Star-recognized business must offer conservation-related
+      activities to their guests.
+    answers:
+      - correct: true
+        text: "True"
+      - correct: false
+        text: "False"
+  - question: Once a dive shop has been evaluated and recognized as a Blue Star
+      partner, the shop never has to be evaluated again to keep its recognition.
+    answers:
+      - correct: false
+        text: "True"
+      - correct: true
+        text: "False"
+  - question: As a partner in the Blue Star program, a major part of your role is to
+      educate reef users.
+    answers:
+      - correct: true
+        text: "True"
+      - correct: false
+        text: "False"
