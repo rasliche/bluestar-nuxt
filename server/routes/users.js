@@ -2,6 +2,7 @@ const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const { check, validationResult } = require('express-validator')
 const User = require('../models/User')
+const UserOperatorRel = require('../models/UserOperatorRel')
 const BlueStarAuth = require('../strategies/BlueStarAuth')
 const BlueStarAdminAuth = require('../strategies/BlueStarAdminAuth')
 const BlueStarManagerAuth = require('../strategies/BlueStarManagerAuth')
@@ -56,6 +57,25 @@ router.post(
     }
   }
 )
+
+router.post('/link-operator', async (req, res) => {
+  if (!req.body || !req.body.operator || !req.body.user) {
+    return res.status(400).json({
+      error: true,
+      message: 'Operator ID and/or user not given!',
+      body: req.body,
+    })
+  }
+  const { operator, user } = req.body
+
+  const rel = new UserOperatorRel()
+  rel.userID = user
+  rel.operatorID = operator
+
+  await rel.save()
+
+  res.json(rel.toJSON())
+})
 
 router.get('/', async (_req, res, _next) => {
   const users = await User.find().select('-password')
