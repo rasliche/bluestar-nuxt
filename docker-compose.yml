@@ -39,6 +39,11 @@ services:
     restart: unless-stopped
     depends_on:
       - mongo_db
+    volumes:
+      - type: bind
+        source: ./server
+        target: /usr/src/app
+    command: ./node_modules/.bin/nodemon index.js
 
   mongo_db:
     image: mongo
