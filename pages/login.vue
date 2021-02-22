@@ -98,25 +98,22 @@ export default {
         }, 750)
       }
       try {
-        // const {
-        //   data: { token, ...userData }
-        // } =
         await this.$auth.loginWith('local', {
           data: this.formResponses,
         })
         clearTimeout(this.spinnerTimer)
-        // this.add({
-        //   type: 'success',
-        //   text: 'You have been logged in.'
-        // })
+        this.$store.dispatch('notification/add', {
+          type: 'success',
+          text: 'You have been logged in.',
+        })
       } catch (e) {
-        // const notification = {
-        //   type: 'error'
-        // }
-        // if (e.message === 'Network Error') {
-        //   notification.text = `There was an error logging in. Are you online?`
-        //   this.add(notification)
-        // }
+        const notification = {
+          type: 'error',
+        }
+        if (e.message === 'Network Error') {
+          notification.text = `There was an error logging in. Are you online?`
+          this.$store.dispatch('notification/add', notification)
+        }
         clearTimeout(this.spinnerTimer)
         this.uiState = 'idle'
         this.formFeedback = e.response.data

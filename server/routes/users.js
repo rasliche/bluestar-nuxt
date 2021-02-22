@@ -20,6 +20,15 @@ router.get('/is-manager', BlueStarManagerAuth, (_req, res) => {
   res.send('OK')
 })
 
+router.get('/:id', BlueStarAuth, async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id).select("-password")
+    res.send(user)
+  } catch (e) {
+    console.log(e)
+  }
+})
+
 // Register a new user
 router.post(
   '/register',
