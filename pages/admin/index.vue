@@ -1,17 +1,19 @@
 <template>
-  <div>
+  <div class="container mx-auto max-w-4xl px-4">
     <PageHeading>Admin Dashboard</PageHeading>
-    <div>
+    <!-- <div>
       <div class="max-w-xl px-8">
         <ul class="h-64 overflow-x-hidden overflow-y-scroll shadow-inner">
           <li v-for="user in users" :key="user._id">
             <nuxt-link :to="`/users/${user._id}`">{{ user.name }}</nuxt-link>
           </li>
         </ul>
-        <!-- <SearchSelect v-model="user" label="All Users" :options="userNames" /> -->
-        <!-- <ButtonPrimary>Show</ButtonPrimary> -->
+        <SearchSelect v-model="user" label="All Users" :options="userNames" />
+        <ButtonPrimary>Show</ButtonPrimary>
       </div>
-    </div>
+    </div> -->
+    <user-table />
+    <br />
 
     <div class="border-t-4 border-gray-300">
       <div class="max-w-xl px-8">
@@ -25,8 +27,14 @@
 </template>
 
 <script>
+import UserTable from '../../components/UserTable.vue'
+import authAdmin from '../../middleware/authAdmin'
 export default {
   name: 'Admin',
+  components: {
+    UserTable,
+  },
+  middleware: [authAdmin],
   data() {
     return {
       users: [],

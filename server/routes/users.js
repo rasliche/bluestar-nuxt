@@ -86,9 +86,39 @@ router.post('/link-operator', async (req, res) => {
   res.json(rel.toJSON())
 })
 
-router.get('/', async (_req, res, _next) => {
+router.get('/', BlueStarAdminAuth, async (_req, res) => {
   const users = await User.find().select('-password')
   res.send(users)
+})
+
+router.put('/change-role', BlueStarAdminAuth, async (req, res) => {
+  if (!req.body || !req.body.user || !req.body.role) {
+    return res.status(400).json({
+      error: true,
+      message: 'User ID and/or role not given!',
+      body: req.body,
+    })
+  }
+  const { user: userID, role } = req.body
+  const user = await User.findById(userID)
+  if (role === 'admin') {
+    user.roles.admin = true
+    user.roles.manager = false
+  } else if (role === 'manager') {
+    user.roles.admin = false
+    user.roles.manager = true
+  } else if (role === 'user') {
+    user.roles.admin = false
+    user.roles.manager = false
+  } else {
+    return res.status(400).json({
+      error: true,
+      message: 'Invalid role!',
+      role,
+    })
+  }
+  await user.save()
+  res.json(user.toJSON())
 })
 
 module.exports = router
