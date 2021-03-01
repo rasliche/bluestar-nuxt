@@ -40,7 +40,7 @@ import {
   PageHeading,
   Parallax,
   ParallaxGroup,
-  ParallaxLayer
+  ParallaxLayer,
 } from '@/components/BaseUI'
 
 export default {
@@ -49,7 +49,7 @@ export default {
     PageHeading,
     Parallax,
     ParallaxGroup,
-    ParallaxLayer
-  }
+    ParallaxLayer,
+  },
 }
 </script>
