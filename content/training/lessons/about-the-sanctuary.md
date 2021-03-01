@@ -16,3 +16,17 @@ Learning objectives: In this section, you will learn about the National Marine S
 ![Map showing the entire sanctuary system from the Pacific to Atlantic Ocean.](https://sanctuaries.noaa.gov/media/maps/nms-system-map-2-1920.jpg "National Marine Sanctuary System map.")
 
 First established in 1972, the National Marine Sanctuary System has grown to include a system of sanctuaries and marine national monuments across the country. Managed by the National Oceanic and Atmospheric Administration (or “NOAA”), the mission of these marine protected areas cover more than 600,000 square miles of marine and Great Lakes waters from Washington State to the Gulf of Mexico, and from Lake Huron to American Samoa. Ranging in size from less than one square mile to 582,000 square miles, each sanctuary site is a special place, managed to conserve, protect, and enhance biodiversity, ecological integrity and cultural legacy.
+
+Check out <https://sanctuaries.noaa.gov/> for more information.
+
+## Florida Keys National Marine Sanctuary
+
+Warning signs about the fragile and finite nature of marine resources in the Florida Keys were present long before Florida Keys National Marine Sanctuary was established. In 1960, John Pennekamp Coral Reef State Park became the world’s first underwater park as a first step in protecting the coral reefs in the Keys. Continued environmental degradation prompted the designation of Key Largo National Marine Sanctuary in 1975 and Looe Key National Marine Sanctuary in 1981. 
+
+Throughout the 1980s, the health of the coral reef ecosystem in the Keys continued to decline. Threats such as deteriorating water quality, vessel groundings, and oil drilling spurred Congress to act. In 1990, Florida Keys National Marine Sanctuary was established, combining the preexisting Key Largo and Looe Key sanctuaries to protect 2,800 square nautical miles of Florida Keys waters.
+
+With the designation of Florida Keys National Marine Sanctuary, several protective measures were immediately put into place, such as prohibiting oil exploration, mining, or any type of activity that would alter the seafloor. Anchoring on, touching, and collecting coral were all restricted within sanctuary waters. 
+
+Today, the sanctuary protects 2,900 square nautical miles of waters surrounding the Florida Keys, from south of Miami and extending westward to encompass the Dry Tortugas, but excluding the Dry Tortugas National Park. The shoreward boundary of the sanctuary is the mean high-water mark, meaning that once you set foot in Keys waters, you have entered the sanctuary. 
+
+As you may already know, the sanctuary protects spectacular, unique, and nationally significant marine environments. As a Blue Star partner, you are playing an important role in protecting these valuable sanctuary resources. Through educating yourselves and your customers you can help ensure our sanctuary is healthy and vibrant for future generations of divers.
