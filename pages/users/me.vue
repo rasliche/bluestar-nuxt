@@ -36,12 +36,38 @@
       <p class="text-lg">Raw User Data</p>
       {{ this.$auth.user }}
     </div>
+    <div>
+      <p>User Roles:</p>
+      <p>Manager: {{ manager }}</p>
+      <p>Admin: {{ admin }}</p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Dashboard',
+  data() {
+    return {
+      manager: false,
+      admin: false,
+    }
+  },
+  mounted() {
+    this.$axios
+      .get('users/is-manager')
+      .then((response) => {
+        if (response.data === 'OK') this.manager = true
+      })
+      .catch(console.error)
+
+    this.$axios
+      .get('users/is-admin')
+      .then((response) => {
+        if (response.data === 'OK') this.admin = true
+      })
+      .catch(console.error)
+  },
   head() {
     return [
       {

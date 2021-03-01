@@ -11,7 +11,7 @@ services:
     restart: always
     ports:
       - "3000:3000"
-    networks: 
+    networks:
       - bluestar-net
     restart: unless-stopped
     volumes:
@@ -29,7 +29,7 @@ services:
       - "3001:3001"
     command:
       "npm start"
-    networks: 
+    networks:
       - bluestar-net
     environment:
       # Change username and password to db user and password
@@ -58,6 +58,8 @@ services:
       MONGO_INITDB_PASSWORD: example
     networks:
       - bluestar-net
+    ports:
+      - "27017:27017"
     volumes:
       - ./docker-mongo-init.sh:/docker-entrypoint-initdb.d/init-mongo.sh
 
