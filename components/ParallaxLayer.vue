@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'ParallaxLayer'
+  name: 'ParallaxLayer',
 }
 </script>

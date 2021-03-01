@@ -7,6 +7,6 @@
 
 <script>
 export default {
-  name: 'ParallaxGroup'
+  name: 'ParallaxGroup',
 }
 </script>
