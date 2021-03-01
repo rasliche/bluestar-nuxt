@@ -20,6 +20,6 @@
 
 <script>
 export default {
-  name: 'Parallax'
+  name: 'Parallax',
 }
 </script>
