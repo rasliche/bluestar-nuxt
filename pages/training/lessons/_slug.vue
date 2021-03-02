@@ -3,6 +3,7 @@
     <PageHeading>{{ lesson.title }}</PageHeading>
     <nuxt-content :document="lesson" />
     <Quiz
+      v-if="lesson.quiz.uuid !== -1"
       :quiz="$quizzes[lesson.quiz]"
       class="my-8 mx-auto md:mx-8 lg:mx-12 xl:mx-32"
     />
