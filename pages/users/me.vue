@@ -45,8 +45,11 @@
 </template>
 
 <script>
+import PageHeading from '@/components/BaseUI/PageHeading'
+
 export default {
   name: 'Dashboard',
+  components: { PageHeading },
   data() {
     return {
       manager: false,
