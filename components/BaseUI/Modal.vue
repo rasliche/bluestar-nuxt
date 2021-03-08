@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { ButtonSecondary } from '@/components/BaseUI'
+import { ButtonSecondary } from '@/components/BaseUI/buttons/ButtonSecondary.vue'
 
 export default {
   name: 'ModalBase',

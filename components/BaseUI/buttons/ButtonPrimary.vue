@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import ButtonBase from '@/components/BaseUI/buttons/ButtonBase'
+import ButtonBase from '@/components/BaseUI/buttons/ButtonBase.vue'
 
 export default {
   name: 'ButtonPrimary',

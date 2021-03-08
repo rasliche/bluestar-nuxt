@@ -57,10 +57,14 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import ButtonPrimary from '@/components/BaseUI/buttons/ButtonPrimary.vue'
 
 export default {
   name: 'Login',
   auth: 'guest',
+  components: {
+    ButtonPrimary,
+  },
   data() {
     return {
       formFeedback: null,

@@ -19,9 +19,14 @@
 </template>
 
 <script>
+import PageHeading from '@/components/BaseUI/PageHeading.vue'
+
 export default {
   name: 'Home',
   auth: false,
+  components: {
+    PageHeading,
+  },
   head() {
     return {
       script: [
