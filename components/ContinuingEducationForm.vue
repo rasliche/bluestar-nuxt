@@ -21,7 +21,14 @@
 </template>
 
 <script>
+import BaseInput from '@/components/BaseUI/inputs/BaseInput'
+import ButtonPrimary from '@/components/BaseUI/buttons/ButtonPrimary'
+
 export default {
+  components: {
+    BaseInput,
+    ButtonPrimary,
+  },
   data() {
     return {
       newRecord: {
