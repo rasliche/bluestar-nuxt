@@ -39,8 +39,13 @@
 </template>
 
 <script>
+import PageHeading from '@/components/BaseUI/PageHeading'
+
 export default {
   name: 'FishingIndex',
+  components: {
+    PageHeading,
+  },
   head() {
     return [
       {

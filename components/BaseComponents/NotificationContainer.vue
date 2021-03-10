@@ -13,9 +13,13 @@
 
 <script>
 import { mapState } from 'vuex'
+import Notification from '@/components/BaseComponents/Notification'
 
 export default {
   name: 'NotificationContainer',
+  components: {
+    Notification,
+  },
   computed: {
     ...mapState('notification', ['notifications']),
   },
