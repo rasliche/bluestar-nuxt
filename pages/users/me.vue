@@ -46,10 +46,12 @@
 
 <script>
 import PageHeading from '@/components/BaseUI/PageHeading'
+import LessonList from '@/components/LessonList'
+import ContinuingEducationForm from '@/components/ContinuingEducationForm'
 
 export default {
   name: 'Dashboard',
-  components: { PageHeading },
+  components: { PageHeading, LessonList, ContinuingEducationForm },
   data() {
     return {
       manager: false,
