@@ -32,10 +32,10 @@
       </div>
       <ContinuingEducationForm></ContinuingEducationForm>
     </div> -->
-    <div v-if="this.$auth.user.admin" class="max-w-4xl">
+    <div class="max-w-4xl">
       <PageHeading>Danger Zone</PageHeading>
       <p>
-        This is where you can do perform dangerous- potentially irreversible-
+        This is where you can perform dangerous- potentially irreversible-
         operations on a Operator listing.
       </p>
       <div class="flex">
