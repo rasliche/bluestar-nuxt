@@ -15,6 +15,13 @@
 
     <div class="border-t-4 border-gray-300">
       <div class="max-w-xl px-8">
+        <ul class="h-64 overflow-x-hidden overflow-y-scroll shadow-inner">
+          <li v-for="operator in operators" :key="operator._id">
+            <nuxt-link :to="`/operators/${operator._id}`">{{
+              operator.name
+            }}</nuxt-link>
+          </li>
+        </ul>
         <span class="font-bold text-sm text-blue-800">
           New Business Account
         </span>
@@ -30,6 +37,7 @@ export default {
   data() {
     return {
       users: [],
+      operators: [],
       // user: null,
     }
   },
@@ -41,6 +49,7 @@ export default {
   async created() {
     try {
       this.users = await this.$axios.$get('/users')
+      this.operators = await this.$axios.$get('/operators')
     } catch (e) {
       // error({
       //   statusCode: 503,
@@ -48,12 +57,7 @@ export default {
       // })
     }
   },
-  methods: {
-    createShop() {},
-    // searchNames(x, y) {
-    //   return x.map((y) => y.includes(x))
-    // },
-  },
+  methods: {},
   head() {
     return [
       {
