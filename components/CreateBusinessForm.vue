@@ -14,7 +14,14 @@
 </template>
 
 <script>
+import BaseInput from '@/components/BaseUI/inputs/BaseInput.vue'
+import ButtonPrimary from '@/components/BaseUI/buttons/ButtonPrimary.vue'
+
 export default {
+  components: {
+    BaseInput,
+    ButtonPrimary,
+  },
   data() {
     return {
       newShop: {
@@ -32,8 +39,12 @@ export default {
         programs: null,
       }
     },
-    createShop() {
+    async createShop() {
       const { name, accessCode, programs } = this.newShop
+      await this.$axios.$post('/operators/', {
+        name,
+        accessCode,
+      })
       this.$store.dispatch('notification/add', {
         type: 'success',
         text: `Created ${name}.`,
