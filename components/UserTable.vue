@@ -21,7 +21,10 @@
           <td class="border">{{ user.email }}</td>
           <td class="border">{{ getRole(user.roles) }}</td>
           <td class="border">
-            <div class="flex flex-row justify-around">
+            <div
+              v-if="$auth.user._id != user._id"
+              class="flex flex-row justify-around"
+            >
               <button
                 v-if="getRole(user.roles) == 'User'"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-2"
@@ -50,6 +53,9 @@
               >
                 Demote to User
               </button>
+            </div>
+            <div v-else class="flex flex-row justify-around">
+              <p>You can't change your own role!</p>
             </div>
           </td>
         </tr>
