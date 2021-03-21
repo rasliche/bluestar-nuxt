@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const router = require('express').Router()
-const Operator = require('../models/Operator')
+const Operator = require('../models/operator')
 
 router.post('/add', async (req, res) => {
   if (!req.body || !req.body.name) {

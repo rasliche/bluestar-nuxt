@@ -12,8 +12,11 @@
 </template>
 
 <script>
+import PageHeading from '@/components/BaseUI/PageHeading'
+
 export default {
   name: 'LessonIndex',
+  components: { PageHeading },
   async asyncData({ $content }) {
     const lessons = await $content('training/lessons')
       .only(['title', 'slug'])

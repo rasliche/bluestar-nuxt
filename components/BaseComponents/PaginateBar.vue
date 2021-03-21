@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { Paginate } from '@/components/BaseComponents/'
+import Paginate from './Paginate.vue'
 
 export default {
   name: 'PaginateBar',
