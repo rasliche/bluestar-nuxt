@@ -32,7 +32,7 @@
       </div>
       <ContinuingEducationForm></ContinuingEducationForm>
     </div> -->
-    <div class="max-w-4xl">
+    <div v-if="this.$auth.hasScope('admin')" class="max-w-4xl">
       <PageHeading>Danger Zone</PageHeading>
       <p>
         This is where you can perform dangerous- potentially irreversible-
