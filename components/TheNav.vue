@@ -57,7 +57,7 @@
         >
           Training
         </nuxt-link>
-        <nuxt-link
+        <!-- <nuxt-link
           to="/blog"
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
@@ -80,7 +80,7 @@
           class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           Buoys
-        </nuxt-link>
+        </nuxt-link> -->
         <nuxt-link
           v-if="this.$auth.hasScope('admin')"
           to="/admin"
