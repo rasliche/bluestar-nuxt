@@ -88,7 +88,6 @@ export default {
     },
   },
   methods: {
-    // ...mapActions('notification', ['add']),
     async loginUser() {
       this.formTouched = !this.$v.formResponses.$anyDirty
       this.errors = this.$v.formResponses.$anyError
