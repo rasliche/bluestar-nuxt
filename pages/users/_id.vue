@@ -6,9 +6,7 @@
       <p class="">
         You are viewing the user info for
         <span class="font-semibold">{{ user.name }}</span> who logs in using the
-        <span class="font-mono bg-blue-100 rounded px-1">{{
-          this.user.email
-        }}</span>
+        <span class="font-mono bg-blue-100 rounded px-1">{{ user.email }}</span>
         email address.
       </p>
       <nuxt-link
