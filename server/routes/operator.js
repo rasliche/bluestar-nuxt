@@ -27,13 +27,7 @@ router.post('/add', async (req, res) => {
 })
 
 router.get('/', async (_req, res) => {
-  const operators = await Operator.find({}).populate({
-    path: 'users',
-    populate: {
-      path: 'userID',
-      select: '-password',
-    },
-  })
+  const operators = await Operator.find({}).populate('managers')
   res.send(operators)
 })
 

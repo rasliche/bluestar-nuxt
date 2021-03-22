@@ -44,7 +44,7 @@ const operatorSchema = new mongoose.Schema(
   }
 )
 
-operatorSchema.virtual('users', {
+operatorSchema.virtual('managers', {
   ref: 'UserOperatorRel',
   localField: '_id',
   foreignField: 'operatorID',
