@@ -35,11 +35,14 @@
 
 <script>
 import UserTable from '../../components/UserTable.vue'
+import PageHeading from '../../components/BaseUI/PageHeading.vue'
 import authAdmin from '../../middleware/authAdmin'
+
 export default {
   name: 'Admin',
   components: {
     UserTable,
+    PageHeading,
   },
   middleware: [authAdmin],
   data() {
