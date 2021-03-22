@@ -44,12 +44,13 @@ export default {
       await this.$axios.$post('/operators/', {
         name,
         accessCode,
+        programs,
       })
       this.$store.dispatch('notification/add', {
         type: 'success',
         text: `Created ${name}.`,
       })
-      console.log('Creating a new business...', { name, accessCode, programs })
+      // console.log('Creating a new business...', { name, accessCode, programs })
     },
   },
 }
