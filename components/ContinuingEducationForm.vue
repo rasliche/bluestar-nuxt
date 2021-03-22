@@ -47,12 +47,12 @@ export default {
       }
     },
     createContinuingEducationRecord() {
-      const { title, date, description } = this.newRecord
-      console.log('Creating a new continuing education record...', {
-        title,
-        date,
-        description,
-      })
+      // const { title, date, description } = this.newRecord
+      // console.log('Creating a new continuing education record...', {
+      //   title,
+      //   date,
+      //   description,
+      // })
       this.resetForm()
     },
   },
