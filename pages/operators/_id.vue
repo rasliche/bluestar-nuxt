@@ -50,11 +50,13 @@
 </template>
 
 <script>
-import PageHeading from '@/components/BaseUI/PageHeading.vue'
+import PageHeading from '@/components/BaseUI/PageHeading'
+import ButtonDanger from '@/components/BaseUI/buttons/ButtonDanger'
 
 export default {
   components: {
     PageHeading,
+    ButtonDanger,
   },
   data() {
     return {
