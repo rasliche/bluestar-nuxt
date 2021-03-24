@@ -77,8 +77,8 @@ export default {
   },
   methods: {
     async getUsers() {
-      const users = await this.$axios.get('/users')
-      this.users = users.data
+      const users = await this.$axios.$get('/users')
+      this.users = users
     },
     getRole(role) {
       if (role.admin) {
