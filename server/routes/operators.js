@@ -12,29 +12,21 @@ router.post(
   async (req, res, _next) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      return res.status(422).send('There was an error processing your registration information on the server. Please try again.')
+      return res.status(422).json({ message: 'There was an error adding this shop on the server. Please try again.'})
     }
-    // if (!req.body || !req.body.name) {
-    //   return res.status(400).json({
-    //     error: true,
-    //     message: 'Operator name not provided!',
-    //     body: req.body,
-    //   })
-    // }
     const { name, accessCode } = req.body
+    const operatorExists = await Operator.find({ name: name })
+    if (operatorExists.length) { return res.status(400).send({ message: 'That operator already exists.' })}
+
     const operator = new Operator({
       name,
       accessCode
     })
-    // operator.name = name
-    // if (accessCode) {
-    //   operator.accessCode = accessCode
-    // }
 
     try {
       await operator.save()
     } catch (error) {
-      return res.status(400).json(error)
+      return res.status(400).json({ message: 'There was an error adding this shop on the server. Please try again.'})
     }
 
     return res.json(operator.toJSON())
