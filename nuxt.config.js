@@ -68,7 +68,7 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    debug: true,
+    debug: process.env.NODE_ENV === 'development',
     baseURL: process.env.BASE_URL || undefined,
   },
   /*
