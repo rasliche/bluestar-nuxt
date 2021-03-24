@@ -53,6 +53,9 @@ export default {
     }
   },
   computed: {
+    operators() {
+      return this.$store.state.operators.operators
+    },
     userNames() {
       return this.users.map((u) => u.name)
     },
@@ -60,7 +63,7 @@ export default {
   async created() {
     try {
       this.users = await this.$axios.$get('/users')
-      this.operators = await this.$axios.$get('/operators')
+      this.$store.commit('operators/get')
     } catch (e) {
       // error({
       //   statusCode: 503,
