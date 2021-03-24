@@ -12,21 +12,20 @@
         <ButtonPrimary>Show</ButtonPrimary>
       </div>
     </div> -->
-    <user-table />
+    <UserTable></UserTable>
     <br />
 
     <div class="border-t-4 border-gray-300">
       <div class="max-w-xl px-8">
         <ul class="h-64 overflow-x-hidden overflow-y-scroll shadow-inner">
           <li v-for="operator in operators" :key="operator._id">
-            <nuxt-link :to="`/operators/${operator._id}`">{{
-              operator.name
-            }}</nuxt-link>
+            <nuxt-link
+              :to="`/operators/${operator._id}`"
+              class="text-blue-600 hover:text-blue-800 visited:text-purple-600 underline"
+              >{{ operator.name }}</nuxt-link
+            >
           </li>
         </ul>
-        <span class="font-bold text-sm text-blue-800">
-          New Business Account
-        </span>
         <CreateBusinessForm></CreateBusinessForm>
       </div>
     </div>
@@ -48,8 +47,6 @@ export default {
   data() {
     return {
       users: [],
-      operators: [],
-      // user: null,
     }
   },
   computed: {
