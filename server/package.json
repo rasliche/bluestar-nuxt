@@ -11,6 +11,9 @@
     }
   ],
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "scripts": {
     "test": "export NODE_ENV=test & jest --watchAll --noStackTrace --detectOpenHandles",
     "start": "node index.js"
