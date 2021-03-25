@@ -99,4 +99,9 @@ describe('/users', () => {
         })
         
     })
+
+    describe('GET /users/me', () => {
+        it.todo('returns the logged in user\'s info')
+        it.todo('returns the logged in user\'s info')
+    })
 })
