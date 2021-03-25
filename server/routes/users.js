@@ -41,6 +41,7 @@ router.post(
       .custom((value, { req }) => value === req.body.password),
   ],
   async (req, res, _next) => {
+    // check validation errors
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
       return res
@@ -49,16 +50,27 @@ router.post(
           'There was an error processing your registration information on the server. Please try again.'
         )
     }
+
+    // check that user does not already exist
+    let user = await User.find({ email: req.body.email })
+    if (user.length) { return res.status(400).send('User could not be created.') }
+    
+    // try creating the user
     try {
       const salt = await bcrypt.genSalt(10)
       const hashedPassword = await bcrypt.hash(req.body.password, salt)
-      const user = new User({
+      user = new User({
         name: req.body.name,
         email: req.body.email,
         password: hashedPassword,
       })
       await user.save()
-      return res.status(201).send('User created.')
+      const { password, ...userInfo } = user.toObject()
+      return res.status(201).send({
+        error: null,
+        message: 'User created.',
+        user: userInfo
+      })
     } catch (e) {
       // eslint-disable-line no-unused-expressions
       console.log(e)
