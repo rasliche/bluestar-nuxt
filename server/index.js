@@ -60,9 +60,11 @@ app.use('/operators', operatorRoute)
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3001
 
-app.listen(port, host, () => {
+const server = app.listen(port, host, () => {
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
     badge: true,
   })
 })
+
+module.exports = server

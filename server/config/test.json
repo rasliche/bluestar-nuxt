@@ -1,0 +1,12 @@
+{
+    "name": "FKNMS Blue Star Online Training - TESTING",
+    "jwtPrivateKey": "testkey",
+    "mongoURI": "mongodb://localhost:27017/bluestar_test",
+    "db": {
+        "mongo_username": "admin",
+        "mongo_password": "password",
+        "mongo_hostname": "mongodb://localhost",
+        "mongo_port": "27017",
+        "mongo_db": "bluestar_test"
+    }
+}
