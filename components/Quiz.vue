@@ -110,16 +110,16 @@ export default {
       return this.questionIndex + 1 === this.questionCount
     },
   },
-  mounted() {
-    this.$axios.get(`/quiz/results/get/${this.quiz.uuid}`).then(({ data }) => {
-      if (data && data.score) {
-        this.highScore = data.score
-        this.finalGrade = data.score
-        this.questionIndex = this.questionCount - 1
-        this.done = true
-      }
-    })
-  },
+  // mounted() {
+  //   this.$axios.get(`/quiz/results/get/${this.quiz.uuid}`).then(({ data }) => {
+  //     if (data && data.score) {
+  //       this.highScore = data.score
+  //       this.finalGrade = data.score
+  //       this.questionIndex = this.questionCount - 1
+  //       this.done = true
+  //     }
+  //   })
+  // },
   methods: {
     submitButtonPressed() {
       // eslint-disable-next-line prettier/prettier

@@ -18,9 +18,7 @@ export default {
   name: 'LessonIndex',
   components: { PageHeading },
   async asyncData({ $content }) {
-    const lessons = await $content('training/lessons')
-      .only(['title', 'slug'])
-      .fetch()
+    const lessons = await $content('lessons').only(['title', 'slug']).fetch()
 
     return {
       lessons,

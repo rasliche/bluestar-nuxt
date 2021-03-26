@@ -2,10 +2,7 @@
   <div class="container mx-auto max-w-4xl px-4">
     <PageHeading>{{ lesson.title }}</PageHeading>
     <nuxt-content :document="lesson" />
-    <Quiz
-      :quiz="$quizzes[lesson.quiz]"
-      class="my-8 mx-auto md:mx-8 lg:mx-12 xl:mx-32"
-    />
+    <Quiz :quiz="lesson.quiz" class="my-8 mx-auto md:mx-8 lg:mx-12 xl:mx-32" />
   </div>
 </template>
 
@@ -18,17 +15,10 @@ export default {
     Quiz,
     PageHeading,
   },
-  async asyncData({ $content, params, error }) {
-    let lesson
-    try {
-      lesson = await $content('training/lessons', params.slug).fetch()
-    } catch (e) {
-      error({ message: 'Lesson not found' })
-    }
+  async asyncData({ $content, params }) {
+    const lesson = await $content('lessons', params.slug).fetch()
 
-    return {
-      lesson,
-    }
+    return { lesson }
   },
 }
 </script>
