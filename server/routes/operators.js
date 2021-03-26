@@ -2,9 +2,12 @@
 const router = require('express').Router()
 const { check, validationResult } = require('express-validator')
 const Operator = require('../models/operator')
+const BlueStarAuth = require('../strategies/BlueStarAuth')
+const BlueStarAdminAuth = require('../strategies/BlueStarAdminAuth')
 
 router.post(
   '/',
+  BlueStarAdminAuth,
   [
     check('name').exists(),
     check('accessCode').exists()
@@ -32,7 +35,7 @@ router.post(
     return res.json(operator.toJSON())
   })
 
-router.get('/', async (_req, res) => {
+router.get('/', BlueStarAuth, async (_req, res) => {
   const operators = await Operator.find({}).populate('managers')
   res.send(operators)
 })

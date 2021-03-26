@@ -26,7 +26,7 @@ router.post('/add', async (req, res) => {
   return res.json(operator.toJSON())
 })
 
-router.get('/', async (_req, res) => {
+router.get('/', authenticated, async (_req, res) => {
   const operators = await Operator.find({}).populate({
     path: 'users',
     populate: {
