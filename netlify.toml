@@ -1,0 +1,2 @@
+[context.dev.environment]
+  BASE_URL = "https://bluestar-dev.herokuapp.com"
