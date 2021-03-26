@@ -37,6 +37,7 @@
     "@popperjs/core": "^2.6.0",
     "@tailwindcss/typography": "^0.2.0",
     "bcryptjs": "^2.4.3",
+    "bluestar-nuxt-server": "file:server",
     "config": "^3.3.3",
     "cross-env": "^7.0.3",
     "express": "^4.16.4",

@@ -12,14 +12,20 @@
         <ButtonPrimary>Show</ButtonPrimary>
       </div>
     </div> -->
-    <user-table />
+    <UserTable></UserTable>
     <br />
 
     <div class="border-t-4 border-gray-300">
       <div class="max-w-xl px-8">
-        <span class="font-bold text-sm text-blue-800">
-          New Business Account
-        </span>
+        <ul class="h-64 overflow-x-hidden overflow-y-scroll shadow-inner">
+          <li v-for="operator in operators" :key="operator._id">
+            <nuxt-link
+              :to="`/operators/${operator._id}`"
+              class="text-blue-600 hover:text-blue-800 visited:text-purple-600 underline"
+              >{{ operator.name }}</nuxt-link
+            >
+          </li>
+        </ul>
         <CreateBusinessForm></CreateBusinessForm>
       </div>
     </div>
@@ -28,20 +34,25 @@
 
 <script>
 import UserTable from '../../components/UserTable.vue'
+import PageHeading from '../../components/BaseUI/PageHeading.vue'
 import authAdmin from '../../middleware/authAdmin'
+
 export default {
   name: 'Admin',
   components: {
     UserTable,
+    PageHeading,
   },
   middleware: [authAdmin],
   data() {
     return {
       users: [],
-      // user: null,
     }
   },
   computed: {
+    operators() {
+      return this.$store.state.operators.operators
+    },
     userNames() {
       return this.users.map((u) => u.name)
     },
@@ -49,6 +60,7 @@ export default {
   async created() {
     try {
       this.users = await this.$axios.$get('/users')
+      this.$store.commit('operators/get')
     } catch (e) {
       // error({
       //   statusCode: 503,
@@ -56,12 +68,7 @@ export default {
       // })
     }
   },
-  methods: {
-    createShop() {},
-    // searchNames(x, y) {
-    //   return x.map((y) => y.includes(x))
-    // },
-  },
+  methods: {},
   head() {
     return [
       {

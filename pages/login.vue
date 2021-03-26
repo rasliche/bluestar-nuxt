@@ -57,13 +57,17 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import ButtonPrimary from '../components/BaseUI/buttons/ButtonPrimary'
+import BaseInput from '@/components/BaseUI/inputs/BaseInput'
+import ButtonPrimary from '@/components/BaseUI/buttons/ButtonPrimary'
+import SimpleSpinner from '@/components/BaseUI/loaders/SimpleSpinner'
 
 export default {
   name: 'Login',
   auth: 'guest',
   components: {
+    BaseInput,
     ButtonPrimary,
+    SimpleSpinner,
   },
   data() {
     return {
@@ -88,7 +92,6 @@ export default {
     },
   },
   methods: {
-    // ...mapActions('notification', ['add']),
     async loginUser() {
       this.formTouched = !this.$v.formResponses.$anyDirty
       this.errors = this.$v.formResponses.$anyError
@@ -100,27 +103,27 @@ export default {
         this.spinnerTimer = setTimeout(() => {
           this.uiState = 'pending'
         }, 750)
-      }
-      try {
-        await this.$auth.loginWith('local', {
-          data: this.formResponses,
-        })
-        clearTimeout(this.spinnerTimer)
-        this.$store.dispatch('notification/add', {
-          type: 'success',
-          text: 'You have been logged in.',
-        })
-      } catch (e) {
-        const notification = {
-          type: 'error',
+        try {
+          await this.$auth.loginWith('local', {
+            data: this.formResponses,
+          })
+          clearTimeout(this.spinnerTimer)
+          this.$store.dispatch('notification/add', {
+            type: 'success',
+            text: 'You have been logged in.',
+          })
+        } catch (e) {
+          const notification = {
+            type: 'error',
+          }
+          if (e.message === 'Network Error') {
+            notification.text = `There was an error logging in. Are you online?`
+            this.$store.dispatch('notification/add', notification)
+          }
+          clearTimeout(this.spinnerTimer)
+          this.uiState = 'idle'
+          this.formFeedback = e.response.data
         }
-        if (e.message === 'Network Error') {
-          notification.text = `There was an error logging in. Are you online?`
-          this.$store.dispatch('notification/add', notification)
-        }
-        clearTimeout(this.spinnerTimer)
-        this.uiState = 'idle'
-        this.formFeedback = e.response.data
       }
     },
   },

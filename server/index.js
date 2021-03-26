@@ -9,7 +9,7 @@ const cors = require('cors')
 const userRoute = require('./routes/users')
 const authRoute = require('./routes/auth')
 const quizRoute = require('./routes/quiz')
-const operatorRoute = require('./routes/operator')
+const operatorRoute = require('./routes/operators')
 
 const jwtStrategy = require('./strategies/jwt')
 const getJwt = require('./strategies/getjwt')
@@ -55,7 +55,7 @@ passport.use('BlueStarAuth', jwtStrategy)
 app.use('/users', userRoute)
 app.use('/auth', authRoute)
 app.use('/quiz', quizRoute)
-app.use('/operator', operatorRoute)
+app.use('/operators', operatorRoute)
 
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3001

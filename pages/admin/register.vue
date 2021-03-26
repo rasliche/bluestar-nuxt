@@ -124,10 +124,14 @@ import {
   maxLength,
   sameAs,
 } from 'vuelidate/lib/validators'
+import ButtonPrimary from '@/components/BaseUI/buttons/ButtonPrimary'
 
 export default {
   name: 'Register',
   auth: 'guest',
+  components: {
+    ButtonPrimary,
+  },
   // auth: 'guest',
   data() {
     return {
