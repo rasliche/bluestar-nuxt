@@ -34,7 +34,13 @@
     </div>
     <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
       <p class="text-lg">Raw User Data</p>
+      this.$auth.user:
       {{ this.$auth.user }}
+    </div>
+    <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
+      <p class="text-lg">Raw User Data</p>
+      scores:
+      {{ scores }}
     </div>
     <div>
       <p>User Roles:</p>
@@ -56,9 +62,10 @@ export default {
     return {
       manager: false,
       admin: false,
+      scores: [],
     }
   },
-  mounted() {
+  async created() {
     this.$axios
       .get('users/is-manager')
       .then((response) => {
@@ -72,6 +79,10 @@ export default {
         if (response.data === 'OK') this.admin = true
       })
       .catch(console.error)
+
+    this.scores = await this.$axios.$get(
+      `/quiz/results/for-user/${this.$auth.user._id}`
+    )
   },
   head() {
     return [
