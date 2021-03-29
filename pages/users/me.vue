@@ -22,7 +22,21 @@
 
     <div class="max-w-4xl">
       <PageHeading>Training Record</PageHeading>
-      <LessonList></LessonList>
+      <div class="flex flex-wrap">
+        <nuxt-link
+          v-for="lesson in lessonsWithScores"
+          :key="lesson.slug"
+          class="border-black border-2 rounded py-3 px-4 m-4 font-semibold transition-colors ease-in-out duration-300 bg-blue-200 text-blue-900 hover:bg-black hover:text-blue-100"
+          :to="`/training/${lesson.slug}`"
+        >
+          {{ lesson.title }} -
+          {{
+            lesson.userRecord !== undefined
+              ? formatScore(lesson.userRecord.score)
+              : formatScore(0)
+          }}
+        </nuxt-link>
+      </div>
     </div>
 
     <!-- <div class="max-w-4xl">
