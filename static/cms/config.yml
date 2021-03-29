@@ -20,6 +20,10 @@ collections:
     editor:
       preview: true
     fields:
+      - label: Lesson ID
+        name: uuid
+        widget: uuid
+        required: true
       - label: Title
         name: title
         widget: string
@@ -33,10 +37,7 @@ collections:
         label: Quiz
         widget: object
         fields:
-          - label: Quiz ID
-            name: uuid
-            widget: uuid
-            required: true
+          
           - label: Minimum Score
             name: minimumScore
             widget: number
