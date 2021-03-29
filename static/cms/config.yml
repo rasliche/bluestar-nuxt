@@ -13,7 +13,7 @@ collections:
   - name: 'lesson'
     label: 'Lessons'
     label_singular: Lesson
-    folder: 'content/training/lessons'
+    folder: 'content/lessons'
     format: 'frontmatter'
     create: true
     slug: "{{slug}}"
@@ -33,11 +33,10 @@ collections:
         name: body
         widget: markdown
         required: true
-      - name: 'quiz'
-        label: Quiz
+      - label: Quiz
+        name: 'quiz'
         widget: object
         fields:
-          
           - label: Minimum Score
             name: minimumScore
             widget: number
