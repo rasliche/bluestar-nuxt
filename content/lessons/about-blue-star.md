@@ -1,6 +1,6 @@
 ---
 title: About Blue Star
-quiz: 
+quiz:
     minScore: 75
     uuid: 991afe48-c585-4d37-a24c-d9465367efc6
     minimumScore: 80
@@ -64,7 +64,6 @@ quiz:
             text: "True"
           - correct: false
             text: "False"
-
 ---
 ## Introduction
 
