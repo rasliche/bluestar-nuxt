@@ -52,11 +52,16 @@
 export default {
   name: 'Quiz',
   props: {
+    uuid: {
+      type: String,
+      default: () => {
+        return -1
+      },
+    },
     quiz: {
       type: Object,
       default: () => {
         return {
-          uuid: -1,
           minimumScore: 75,
           questions: [
             {
@@ -111,14 +116,19 @@ export default {
     },
   },
   mounted() {
-    this.$axios.get(`/quiz/results/get/${this.quiz.uuid}`).then(({ data }) => {
-      if (data && data.score) {
-        this.highScore = data.score
-        this.finalGrade = data.score
-        this.questionIndex = this.questionCount - 1
-        this.done = true
-      }
-    })
+    this.$axios
+      .$get(`/users/${this.$auth.user._id}/scores/${this.uuid}`)
+      .then((data) => {
+        if (data && data.score) {
+          this.highScore = data.score
+          this.finalGrade = data.score
+          this.questionIndex = this.questionCount - 1
+          this.done = true
+        }
+      })
+      .catch((error) => {
+        console.log(error.message)
+      })
   },
   methods: {
     submitButtonPressed() {
@@ -150,11 +160,11 @@ export default {
     },
     grade() {
       this.$axios
-        .post('/quiz/results/add', {
-          uuid: this.quiz.uuid,
+        .$post(`/users/${this.$auth.user._id}/scores/${this.uuid}`, {
+          // uuid: this.quiz.uuid,
           score: this.finalGrade,
         })
-        .then(({ data }) => {
+        .then((data) => {
           if (data && data.score) {
             this.highScore = data.score
           }
