@@ -26,7 +26,7 @@
         <nuxt-link
           v-for="lesson in lessonsWithScores"
           :key="lesson.slug"
-          class="border-black border-2 rounded py-3 px-4 m-4 font-semibold transition-colors ease-in-out duration-300 bg-blue-200 text-blue-900 hover:bg-black hover:text-blue-100"
+          class="relative border-black border-2 rounded py-3 px-4 m-4 font-semibold transition-colors ease-in-out duration-300 bg-blue-200 text-blue-900 hover:bg-black hover:text-blue-100"
           :to="`/training/${lesson.slug}`"
         >
           {{ lesson.title }} -
@@ -35,6 +35,13 @@
               ? formatScore(lesson.userRecord.score)
               : formatScore(0)
           }}
+          <div class="mx-auto text-sm italic">
+            ({{
+              lesson.userRecord !== undefined
+                ? `last taken on ${formatDate(lesson.userRecord.date)}`
+                : 'not yet passed'
+            }})
+          </div>
         </nuxt-link>
       </div>
     </div>
@@ -46,13 +53,13 @@
       </div>
       <ContinuingEducationForm></ContinuingEducationForm>
     </div> -->
-    <!-- <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
+    <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
       <p class="text-lg">Raw User Data</p>
       {{ this.$auth.user }}
       <p class="text-lg">Zipped Score Data</p>
       {{ this.lessonsWithScores }}
     </div>
-    <div>
+    <!-- <div>
       <p>User Roles:</p>
       <p>Manager: {{ manager }}</p>
       <p>Admin: {{ admin }}</p>
@@ -116,6 +123,13 @@ export default {
   methods: {
     formatScore(score) {
       return `${Math.ceil(score * 100)}%`
+    },
+    formatDate(dateObject) {
+      const options = {
+        dateStyle: 'short',
+      }
+      return new Intl.DateTimeFormat([], options).format(new Date(dateObject))
+      // return new Intl.DateTimeFormat([], options).format(dateObject)
     },
   },
   head() {
