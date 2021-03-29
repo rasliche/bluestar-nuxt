@@ -58,6 +58,16 @@ export default {
       admin: false,
     }
   },
+  computed: {
+    lessonsWithScores() {
+      return this.lessons.map((lesson, index) => {
+        lesson.userRecord = this.lessonScores.find((record) => {
+          return record.uuid === lesson.uuid
+        })
+        return lesson
+      })
+    },
+  },
   mounted() {
     this.$axios.$get(`users/${this.$auth.user._id}/scores`).then((response) => {
       this.lessonScores = response
