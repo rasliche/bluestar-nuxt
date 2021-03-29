@@ -73,6 +73,11 @@ export default {
       })
       .catch(console.error)
   },
+  methods: {
+    formatScore(score) {
+      return `${Math.ceil(score * 100)}%`
+    },
+  },
   head() {
     return [
       {
