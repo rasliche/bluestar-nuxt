@@ -59,6 +59,10 @@ export default {
     }
   },
   mounted() {
+    this.$axios.$get(`users/${this.$auth.user._id}/scores`).then((response) => {
+      this.lessonScores = response
+    })
+
     this.$axios
       .get('users/is-manager')
       .then((response) => {
