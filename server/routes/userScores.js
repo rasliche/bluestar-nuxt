@@ -27,7 +27,7 @@ router.get('/',
             })
         }
         console.log(user.lessonScores)
-        if (user.lessonScores.length !== 0) return res.status(200).json(user.lessonScores)
+        return res.status(200).json(user.lessonScores)
     })
 
 router.get('/:uuid',
