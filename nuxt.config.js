@@ -1,7 +1,16 @@
 module.exports = {
   target: 'static', // Default, not needed
   telemetry: true, // Default is to ask in CLI, set to false if you want
-  components: true, // Default, not needed?
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/BaseUI',
+      '~/components/BaseUI/buttons',
+      '~/components/BaseUI/inputs',
+      '~/components/BaseUI/loaders',
+      '~/components/BaseComponents',
+    ]
+  }, // Default, not needed?
   /*
    ** Headers of the page
    */
