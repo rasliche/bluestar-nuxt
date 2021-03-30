@@ -19,7 +19,7 @@ export default {
       lessons: [],
     }
   },
-  async created() {
+  async mounted() {
     this.lessons = await this.$content('lessons')
       .only(['path', 'title', 'slug'])
       .fetch()

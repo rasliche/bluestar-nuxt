@@ -1,5 +1,6 @@
 module.exports = {
   target: 'static', // Default, not needed
+  ssr: false,
   telemetry: true, // Default is to ask in CLI, set to false if you want
   components: {
     dirs: [
@@ -67,6 +68,7 @@ module.exports = {
   content: {
   },
   generate: {
+    fallback:true,
     async routes () {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).only(['path']).fetch()

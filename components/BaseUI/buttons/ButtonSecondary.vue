@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ButtonBase from '@/components/BaseUI/buttons/ButtonBase'
+import ButtonBase from '~/components/BaseUI/buttons/ButtonBase'
 
 export default {
   name: 'ButtonSecondary',
