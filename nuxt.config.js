@@ -65,7 +65,6 @@ module.exports = {
     '@nuxt/content',
   ],
   content: {
-    nestedProperties: ['lesson.quiz.minimumScore']
   },
   generate: {
     async routes () {
