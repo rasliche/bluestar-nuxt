@@ -23,9 +23,13 @@ export default {
     this.lessons = await this.$content('lessons')
       .only(['path', 'title', 'slug'])
       .fetch()
-      .catch((error) => {
-        error({ statusCode: 404, message: 'Lessons not found!' })
-      })
+    // .catch((error) => {
+    //   console.log({
+    //     error: true,
+    //     statusCode: 404,
+    //     message: 'Lessons not found!',
+    //   })
+    // })
   },
 }
 </script>
