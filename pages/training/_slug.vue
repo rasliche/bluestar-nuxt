@@ -11,15 +11,8 @@
 </template>
 
 <script>
-import Quiz from '@/components/Quiz.vue'
-import PageHeading from '@/components/BaseUI/PageHeading.vue'
-
 export default {
   name: 'LessonSlug',
-  components: {
-    Quiz,
-    PageHeading,
-  },
   async asyncData({ $content, params, error }) {
     let lesson
     try {

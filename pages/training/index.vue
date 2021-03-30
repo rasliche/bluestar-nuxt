@@ -6,11 +6,8 @@
 </template>
 
 <script>
-import PageHeading from '@/components/BaseUI/PageHeading'
-
 export default {
   name: 'TrainingIndex',
-  components: { PageHeading },
   head() {
     return [
       {
