@@ -18,7 +18,7 @@ export default {
     try {
       lesson = await $content('lessons', params.slug).fetch()
     } catch (e) {
-      error({ message: 'Lesson not found' })
+      error({ statusCode: 404, message: 'Lesson not found' })
     }
 
     return {
