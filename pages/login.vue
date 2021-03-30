@@ -57,18 +57,10 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import BaseInput from '@/components/BaseUI/inputs/BaseInput'
-import ButtonPrimary from '@/components/BaseUI/buttons/ButtonPrimary'
-import SimpleSpinner from '@/components/BaseUI/loaders/SimpleSpinner'
 
 export default {
   name: 'Login',
   auth: 'guest',
-  components: {
-    BaseInput,
-    ButtonPrimary,
-    SimpleSpinner,
-  },
   data() {
     return {
       formFeedback: null,

@@ -112,15 +112,10 @@ import {
   maxLength,
   sameAs,
 } from 'vuelidate/lib/validators'
-import ButtonPrimary from '../components/BaseUI/buttons/ButtonPrimary'
 
 export default {
   name: 'Register',
   auth: 'guest',
-  // auth: 'guest',
-  components: {
-    ButtonPrimary,
-  },
   data() {
     return {
       formFeedback: null,
@@ -181,7 +176,7 @@ export default {
           clearTimeout(this.spinnerTimer)
           this.$store.dispatch('notification/add', {
             type: 'success',
-            text: 'You have been logged in.',
+            text: 'You have been registered and logged in.',
           })
           this.$router.push('/')
         } catch (e) {
