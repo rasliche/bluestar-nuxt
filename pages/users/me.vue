@@ -1,8 +1,7 @@
 <template>
   <div>
-    <PageHeading>My Dashboard</PageHeading>
-
     <div class="max-w-4xl">
+      <PageHeading>My Dashboard</PageHeading>
       <p class="">
         You are logged in as
         <span class="font-semibold">{{ this.$auth.user.name }}</span> using the
@@ -35,7 +34,7 @@
               ? formatScore(lesson.userRecord.score)
               : formatScore(0)
           }}
-          <div class="mx-auto text-sm italic">
+          <div class="mx-auto text-center text-sm italic font-normal">
             ({{
               lesson.userRecord !== undefined
                 ? `last taken on ${formatDate(lesson.userRecord.date)}`
