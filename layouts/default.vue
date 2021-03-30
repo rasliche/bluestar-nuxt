@@ -10,12 +10,7 @@
 </template>
 
 <script>
-import NotificationContainer from '@/components/BaseComponents/NotificationContainer'
-
 export default {
-  components: {
-    NotificationContainer,
-  },
   head() {
     return {
       titleTemplate: '%s - FKNMS Blue Star Online',

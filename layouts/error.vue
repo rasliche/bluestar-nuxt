@@ -1,11 +1,11 @@
 <template>
   <div>
+    <PageHeading v-if="error.statusCode === 404">Page Not Found</PageHeading>
+    <PageHeading v-else>An Error Occurred</PageHeading>
     <div>
-      {{ message }}
+      {{ error.message }}
     </div>
-    <p v-if="statusCode === 404">
-      <nuxt-link to="/"> Return to Homepage </nuxt-link>
-    </p>
+    <nuxt-link to="/"> Return to Homepage </nuxt-link>
   </div>
 </template>
 
@@ -17,17 +17,9 @@ export default {
       default: null,
     },
   },
-  computed: {
-    statusCode() {
-      return (this.error && this.error.statusCode) || 500
-    },
-    message() {
-      return this.error.message
-    },
-  },
   head() {
     return {
-      title: this.message,
+      title: this.error.statusCode,
     }
   },
 }

@@ -11,21 +11,14 @@
 </template>
 
 <script>
-import Quiz from '@/components/Quiz.vue'
-import PageHeading from '@/components/BaseUI/PageHeading.vue'
-
 export default {
   name: 'LessonSlug',
-  components: {
-    Quiz,
-    PageHeading,
-  },
   async asyncData({ $content, params, error }) {
     let lesson
     try {
       lesson = await $content('lessons', params.slug).fetch()
     } catch (e) {
-      error({ message: 'Lesson not found' })
+      error({ statusCode: 404, message: 'Lesson not found' })
     }
 
     return {
