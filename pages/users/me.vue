@@ -52,12 +52,12 @@
       </div>
       <ContinuingEducationForm></ContinuingEducationForm>
     </div> -->
-    <!-- <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
+    <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
       <p class="text-lg">Raw User Data</p>
       {{ this.$auth.user }}
       <p class="text-lg">Zipped Score Data</p>
       {{ this.lessonsWithScores }}
-    </div> -->
+    </div>
     <!-- <div>
       <p>User Roles:</p>
       <p>Manager: {{ manager }}</p>

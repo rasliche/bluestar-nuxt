@@ -55,6 +55,9 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxt/content',
   ],
+  content: {
+    nestedProperties: ['lesson.quiz.minimumScore']
+  },
   generate: {
     async routes () {
       const { $content } = require('@nuxt/content')
