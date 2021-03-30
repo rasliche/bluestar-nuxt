@@ -6,10 +6,11 @@ const config = require('config')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 
-const userRoute = require('./routes/users')
-const authRoute = require('./routes/auth')
-const quizRoute = require('./routes/quiz')
-const operatorRoute = require('./routes/operators')
+const userRoutes = require('./routes/users')
+const userScoresRoutes = require('./routes/userScores')
+const authRoutes = require('./routes/auth')
+const quizRoutes = require('./routes/quiz')
+const operatorRoutes = require('./routes/operators')
 
 const jwtStrategy = require('./strategies/jwt')
 const getJwt = require('./strategies/getjwt')
@@ -52,10 +53,11 @@ app.use(getJwt)
 app.use(passport.initialize())
 passport.use('BlueStarAuth', jwtStrategy)
 
-app.use('/users', userRoute)
-app.use('/auth', authRoute)
-app.use('/quiz', quizRoute)
-app.use('/operators', operatorRoute)
+app.use('/users', userRoutes)
+app.use('/users/:userId/scores',userScoresRoutes)
+app.use('/auth', authRoutes)
+app.use('/quiz', quizRoutes)
+app.use('/operators', operatorRoutes)
 
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3001

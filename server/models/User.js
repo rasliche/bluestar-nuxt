@@ -34,22 +34,22 @@ const userSchema = new mongoose.Schema({
   //         default: false,
   //     }
   // }],
-  // lessonScores: [
-  //   {
-  //     name: {
-  //       type: String,
-  //       required: true
-  //     },
-  //     score: {
-  //       type: Number,
-  //       default: 0
-  //     },
-  //     date: {
-  //       type: Date,
-  //       default: () => Date.now()
-  //     }
-  //   }
-  // ],
+  lessonScores: [
+    {
+      uuid: {
+        type: String,
+        required: true
+      },
+      score: {
+        type: Number,
+        default: 0
+      },
+      date: {
+        type: Date,
+        default: () => Date.now()
+      }
+    }
+  ],
   roles: {
     admin: {
       type: Boolean,

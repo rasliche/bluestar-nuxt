@@ -3,15 +3,17 @@
     <PageHeading>{{ lesson.title }}</PageHeading>
     <nuxt-content :document="lesson" />
     <Quiz
-      :quiz="$quizzes[lesson.quiz]"
+      :quiz="lesson.quiz"
+      :uuid="lesson.uuid"
       class="my-8 mx-auto md:mx-8 lg:mx-12 xl:mx-32"
     />
   </div>
 </template>
 
 <script>
-import Quiz from '../../../components/Quiz.vue'
-import PageHeading from '../../../components/BaseUI/PageHeading.vue'
+import Quiz from '@/components/Quiz.vue'
+import PageHeading from '@/components/BaseUI/PageHeading.vue'
+
 export default {
   name: 'LessonSlug',
   components: {
@@ -21,7 +23,7 @@ export default {
   async asyncData({ $content, params, error }) {
     let lesson
     try {
-      lesson = await $content('training/lessons', params.slug).fetch()
+      lesson = await $content('lessons', params.slug).fetch()
     } catch (e) {
       error({ message: 'Lesson not found' })
     }

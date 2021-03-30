@@ -174,16 +174,15 @@ export default {
           this.uiState = 'waiting'
         }, 750)
         try {
-          // const { token, ...userData } =
           await this.$axios.post('/users/register', this.formResponses)
           await this.$auth.loginWith('local', {
             data: this.formResponses,
           })
           clearTimeout(this.spinnerTimer)
-          // this.add({
-          //   type: 'success',
-          //   text: 'You have been logged in.'
-          // })
+          this.$store.dispatch('notification/add', {
+            type: 'success',
+            text: 'You have been logged in.',
+          })
           this.$router.push('/')
         } catch (e) {
           clearTimeout(this.spinnerTimer)
