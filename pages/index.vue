@@ -10,9 +10,10 @@
       class="mt-12 max-w-5xl w-1/2 mx-auto bg-green-100 text-blue-900 text-lg text-center rounded-lg border border-blue-900"
     >
       <p class="p-8">
-        We are currently in the process of revamping the online training for a
-        better, smoother experience. If you have feedback for the site so far,
-        please email the Blue Star Coordinators.
+        You're making a choice to be part of the Blue Star program in Florida
+        Keys National Marine Sanctuary. On this site are a number of topics for
+        you to explore and gain the knowledge you need in order to be the best
+        informed guide to visitors of our sanctuary.
       </p>
     </div>
   </div>
