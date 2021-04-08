@@ -5,6 +5,9 @@ const consola = require('consola')
 const config = require('config')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
+const YAML = require('yamljs')
+const swaggerJSDoc = require('swagger-jsdoc')
+const swaggerUI = require('swagger-ui-express')
 
 const userRoutes = require('./routes/users')
 const userScoresRoutes = require('./routes/userScores')
@@ -54,10 +57,16 @@ app.use(passport.initialize())
 passport.use('BlueStarAuth', jwtStrategy)
 
 app.use('/users', userRoutes)
-app.use('/users/:userId/scores',userScoresRoutes)
+app.use('/users/:userId/scores', userScoresRoutes)
 app.use('/auth', authRoutes)
 app.use('/quiz', quizRoutes)
 app.use('/operators', operatorRoutes)
+
+
+if (process.env.NODE_ENV !== 'production') {
+  const swaggerDocument = YAML.load('./swagger.yaml')
+  app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+}
 
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3001
