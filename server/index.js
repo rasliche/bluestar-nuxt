@@ -6,7 +6,6 @@ const config = require('config')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const YAML = require('yamljs')
-const swaggerJSDoc = require('swagger-jsdoc')
 const swaggerUI = require('swagger-ui-express')
 
 const userRoutes = require('./routes/users')
