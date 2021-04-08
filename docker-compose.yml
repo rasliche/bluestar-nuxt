@@ -43,7 +43,7 @@ services:
       - type: bind
         source: ./server
         target: /usr/src/app
-    command: ./node_modules/.bin/nodemon index.js
+    command: ./node_modules/.bin/nodemon -e js,mjs,json,yaml index.js
 
   mongo_db:
     image: mongo
