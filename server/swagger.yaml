@@ -1,0 +1,570 @@
+openapi: '3.0.2'
+info:
+  title: API for the BlueStar LMS
+  version: '1.0'
+servers:
+  - url: http://localhost:3001/
+tags:
+  - name: auth
+    description: User sign in and registration.
+  - name: operators
+    description: Operator/Shop registration and management.
+  - name: quiz
+    description: Quiz scoring and management.
+  - name: users
+    description: User registration and management.
+components:
+  securitySchemes:
+    bluestarAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+paths:
+  /auth/login:
+    post:
+      summary: Logs in a user.
+      description: Logs in a user with their email and password.
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Signed In! Returns a JWT.
+        "422":
+          description: Email or password not provided.
+        "400":
+          description: Invalid email or password.
+        "404":
+          description: User not found with provided email.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: The user's email address
+                password:
+                  type: string
+                  format: password
+                  description: The user's password
+  /auth/admin:
+    post:
+      summary: Register a new admin user
+      description: Register a new admin user with an email, password, and the admin password
+      tags:
+        - auth
+      responses:
+        "201":
+          description: Admin user created!
+        "422":
+          description: Email, password, or admin password not provided.
+        "500":
+          description: Error creating admin user.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: The admin's email address
+                password:
+                  type: string
+                  format: password
+                  description: The admin's password
+                passwordCopy:
+                  type: string
+                  format: password
+                  description: The admin's password (repeat)
+                adminPassword:
+                  type: string
+                  format: password
+                  description: The global admin password
+  /auth/manager:
+    post:
+      summary: Register a new manager user.
+      description: Register a new manager user with an email, password, and the manager password
+      tags:
+        - auth
+      responses:
+        "201":
+          description: Manager user created!
+        "422":
+          description: Email, password, or manager password not provided.
+        "500":
+          description: Error creating manager user.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: The manager's email address
+                password:
+                  type: string
+                  format: password
+                  description: The manager's password
+                passwordCopy:
+                  type: string
+                  format: password
+                  description: The manager's password (repeat)
+                managerPassword:
+                  type: string
+                  format: password
+                  description: The global manager password
+  /operators/:
+    post:
+      summary: Creates a new operator.
+      description: Creates a new operator with a name and optional access code. Requires an admin account!
+      security:
+        - bluestarAuth: []
+      tags:
+        - operators
+      responses:
+        "200":
+          description: Operator created!
+        "422":
+          description: Name not provided.
+        "400":
+          description: Operator already exists.
+        "500":
+          description: Error adding operator.
+        "401":
+          description: Auth failure!
+        "403":
+          description: User is not an admin!
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The new operator's name
+                accessCode:
+                  type: string
+                  description: The new operator's access code
+                  default: 'floridakeys'
+    get:
+      summary: Gets all operators.
+      description: Gets all registered operators and associated users. Requires a user account!
+      security:
+        - bluestarAuth: []
+      tags:
+        - operators
+      responses:
+        "200":
+          description: A list of registered operators.
+        "401":
+          description: Auth failure!
+  /operators/{id}:
+    get:
+      summary: Gets an operator by its id.
+      description: Gets an operator and its associated users by its id. Requires a user account!
+      security:
+        - bluestarAuth: []
+      tags:
+        - operators
+      parameters:
+        - name: id
+          in: path
+          description: The requested operator's ID.
+          type: string
+          required: true
+      responses:
+        "200":
+          description: Operator found!
+        "404":
+          description: Operator not found!
+        "401":
+          description: Auth failure!
+  /quiz/:
+    get:
+      summary: Gets all quizzes.
+      description: Gets all registered quizzes.
+      tags:
+        - quiz
+      responses:
+        "200":
+          description: Sent all quizzes
+  /quiz/results:
+    get:
+      summary: Gets all quiz results.
+      description: Gets all saved quiz results.
+      tags:
+        - quiz
+      responses:
+        "200":
+          description: Sent all quiz results
+  /quiz/add:
+    post:
+      summary: Add a new quiz.
+      description: Add a new quiz to the DB. Used by the CMS.
+      tags:
+        - quiz
+      responses:
+        "200":
+          description: Quiz added
+        "400":
+          description: UUID not given
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                uuid:
+                  type: string
+                  description: The quiz's UUID
+                minimumScore:
+                  type: integer
+                  description: The minimum score to pass
+  /quiz/results/add:
+    post:
+      summary: Add a new quiz result.
+      description: Add a new quiz result to the DB. Requires a user account!
+      tags:
+        - quiz
+      security:
+        - bluestarAuth: []
+      responses:
+        "200":
+          description: Quiz result added
+        "400":
+          description: UUID or score not given
+        "401":
+          description: Auth failure!
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                uuid:
+                  type: string
+                  description: The quiz's UUID
+                score:
+                  type: integer
+                  description: The user's score
+  /quiz/results/for-user/{user}:
+    get:
+      summary: Gets all quiz results for a particular user.
+      description: Gets all saved quiz results for a particular user ID.
+      tags:
+        - quiz
+      parameters:
+        - name: user
+          in: path
+          description: The user's ID.
+          type: string
+          required: true
+      responses:
+        "200":
+          description: Sent all quiz results
+        "400":
+          description: User not given
+  /quiz/results/for-quiz/{quiz}:
+    get:
+      summary: Gets all quiz results for a particular quiz.
+      description: Gets all saved quiz results for a particular quiz UUID.
+      tags:
+        - quiz
+      parameters:
+        - name: quiz
+          in: path
+          description: The quiz's UUID.
+          type: string
+          required: true
+      responses:
+        "200":
+          description: Sent all quiz results
+        "400":
+          description: UUID not given
+  /quiz/results/get/{quiz}:
+    get:
+      summary: Gets a user's quiz result for a particular quiz.
+      description: Gets a user's quiz result for a particular quiz. Requires a user account!
+      tags:
+        - quiz
+      security:
+        - bluestarAuth: []
+      parameters:
+        - name: quiz
+          in: path
+          description: The quiz's UUID.
+          type: string
+          required: true
+      responses:
+        "200":
+          description: Sent quiz result
+        "400":
+          description: UUID not given
+        "401":
+          description: Auth failure!
+  /users/me:
+    get:
+      summary: Get's the active user's profile.
+      description: Get's the active user's profile. Requires a user account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      responses:
+        "200":
+          description: The active user's profile
+        "401":
+          description: Auth failure!
+  /users/is-admin:
+    get:
+      summary: Checks if a user is an admin.
+      description: Checks if a user is an admin. Requires an admin account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      responses:
+        "200":
+          description: The user is an admin!
+        "401":
+          description: Auth failure!
+        "403":
+          description: User is not an admin!
+  /users/is-manager:
+    get:
+      summary: Checks if a user is a manager (or an admin).
+      description: Checks if a user is a manager (or an admin). Requires a manager account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      responses:
+        "200":
+          description: The user is a manager!
+        "401":
+          description: Auth failure!
+        "403":
+          description: User is not a manager!
+  /users/{id}:
+    get:
+      summary: Gets a user's profile.
+      description: Gets a user's profile. Requires a user account!
+      tags:
+        - users
+      parameters:
+        - name: id
+          in: path
+          description: The user's ID.
+          type: string
+          required: true
+      security:
+        - bluestarAuth: []
+      responses:
+        "200":
+          description: The requested profile
+        "401":
+          description: Auth failure!
+  /users/register:
+    post:
+      summary: Registers a new user.
+      description: Registers a new user with a name, email, and password.
+      tags:
+        - users
+      responses:
+        "201":
+          description: Created user!
+        "422":
+          description: User name, email, or password not given!
+        "400":
+          description: User already exists!
+        "500":
+          description: Error creating user!
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The user's name
+                email:
+                  type: string
+                  description: The user's email
+                password:
+                  type: string
+                  format: password
+                  description: The user's password
+                passwordCopy:
+                  type: string
+                  format: password
+                  description: The user's password (repeat)
+  /users/link-operator:
+    post:
+      summary: Links a user with an operator.
+      description: Links a user ID with an operator ID.
+      tags:
+        - users
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: The user's ID
+                operator:
+                  type: string
+                  description: The operator's ID
+      responses:
+        "200":
+          description: User and operator linked!
+        "400":
+          description: User ID or operator ID not given!
+  /users/:
+    get:
+      summary: Gets all user profiles.
+      description: Gets all user profiles. Requires an admin account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      responses:
+        "200":
+          description: All user profiles
+        "401":
+          description: Auth failure!
+        "403":
+          description: User is not an admin!
+  /users/change-role:
+    put:
+      summary: Changes a user's role.
+      description: Changes a user's role. Requires an admin account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: The user's ID
+                role:
+                  type: string
+                  description: The user's new role
+      responses:
+        "200":
+          description: Role Changed!
+        "400":
+          description: User ID or role not given!
+        "401":
+          description: Auth failure!
+        "403":
+          description: User is not an admin!
+  /users/{userId}/scores/:
+    get:
+      summary: Gets the lesson scores for a particular user.
+      description: Gets the lesson scores for a particular user. Requires a user account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      parameters:
+        - name: userId
+          in: path
+          description: The user's ID.
+          type: string
+          required: true
+      responses:
+        "200":
+          description: Returns the lesson scores
+        "401":
+          description: Auth failure!
+        "422":
+          description: User ID not given!
+        "404":
+          description: User not found!
+  /users/{userId}/scores/{uuid}:
+    get:
+      summary: Gets the lesson score for a particular user and lesson.
+      description: Gets the lesson score for a particular user and lesson. Requires a user account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      parameters:
+        - name: userId
+          in: path
+          description: The user's ID.
+          type: string
+          required: true
+        - name: uuid
+          in: path
+          description: The quiz's UUID.
+          type: string
+          required: true
+      responses:
+        "200":
+          description: Returns the lesson score
+        "401":
+          description: Auth failure!
+        "422":
+          description: User ID or quiz UUID not given!
+        "404":
+          description: User or quiz not found!
+    post:
+      summary: Saves the lesson score for a particular user and lesson.
+      description: Saves the lesson score for a particular user and lesson. Requires a user account!
+      tags:
+        - users
+      security:
+        - bluestarAuth: []
+      parameters:
+        - name: userId
+          in: path
+          description: The user's ID.
+          type: string
+          required: true
+        - name: uuid
+          in: path
+          description: The quiz's UUID.
+          type: string
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                score:
+                  type: integer
+                  description: The user's score
+      responses:
+        "200":
+          description: Saves the lesson score
+        "401":
+          description: Auth failure!
+        "422":
+          description: User ID, quiz UUID, or score not given!
+        "404":
+          description: User or quiz not found!
+
