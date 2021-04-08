@@ -41,11 +41,11 @@
             <SimpleSpinner v-if="uiState === 'pending'"></SimpleSpinner>
             <template v-else> Login </template>
           </ButtonPrimary>
-          <a
+          <!-- <a
             href="#"
             class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 underline"
             >Forgot password?</a
-          >
+          > -->
         </div>
         <p v-if="formFeedback" class="absolute bottom-0 inset-x-0 text-center">
           <span class="error">{{ formFeedback }}</span>
