@@ -7,12 +7,13 @@ local_backend: true
 media_folder: static/img
 public_folder: /img
 
-site_url: https://romantic-montalcini-b4ef44.netlify.app
+site_url: https://dev--sanctuarybluestar.netlify.app
 
 collections:
-  - name: 'lesson'
-    label: 'Lessons'
+  - name: lesson
+    label: Lessons
     label_singular: Lesson
+    description: Independent content module and accompanying questions to test understanding.
     folder: 'content/lessons'
     format: 'frontmatter'
     create: true
@@ -71,5 +72,3 @@ collections:
                     required: true
                     widget: boolean
                     default: false
-
-

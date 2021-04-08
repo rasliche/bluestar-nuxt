@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="max-w-4xl">
+  <article>
+    <section class="max-w-4xl">
       <PageHeading>My Dashboard</PageHeading>
       <p class="">
         You are logged in as
@@ -17,9 +17,9 @@
       >
         🌟 You are an Admin.
       </nuxt-link>
-    </div>
+    </section>
 
-    <div class="max-w-4xl">
+    <section class="max-w-4xl">
       <PageHeading>Training Record</PageHeading>
       <div class="flex flex-wrap">
         <nuxt-link
@@ -43,37 +43,21 @@
           </div>
         </nuxt-link>
       </div>
-    </div>
+    </section>
 
-    <!-- <div class="max-w-4xl">
+    <!-- <section class="max-w-4xl">
       <PageHeading>Continuing Education</PageHeading>
       <div>
         <p></p>
       </div>
       <ContinuingEducationForm></ContinuingEducationForm>
-    </div> -->
-    <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
-      <p class="text-lg">Raw User Data</p>
-      {{ this.$auth.user }}
-      <p class="text-lg">Zipped Score Data</p>
-      {{ this.lessonsWithScores }}
-    </div>
-    <!-- <div>
-      <p>User Roles:</p>
-      <p>Manager: {{ manager }}</p>
-      <p>Admin: {{ admin }}</p>
-    </div> -->
-  </div>
+    </section> -->
+  </article>
 </template>
 
 <script>
-import PageHeading from '@/components/BaseUI/PageHeading'
-// import LessonList from '@/components/LessonList'
-// import ContinuingEducationForm from '@/components/ContinuingEducationForm'
-
 export default {
   name: 'Dashboard',
-  components: { PageHeading },
   data() {
     return {
       manager: false,
@@ -134,7 +118,7 @@ export default {
   head() {
     return [
       {
-        title: 'Dashboard',
+        title: 'My Dashboard',
       },
     ]
   },

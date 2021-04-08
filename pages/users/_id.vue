@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <PageHeading>User Dashboard for {{ user.name }}</PageHeading>
-
-    <div class="max-w-4xl">
+  <article>
+    <section class="max-w-4xl">
+      <PageHeading>User Dashboard for {{ user.name }}</PageHeading>
       <p class="">
         You are viewing the user info for
         <span class="font-semibold">{{ user.name }}</span> who logs in using the
@@ -16,21 +15,21 @@
       >
         🌟 {{ user.name }} is an Admin.
       </nuxt-link>
-    </div>
+    </section>
 
-    <div class="max-w-4xl">
+    <section class="max-w-4xl">
       <PageHeading>Training Record</PageHeading>
       <LessonList></LessonList>
-    </div>
+    </section>
 
-    <div class="max-w-4xl">
+    <section class="max-w-4xl">
       <PageHeading>Continuing Education</PageHeading>
       <div>
         <p></p>
       </div>
       <ContinuingEducationForm></ContinuingEducationForm>
-    </div>
-    <div class="max-w-4xl">
+    </section>
+    <section class="max-w-4xl">
       <LazyPageHeading>Danger Zone</LazyPageHeading>
       <p>
         This is where you can do perform dangerous- potentially irreversible-
@@ -39,12 +38,8 @@
       <div class="flex">
         <ButtonDanger @click="deleteUser">Delete User</ButtonDanger>
       </div>
-    </div>
-    <div class="bg-gray-700 text-gray-100 rounded max-w-lg p-2 mt-24">
-      <p class="text-lg">Raw User Data</p>
-      {{ user }}
-    </div>
-  </div>
+    </section>
+  </article>
 </template>
 
 <script>

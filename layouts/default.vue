@@ -1,11 +1,13 @@
 <template>
   <client-only placeholder="Loading...">
-    <div class="antialiased text-gray-800 bg-gray-100">
+    <main
+      class="antialiased text-gray-800 bg-gray-100 bg-gradient-to-b from-gray-100 via-blue-100 to-blue-200"
+    >
       <the-nav />
       <nuxt class="min-h-screen mx-2 mt-2" />
       <the-footer />
       <notification-container />
-    </div>
+    </main>
   </client-only>
 </template>
 

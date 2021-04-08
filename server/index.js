@@ -18,6 +18,7 @@ const jwtStrategy = require('./strategies/jwt')
 const getJwt = require('./strategies/getjwt')
 
 const app = express()
+app.disable('x-powered-by')
 
 mongoose
   .connect(config.get('mongoURI'), {
