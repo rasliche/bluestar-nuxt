@@ -1,6 +1,10 @@
 <template>
   <div>
     <PageHeading>Choose a Lesson</PageHeading>
+    <p>
+      The lessons below have been hand crafted by experts to give you the
+      need-to-know information about a specific topic.
+    </p>
     <LessonList></LessonList>
   </div>
 </template>
