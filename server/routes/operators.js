@@ -32,7 +32,7 @@ router.post(
     try {
       await operator.save()
     } catch (error) {
-      return res.status(400).json({ message: 'There was an error adding this shop on the server. Please try again.'})
+      return res.status(500).json({ message: 'There was an error adding this shop on the server. Please try again.'})
     }
 
     return res.json(operator.toJSON())
@@ -50,14 +50,18 @@ router.get('/', BlueStarAuth, async (_req, res) => {
 })
 
 router.get('/:id', async (req, res, _next) => {
-  const operator = await Operator.findById(req.params.id).populate({
-    path: 'users',
-    populate: {
-      path: 'userID',
-      select: '-password',
-    },
-  })
-  res.send(operator)
+  try {
+    const operator = await Operator.findById(req.params.id).populate({
+      path: 'users',
+      populate: {
+        path: 'userID',
+        select: '-password',
+      },
+    })
+    res.send(operator)
+  } catch (error) {
+    res.status(404).send('Operator not found.')
+  }
 })
 
 module.exports = router
