@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-4xl px-4">
+  <article class="container mx-auto max-w-4xl px-4">
     <PageHeading>{{ lesson.title }}</PageHeading>
     <nuxt-content :document="lesson" />
     <Quiz
@@ -7,7 +7,7 @@
       :uuid="lesson.uuid"
       class="my-8 mx-auto md:mx-8 lg:mx-12 xl:mx-32"
     />
-  </div>
+  </article>
 </template>
 
 <script>
