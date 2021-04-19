@@ -4,23 +4,25 @@
     <table class="table-auto border w-full">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>User Count</th>
-          <th>More Info</th>
+          <th class="border">Name</th>
+          <th class="border">User Count</th>
+          <th class="border">More Info</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="operator in operators" :key="operator._id">
-          <th>{{ operator.name }}</th>
-          <th>{{ operator.users ? operator.users.length : 0 }}</th>
-          <th>
+          <td class="border">{{ operator.name }}</td>
+          <td class="border">
+            {{ operator.users ? operator.users.length : 0 }}
+          </td>
+          <td class="border">
             <nuxt-link
               :to="`/operators/${operator._id}`"
               class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
               >More Info</nuxt-link
             >
             <!-- Prettier is dumb -->
-          </th>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -56,5 +58,6 @@ export default {
 th,
 td {
   padding: 2px 5px;
+  text-align: center;
 }
 </style>
