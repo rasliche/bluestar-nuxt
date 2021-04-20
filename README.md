@@ -63,3 +63,33 @@ MONGO_URI: "mongodb://bluestar:<another_new_password>@mongo_db:27017/bluestar"
 docker-compose build
 docker-compose up
 ```
+
+## Testing
+
+New features and pull requests should have some basic tests. If you need help, reach out to project maintainers.
+
+### Get started with testing
+
+The easiest way to get testing is to use a MongoDB container with Docker:
+
+```bash
+docker run -d -p 27017:27017 --name mongo_bluestar_test mongo
+```
+
+This launches a MongoDB instance that listens on port 27017 named "mongo_bluestar_test" and then puts it into the background.
+
+Then navigate in a terminal to the "server" folder within the bluestar-nuxt project.
+
+In the server folder run `npm run test` for Jest to run the tests and then wait in watch mode.
+
+### To stop your docker containers
+
+```bash
+docker stop mongo_bluestar_test
+```
+
+### To restart your docker container
+
+```bash
+docker start mongo_bluestar_test
+```
