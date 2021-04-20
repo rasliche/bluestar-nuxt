@@ -29,4 +29,8 @@ const quizResultSchema = new Schema({
   }
 })
 
+quizResultSchema.pre('find', function() {
+  this.populate('quiz')
+})
+
 module.exports = model('QuizResult', quizResultSchema)
