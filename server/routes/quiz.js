@@ -1,9 +1,7 @@
-const express = require('express')
+const router = require('express').Router()
 const Quiz = require('../models/Quiz')
 const QuizResult = require('../models/QuizResult')
 const BlueStarAuth = require('../strategies/BlueStarAuth')
-
-const router = express.Router()
 
 // Return all quizzes
 router.get('/', async (req, res) => {

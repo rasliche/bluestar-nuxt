@@ -1,6 +1,8 @@
 const router = require('express').Router({ mergeParams: true})
 const { validationResult, param, body } = require('express-validator')
 const User = require('../models/User')
+const Quiz = require('../models/Quiz')
+const QuizResult = require('../models/QuizResult')
 const BlueStarAuth = require('../strategies/BlueStarAuth')
 
 router.get('/',
@@ -18,6 +20,7 @@ router.get('/',
                 body: req.body
             })
         }
+
         const user = await User.findById(req.params.userId).select('lessonScores')
         if (user.length === 0) {
             return res.status(404).send({
@@ -49,19 +52,17 @@ router.get('/:uuid',
 
         // Get the quiz uuid and user id from the request
         const { userId, uuid } = req.params
-        console.log(uuid)
-        const user = await User.findById(userId, '-password').limit(1)
-        const currentScoreRecord = user.lessonScores.find(record => record.uuid === uuid)
-        console.log(currentScoreRecord)
+        const quiz = await Quiz.find({ uuid: uuid })
+        let quizResult = await QuizResult.find({ user: userId, quiz: quiz[0]._id })
 
-        if (!currentScoreRecord) {
+        if (quizResult.length === 0) {
             return res.status(404).json({
                 error: true,
-                message: "Current score not found for current user and lesson."
+                message: "Score not found for current user and lesson."
             })
         }
 
-        res.status(200).send(currentScoreRecord)
+        res.status(200).send(quizResult)
 })
 
 router.post('/:uuid',
@@ -85,60 +86,32 @@ router.post('/:uuid',
         const { score } = req.body
         const { userId, uuid } = req.params
     
-        // Get the quiz from the DB
-        const user = await User.findById(userId, '-password').limit(1)
-        let currentScoreRecord = user.lessonScores.find(record => record.uuid === uuid)
+        // If a quiz result exists and the new score is higher
+        // the score should be updated. If the score is lower,
+        // the old score should be returned unchanged.
+        const quiz = await Quiz.find({ uuid })
+        let quizResult = await QuizResult.find({ user: userId, quiz: quiz._id })
 
-        console.log(user)
-        console.log(currentScoreRecord)
+        if (quizResult.length <= 1) {
+            // Get the quiz from the DB
+            const quiz = await Quiz.find({uuid}).limit(1)
+            // Get the user from the DB
+            const user = await User.findById(userId)
+            quizResult = new QuizResult({
+                score,
+                quiz: quiz[0],
+                user,
+            })
 
-        if (!currentScoreRecord) {
-            currentScoreRecord = {
-                uuid,
-                score
-            }
-            console.log('here')
-            user.lessonScores.push(currentScoreRecord)
-            await user.save()
-            return res.send(currentScoreRecord)
-        }
-        if (score >=  currentScoreRecord.score) {
-            currentScoreRecord.score = Math.max(currentScoreRecord.score, score)
-            currentScoreRecord.date = new Date()
-            await user.save()
-            return res.send(currentScoreRecord)
+            await quizResult.save()
+
+            return res.status(201).send(quizResult)
         }
 
-        // if (!quizzes || quizzes.length === 0) {
-        //   return res.status(400).json({ error: true, message: 'Quiz not found' })
-        // }
-        // const quiz = quizzes[0]
-    
-        // Find an existing quiz result, else make a new one
-        // let results = await QuizResult.find({ quiz: quiz.id, user })
-        // if (!results || results.length === 0) {
-        //   results = [new QuizResult()]
-        // }
-        // const result = results[0]
-    
-        // Update fields
-        // if (score >= result.score) {
-        //   result.dateCompleted = new Date()
-        // }
-        // result.score = Math.max(result.score, score)
-        // result.quiz = quiz.id
-        // result.user = user
-    
-        // Save it
-        // await result.save()
-    
-        // Send back the quiz result
-        // return res.json(result.toJSON())
-        // res.send({
-        //     ok: true,
-        //     userId: req.params.userId,
-        //     lessonUuid: req.params.uuid
-        // })
+        quizResult.score = Math.max(quizResult.score, score)
+        quizResult.date = new Date()
+        await quizResult.save()
+        return res.send(quizResult)
 })
 
 router.post('/', BlueStarAuth, async (req, res) => {

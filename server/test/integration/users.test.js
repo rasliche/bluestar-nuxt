@@ -101,7 +101,31 @@ describe('/users', () => {
     })
 
     describe('GET /users/me', () => {
-        it.todo('returns the logged in user\'s info')
-        it.todo('returns the logged in user\'s info')
+        it('returns 401 if the user is not authenticated', async () => {
+            const { status } = await request(server).get('/users/me')
+            expect(status).toBe(401)
+        })
+
+        it('returns the logged in user\'s info', async () => {
+            // Create a user to generate an auth token
+            const authUser = new User({
+                name: 'test',
+                email: 'a@a.a',
+                password: 'tester',
+                roles: {
+                    admin: true,
+                }
+            })
+            await authUser.save()
+
+            const { body, status } = await request(server)
+                .get('/users/me')
+                .set('Authorization', `Bearer ${authUser.generateAuthToken()}`)
+            expect(body.name).toBe('test')
+            expect(body.email).toBe('a@a.a')
+            expect(body.password).toBe(undefined)
+            expect(body.roles.admin).toBe(true)
+            expect(status).toBe(200)
+        })
     })
 })

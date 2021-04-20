@@ -97,7 +97,7 @@ export default {
   },
   async created() {
     this.lessons = await this.$content('lessons')
-      .only(['path', 'title', 'slug', 'uuid'])
+      .only(['path', 'title', 'slug', 'uuid', 'minimumScore'])
       .fetch()
       .catch((error) => {
         error({ statusCode: 404, message: 'Lessons not found!' })

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const config = require('config')
 const jwt = require('jsonwebtoken')
-// const passportLocalMongoose = require('passport-local-mongoose')
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -36,19 +35,9 @@ const userSchema = new mongoose.Schema({
   // }],
   lessonScores: [
     {
-      uuid: {
-        type: String,
-        required: true
-      },
-      score: {
-        type: Number,
-        default: 0
-      },
-      date: {
-        type: Date,
-        default: () => Date.now()
-      }
-    }
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'QuizResult',
+    },
   ],
   roles: {
     admin: {
@@ -62,14 +51,8 @@ const userSchema = new mongoose.Schema({
   },
 })
 
-// userSchema.plugin(passportLocalMongoose, {
-//   usernameField: 'email'
-//   // usernameUnique: false
-// })
-
 // Method on User object that signs and returns a JSON Web Token
 // Token contains User._id and is no longer valid after 2 hours.
-
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
     {

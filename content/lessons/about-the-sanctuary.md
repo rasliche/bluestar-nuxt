@@ -4,7 +4,7 @@ uuid: 558e9a37-8bf6-49d5-b301-9442811f794c
 # DO NOT EDIT!
 title: About the Sanctuary
 quiz:
-  minimumScore: 75
+  minimumScore: 80
   questions:
     - answers:
         - correct: false
