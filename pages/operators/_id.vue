@@ -1,37 +1,69 @@
 <template>
-  <div>
+  <div class="container mx-auto max-w-4xl px-4">
     <PageHeading>Dashboard for {{ operator.name }}</PageHeading>
 
-    <div class="max-w-4xl">
-      <!-- <p class="">
-        You are viewing the user info for
-        <span class="font-semibold">{{ user.name }}</span> who logs in using the
-        <span class="font-mono bg-blue-100 rounded px-1">{{
-          this.user.email
-        }}</span>
-        email address.
-      </p> -->
-      <!-- <nuxt-link
-        v-if="user.roles && user.roles.admin"
-        to="/admin"
-        class="mt-4 p-3 bg-yellow-200 rounded text-yellow-800 inline-block"
-      >
-        🌟 {{ user.name }} is an Admin.
-      </nuxt-link> -->
+    <div v-if="operator.users">
+      <h2>Managers:</h2>
+      <table class="table-auto border w-full">
+        <thead>
+          <tr>
+            <th class="border">Name</th>
+            <th class="border">Email</th>
+            <th class="border">Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="user in managers" :key="user._id">
+            <td class="border">{{ user.name }}</td>
+            <td class="border">
+              <a
+                :href="`mailto:${user.email}`"
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                >{{ user.email }}</a
+              >
+            </td>
+            <td class="border">
+              <nuxt-link
+                :to="`/users/${user._id}`"
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                >View Profile</nuxt-link
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Users:</h2>
+      <table class="table-auto border w-full">
+        <thead>
+          <tr>
+            <th class="border">Name</th>
+            <th class="border">Email</th>
+            <th class="border">Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="user in users" :key="user._id">
+            <td class="border">{{ user.name }}</td>
+            <td class="border">
+              <a
+                :href="`mailto:${user.email}`"
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                >{{ user.email }}</a
+              >
+            </td>
+            <td class="border">
+              <nuxt-link
+                :to="`/users/${user._id}`"
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                >View Profile</nuxt-link
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- <div class="max-w-4xl">
-      <PageHeading>Training Record</PageHeading>
-      <LessonList></LessonList>
-    </div> -->
-
-    <!-- <div class="max-w-4xl">
-      <PageHeading>Continuing Education</PageHeading>
-      <div>
-        <p></p>
-      </div>
-      <ContinuingEducationForm></ContinuingEducationForm>
-    </div> -->
     <div v-if="this.$auth.hasScope('admin')" class="max-w-4xl">
       <PageHeading>Danger Zone</PageHeading>
       <p>
@@ -65,6 +97,23 @@ export default {
       },
     }
   },
+  computed: {
+    allUsers() {
+      const users = []
+      this.operator.users.forEach((user) => users.push(user.userID))
+      return users
+    },
+    managers() {
+      return this.allUsers.filter((user) =>
+        ['Manager', 'Admin'].includes(this.getRole(user.roles))
+      )
+    },
+    users() {
+      return this.allUsers.filter(
+        (user) => !['Manager', 'Admin'].includes(this.getRole(user.roles))
+      )
+    },
+  },
   async created() {
     try {
       this.operator = await this.$axios.$get(
@@ -85,6 +134,15 @@ export default {
       }, 3000)
       console.log('operator deleted')
     },
+    getRole(role) {
+      if (role.admin) {
+        return 'Admin'
+      } else if (role.manager) {
+        return 'Manager'
+      } else {
+        return 'User'
+      }
+    },
   },
   head() {
     return [
@@ -95,3 +153,11 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+th,
+td {
+  padding: 2px 5px;
+  text-align: center;
+}
+</style>

@@ -11,7 +11,7 @@
  */
 export default function authManager(context) {
   if (
-    !context.$auth.$state.user.roles.admin ||
+    !context.$auth.$state.user.roles.admin &&
     !context.$auth.$state.user.roles.manager
   ) {
     context.redirect('/')
