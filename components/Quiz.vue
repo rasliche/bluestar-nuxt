@@ -119,9 +119,10 @@ export default {
     this.$axios
       .$get(`/users/${this.$auth.user._id}/scores/${this.uuid}`)
       .then((data) => {
-        if (data && data.score) {
-          this.highScore = data.score
-          this.finalGrade = data.score
+        console.log(data)
+        if (data && data[0].score) {
+          this.highScore = data[0].score
+          this.finalGrade = data[0].score
           this.questionIndex = this.questionCount - 1
           this.done = true
         }
