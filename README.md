@@ -22,8 +22,6 @@ This project uses the typical github flow:
 
 The code stack is Nuxt, Express, MongoDB. Having a good foundation in Vue and Node are helpful. TailwindCSS is used for styling components, and a design system is a work in progress.
 
-> A major feature would be creating a Docker image for this project to make getting contributors up to speed quicker.
-
 Content is developed internally with contributions and references from across the wider scientific and regulatory communities.
 
 > Content contributions have been made by FWC, NOAA, Mote Marine Laboratory, Coral Restoration Foundation, Florida DEP, and the staff of Florida Keys National Marine Sanctuary.
