@@ -160,16 +160,20 @@ export default {
       this.done = false
     },
     grade() {
-      this.$axios
-        .$post(`/users/${this.$auth.user._id}/scores/${this.uuid}`, {
-          // uuid: this.quiz.uuid,
-          score: this.finalGrade,
-        })
-        .then((data) => {
-          if (data && data.score) {
-            this.highScore = data.score
-          }
-        })
+      try {
+        this.$axios
+          .$post(`/users/${this.$auth.user._id}/scores/${this.uuid}`, {
+            // uuid: this.quiz.uuid,
+            score: this.finalGrade,
+          })
+          .then((data) => {
+            if (data && data.score) {
+              this.highScore = data.score
+            }
+          })
+      } catch (error) {
+        console.log(error)
+      }
     },
   },
 }
