@@ -73,45 +73,45 @@ router.post('/:uuid',
         body('score').exists(),
     ],
     async (req, res) => {
-        const errors = validationResult(req)
-        if(!errors.isEmpty()) {
-            // Send an error if the required data wasn't given
-            return res.status(422).json({
-                error: true,
-                message: 'Quiz UUID, score, and user id required',
-                body: req.body
-            })
-        }
-        // Get the quiz uuid, score, and user id from the request
-        const { score } = req.body
-        const { userId, uuid } = req.params
-    
-        // If a quiz result exists and the new score is higher
-        // the score should be updated. If the score is lower,
-        // the old score should be returned unchanged.
-        const quiz = await Quiz.find({ uuid })
-        let quizResult = await QuizResult.find({ user: userId, quiz: quiz._id })
+        try {
+            const errors = validationResult(req)
+            if(!errors.isEmpty()) {
+                // Send an error if the required data wasn't given
+                return res.status(422).json({
+                    error: true,
+                    message: 'Quiz UUID, score, and user id required',
+                    body: req.body
+                })
+            }
+            // Get the quiz uuid, score, and user id from the request
+            const { score } = req.body
+            const { userId, uuid } = req.params
+        
+            // If a quiz result exists and the new score is higher
+            // the score should be updated. If the score is lower,
+            // the old score should be returned unchanged.
+            const quiz = await Quiz.find({ uuid }).limit(1)
+            let quizResult = await QuizResult.find({ user: userId, quiz: quiz[0]._id })
+            console.log({ quizResult })
+            if (quizResult.length < 1) { // && score >= quiz.minimumScore
+                // Get the quiz from the DB
+                quizResult = new QuizResult({
+                    score,
+                    quiz: quiz[0]._id,
+                    user: userId,
+                })
 
-        if (quizResult.length <= 1) {
-            // Get the quiz from the DB
-            const quiz = await Quiz.find({uuid}).limit(1)
-            // Get the user from the DB
-            const user = await User.findById(userId)
-            quizResult = new QuizResult({
-                score,
-                quiz: quiz[0],
-                user,
-            })
+                await quizResult.save()
+                return res.status(201).send(quizResult)
+            }
 
+            quizResult.score = Math.max(quizResult.score, score)
+            quizResult.date = new Date()
             await quizResult.save()
-
-            return res.status(201).send(quizResult)
+            return res.send(quizResult)
+        } catch (error) {
+            return res.status(500).send({ message: "There was an error on the server." })
         }
-
-        quizResult.score = Math.max(quizResult.score, score)
-        quizResult.date = new Date()
-        await quizResult.save()
-        return res.send(quizResult)
 })
 
 router.post('/', BlueStarAuth, async (req, res) => {
