@@ -3,7 +3,8 @@
     <div class="flex items-center justify-between px-4 py-2 md:p-0">
       <!-- Desktop Logo -->
       <div class="flex items-center flex-shrink-0 md:mr-6 text-blue-200">
-        <svg
+        <img src="~/assets/images/BlueStar_logo.jpeg" class="w-8 mr-2" />
+        <!-- <svg
           class="fill-current h-8 w-8 mr-2"
           width="54"
           height="54"
@@ -13,7 +14,7 @@
           <path
             d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
           />
-        </svg>
+        </svg> -->
         <nuxt-link to="/" class="text-3xl text-blue-100" active-class="">
           Blue Star
         </nuxt-link>
