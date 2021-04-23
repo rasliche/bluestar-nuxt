@@ -17,20 +17,21 @@ router.get('/',
             return res.status(422).json({
                 error: true,
                 message: 'UserID required',
-                body: req.body
+                body: null
             })
         }
 
-        const user = await User.findById(req.params.userId).select('lessonScores')
-        if (user.length === 0) {
+        const { userId } = req.params
+        const scores = await QuizResult.find({ user: userId })
+        if (scores.length === 0) {
             return res.status(404).send({
                 error: true,
                 message: 'User not found with given userId.',
                 body: req.params
             })
         }
-        console.log(user.lessonScores)
-        return res.status(200).json(user.lessonScores)
+        console.log(scores)
+        return res.status(200).json(scores)
     })
 
 router.get('/:uuid',
@@ -93,7 +94,7 @@ router.post('/:uuid',
             const quiz = await Quiz.find({ uuid }).limit(1)
             let quizResult = await QuizResult.find({ user: userId, quiz: quiz[0]._id })
             console.log({ quizResult })
-            if (quizResult.length < 1) { // && score >= quiz.minimumScore
+            if (quizResult.length === 0) { // && score >= quiz.minimumScore
                 // Get the quiz from the DB
                 quizResult = new QuizResult({
                     score,
