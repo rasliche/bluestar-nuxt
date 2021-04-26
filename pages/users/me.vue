@@ -37,14 +37,13 @@
           <div class="mx-auto text-center text-sm italic font-normal">
             ({{
               lesson.userRecord !== undefined
-                ? `last taken on ${formatDate(lesson.userRecord.date)}`
+                ? `last taken on ${formatDate(lesson.userRecord.dateCompleted)}`
                 : 'not yet passed'
             }})
           </div>
         </nuxt-link>
       </div>
     </section>
-
     <!-- <section class="max-w-4xl">
       <PageHeading>Continuing Education</PageHeading>
       <div>
@@ -70,7 +69,7 @@ export default {
     lessonsWithScores() {
       return this.lessons.map((lesson, index) => {
         lesson.userRecord = this.lessonScores.find((record) => {
-          return record.uuid === lesson.uuid
+          return record.quiz.uuid === lesson.uuid
         })
         return lesson
       })

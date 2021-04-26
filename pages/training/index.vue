@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mx-auto max-w-4xl px-4">
     <PageHeading>Choose a Lesson</PageHeading>
     <p>
       The lessons below have been hand crafted by experts to give you the

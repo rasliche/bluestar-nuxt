@@ -111,8 +111,10 @@ router.put('/change-role', BlueStarAdminAuth, async (req, res) => {
       body: req.body,
     })
   }
+  
   const { user: userID, role } = req.body
   const user = await User.findById(userID)
+
   if (role === 'admin') {
     user.roles.admin = true
     user.roles.manager = false

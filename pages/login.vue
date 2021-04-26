@@ -1,6 +1,7 @@
 <template>
   <div class="w-full max-w-md mx-auto">
     <form
+      v-if="!this.$auth.user"
       class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       method="POST"
       @submit.prevent="loginUser"
@@ -52,6 +53,13 @@
         </p>
       </section>
     </form>
+    <div v-else>
+      You're logged in! Why don't you head to
+      <nuxt-link to="/users/me" class="text-blue-800 underline">
+        your profile
+      </nuxt-link>
+      and see where you left off?
+    </div>
   </div>
 </template>
 
