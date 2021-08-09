@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-4xl px-4">
+  <article class="container mx-auto max-w-4xl px-4">
     <PageHeading>Admin Dashboard</PageHeading>
     <!-- <div>
       <div class="max-w-xl px-8">
@@ -29,7 +29,7 @@
         <CreateBusinessForm></CreateBusinessForm>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

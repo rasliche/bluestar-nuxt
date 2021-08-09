@@ -1,6 +1,6 @@
 <template>
-  <article>
-    <section class="max-w-4xl">
+  <article class="container mx-auto max-w-4xl px-4">
+    <section>
       <PageHeading>My Dashboard</PageHeading>
       <p class="">
         You are logged in as
@@ -19,7 +19,7 @@
       </nuxt-link>
     </section>
 
-    <section class="max-w-4xl">
+    <section>
       <PageHeading>Training Record</PageHeading>
       <div class="flex flex-wrap">
         <nuxt-link
@@ -43,6 +43,19 @@
           </div>
         </nuxt-link>
       </div>
+    </section>
+    <section>
+      <PageHeading>Where I Work</PageHeading>
+      <ul>
+        <li>here's a shop</li>
+        <li>another shop</li>
+        <li>wacky dive shop</li>
+      </ul>
+      <form>
+        <BaseInput type="text" label="Shop Name"></BaseInput>
+        <BaseInput type="text" label="Shop Access Code"></BaseInput>
+        <ButtonPrimary>Join</ButtonPrimary>
+      </form>
     </section>
     <!-- <section class="max-w-4xl">
       <PageHeading>Continuing Education</PageHeading>
