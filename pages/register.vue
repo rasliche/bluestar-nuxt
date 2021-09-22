@@ -92,7 +92,14 @@
           </ButtonPrimary>
           <a
             href="#"
-            class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 underline"
+            class="
+              inline-block
+              align-baseline
+              font-bold
+              text-sm text-blue-500
+              hover:text-blue-800
+              underline
+            "
             >Forgot password?</a
           >
         </div>

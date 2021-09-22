@@ -212,19 +212,37 @@ https://www.flickr.com/photos/onms/29893338022/in/album-72157657763892082/ -->
       more about the three types of reefs:
       <a
         href="https://coral.org/coral-reefs-101/coral-reef-ecology/types-of-coral-reef-formations/"
-        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
+        class="
+          text-blue-800
+          border-b-2 border-blue-200
+          transition-colors
+          duration-700
+          hover:bg-blue-200
+        "
       >
         Types of Coral Reef Formations </a
       >,
       <a
         href="https://oceanservice.noaa.gov/facts/threecorals.html"
-        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
+        class="
+          text-blue-800
+          border-b-2 border-blue-200
+          transition-colors
+          duration-700
+          hover:bg-blue-200
+        "
       >
         Three Coral Formations </a
       >, and
       <a
         href="https://oceanservice.noaa.gov/education/tutorial_corals/coral04_reefs.html"
-        class="text-blue-800 border-b-2 border-blue-200 transition-colors duration-700 hover:bg-blue-200"
+        class="
+          text-blue-800
+          border-b-2 border-blue-200
+          transition-colors
+          duration-700
+          hover:bg-blue-200
+        "
       >
         Coral Reefs </a
       >.

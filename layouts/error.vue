@@ -1,6 +1,13 @@
 <template>
   <article
-    class="antialiased text-gray-800 bg-gray-100 bg-gradient-to-b from-gray-100 via-blue-100 to-blue-200"
+    class="
+      antialiased
+      text-gray-800
+      bg-gray-100 bg-gradient-to-b
+      from-gray-100
+      via-blue-100
+      to-blue-200
+    "
   >
     <PageHeading v-if="error.statusCode === 404">Page Not Found</PageHeading>
     <PageHeading v-else>An Error Occurred</PageHeading>

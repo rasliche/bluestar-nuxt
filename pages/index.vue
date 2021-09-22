@@ -7,7 +7,17 @@
       </PageHeading>
     </section>
     <section
-      class="mt-12 max-w-5xl w-3/4 mx-auto bg-green-100 text-blue-900 text-lg text-center rounded-lg shadow-sm border-blue-900"
+      class="
+        mt-12
+        max-w-5xl
+        w-3/4
+        mx-auto
+        bg-green-100
+        text-blue-900 text-lg text-center
+        rounded-lg
+        shadow-sm
+        border-blue-900
+      "
     >
       <p class="p-8">
         Thanks for making a choice to be part of the Blue Star program in

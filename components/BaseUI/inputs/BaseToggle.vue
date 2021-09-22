@@ -5,11 +5,33 @@
     @keydown.space.prevent="toggle"
   >
     <span
-      class="inline-block rounded-full h-full w-full shadow-inner transition-colors duration-200 ease-linear"
+      class="
+        inline-block
+        rounded-full
+        h-full
+        w-full
+        shadow-inner
+        transition-colors
+        duration-200
+        ease-linear
+      "
       :class="backgroundStyles"
     ></span>
     <span
-      class="absolute top-1 left-1 h-6 w-6 bg-white rounded-full shadow-inner transition-transform transform duration-200 ease-linear"
+      class="
+        absolute
+        top-1
+        left-1
+        h-6
+        w-6
+        bg-white
+        rounded-full
+        shadow-inner
+        transition-transform
+        transform
+        duration-200
+        ease-linear
+      "
       :class="toggleIndicatorStyles"
     ></span>
   </span>

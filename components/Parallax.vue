@@ -3,13 +3,23 @@
   <div class="prlx">
     <slot>
       <div
-        class="prlx-layer prlx-back prlx-offset-50 bg-transparent opacity-50 text-center"
+        class="
+          prlx-layer prlx-back prlx-offset-50
+          bg-transparent
+          opacity-50
+          text-center
+        "
       >
         <!-- This scrolls slower -->
         Background
       </div>
       <div
-        class="prlx-layer prlx-base prlx-offset-50 bg-transparent opacity-50 text-center"
+        class="
+          prlx-layer prlx-base prlx-offset-50
+          bg-transparent
+          opacity-50
+          text-center
+        "
       >
         <!-- This scrolls normally -->
         Base

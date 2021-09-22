@@ -25,7 +25,21 @@
         <nuxt-link
           v-for="lesson in lessonsWithScores"
           :key="lesson.slug"
-          class="relative border-black border-2 rounded py-3 px-4 m-4 font-semibold transition-colors ease-in-out duration-300 bg-blue-200 text-blue-900 hover:bg-black hover:text-blue-100"
+          class="
+            relative
+            border-black border-2
+            rounded
+            py-3
+            px-4
+            m-4
+            font-semibold
+            transition-colors
+            ease-in-out
+            duration-300
+            bg-blue-200
+            text-blue-900
+            hover:bg-black hover:text-blue-100
+          "
           :to="`/training/${lesson.slug}`"
         >
           {{ lesson.title }} -
@@ -52,18 +66,26 @@
         <li>wacky dive shop</li>
       </ul>
       <form>
-        <BaseInput type="text" label="Shop Name"></BaseInput>
+        <SearchSelect
+          v-model="selectedOperator"
+          :options="operatorNames"
+          label="Shop Name"
+        ></SearchSelect>
         <BaseInput type="text" label="Shop Access Code"></BaseInput>
-        <ButtonPrimary>Join</ButtonPrimary>
+        <ButtonPrimary @click="joinOperator">Join</ButtonPrimary>
       </form>
     </section>
-    <!-- <section class="max-w-4xl">
+    <section>
       <PageHeading>Continuing Education</PageHeading>
       <div>
-        <p></p>
+        <p>
+          Coming soon! Submit your continuing education documentation directly
+          online. Your shop's manager and the Blue Star Coordinators will be
+          able to see that you've completed this yearly requirement.
+        </p>
       </div>
-      <ContinuingEducationForm></ContinuingEducationForm>
-    </section> -->
+      <!-- <ContinuingEducationForm></ContinuingEducationForm> -->
+    </section>
   </article>
 </template>
 
@@ -76,6 +98,8 @@ export default {
       admin: false,
       lessons: [],
       lessonScores: [],
+      operators: [],
+      selectedOperator: null,
     }
   },
   computed: {
@@ -85,6 +109,11 @@ export default {
           return record.quiz.uuid === lesson.uuid
         })
         return lesson
+      })
+    },
+    operatorNames() {
+      return this.$store.state.operators.operators.map((operator) => {
+        return operator.name
       })
     },
   },
@@ -114,6 +143,8 @@ export default {
       .catch((error) => {
         error({ statusCode: 404, message: 'Lessons not found!' })
       })
+
+    this.$store.commit('operators/get')
   },
   methods: {
     formatScore(score) {
@@ -125,6 +156,12 @@ export default {
       }
       return new Intl.DateTimeFormat([], options).format(new Date(dateObject))
       // return new Intl.DateTimeFormat([], options).format(dateObject)
+    },
+    joinOperator() {
+      this.$store.dispatch('notification/add', {
+        type: 'success',
+        text: 'Trying to join shop...',
+      })
     },
   },
   head() {

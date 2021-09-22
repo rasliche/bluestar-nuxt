@@ -1,7 +1,13 @@
 <template>
   <client-only placeholder="Loading...">
     <main
-      class="antialiased text-gray-800 bg-gradient-to-b from-gray-100 to-blue-100"
+      class="
+        antialiased
+        text-gray-800
+        bg-gradient-to-b
+        from-gray-100
+        to-blue-100
+      "
     >
       <the-nav />
       <nuxt class="min-h-screen mx-2 mt-2" />

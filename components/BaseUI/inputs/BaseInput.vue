@@ -6,7 +6,19 @@
     <input
       :value="value"
       v-bind="$attrs"
-      class="shadow appearance-none rounded border-blue-200 border w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+      class="
+        shadow
+        appearance-none
+        rounded
+        border-blue-200 border
+        w-full
+        py-2
+        px-3
+        text-gray-700
+        mb-3
+        leading-tight
+        focus:outline-none focus:shadow-outline
+      "
       @input="updateValue"
       v-on="listeners"
     />
