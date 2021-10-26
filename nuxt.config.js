@@ -3,7 +3,7 @@ module.exports = {
   ssr: false,
   telemetry: true, // Default is to ask in CLI, set to false if you want
   components: {
-    dirs: [
+    dirs: [ // Manually tell Nuxt/Components where to look
       '~/components',
       '~/components/BaseUI',
       '~/components/BaseUI/buttons',
@@ -88,24 +88,29 @@ module.exports = {
    ** Auth module configuration
    ** See https://auth.nuxtjs.org/options
    */
-  auth: {
-    scopeKey: 'roles',
-    strategies: {
-      local: {
-        endpoints: {
-          login: { url: '/auth/login', method: 'post', propertyName: false },
-          logout: false,
-          user: { url: '/users/me', method: 'get', propertyName: false },
-        },
-        // tokenRequired: true,
-        // tokenType: 'bearer',
-        // globalToken: true,
-        //autoFetchUser: true
-      },
-    },
-  },
+  // auth: {
+  //   scopeKey: 'roles',
+  //   strategies: {
+  //     auth0: {
+  //       domain: '',
+  //       clientId: '',
+  //       audience: ''
+  //     },
+  //     local: {
+  //       endpoints: {
+  //         login: { url: '/auth/login', method: 'post', propertyName: false },
+  //         logout: false,
+  //         user: { url: '/users/me', method: 'get', propertyName: false },
+  //       },
+  //       // tokenRequired: true,
+  //       // tokenType: 'bearer',
+  //       // globalToken: true,
+  //       //autoFetchUser: true
+  //     },
+  //   },
+  // },
   router: {
-    middleware: ['auth'],
+    // middleware: ['auth'],
   },
   /*
    ** Build configuration
