@@ -1,6 +1,6 @@
 <template>
   <div class="quiz border border-blue-800 rounded-t-md rounded-b-md">
-    <p class="quiz-header">
+    <p class="bg-blue-800 text-white font-bold text-center py-2 px-4">
       Quiz ({{ questionIndex + 1 }}/{{ questionCount }}){{
         highScore * 100 >= quiz.minimumScore ? ': COMPLETED' : ''
       }}
@@ -13,14 +13,25 @@
       <button
         v-for="(answer, index) in quiz.questions[questionIndex].answers"
         :key="index"
-        class="quiz-answer-choice block text-center btn"
+        class="quiz-answer-choice block text-center btn hover:bg-blue-300"
         :style="{ color: currentAnswerChoice == index ? 'blue' : 'inherit' }"
         @click="answerChoicePressed(index)"
       >
         {{ answer.text }}
       </button>
       <button
-        class="quiz-submit block text-center btn btn-blue"
+        class="
+          quiz-submit
+          block
+          text-center
+          font-bold
+          py-2
+          px-4
+          rounded-b-md
+          bg-blue-800
+          text-white
+          hover:bg-blue-300
+        "
         :disabled="!readyForNextQuestion"
         @click="submitButtonPressed"
       >
@@ -41,7 +52,18 @@
       <p>
         <em>Your best score was {{ `${Math.round(highScore * 100)}%` }}</em>
       </p>
-      <button class="retry-button btn btn-blue" @click="reset">
+      <button
+        class="
+          retry-button
+          font-bold
+          py-2
+          px-4
+          rounded-b-md
+          bg-blue-800
+          text-white
+        "
+        @click="reset"
+      >
         Try Again
       </button>
     </div>
@@ -115,22 +137,22 @@ export default {
       return this.questionIndex + 1 === this.questionCount
     },
   },
-  mounted() {
-    this.$axios
-      .$get(`/users/${this.$auth.user._id}/scores/${this.uuid}`)
-      .then((data) => {
-        console.log(data)
-        if (data && data[0].score) {
-          this.highScore = data[0].score
-          this.finalGrade = data[0].score
-          this.questionIndex = this.questionCount - 1
-          this.done = true
-        }
-      })
-      .catch((error) => {
-        console.log(error.message)
-      })
-  },
+  // mounted() {
+  //   this.$axios
+  //     .$get(`/users/${this.$auth.user._id}/scores/${this.uuid}`)
+  //     .then((data) => {
+  //       console.log(data)
+  //       if (data && data[0].score) {
+  //         this.highScore = data[0].score
+  //         this.finalGrade = data[0].score
+  //         this.questionIndex = this.questionCount - 1
+  //         this.done = true
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message)
+  //     })
+  // },
   methods: {
     submitButtonPressed() {
       // eslint-disable-next-line prettier/prettier
@@ -159,37 +181,22 @@ export default {
       this.finalGrade = 0
       this.done = false
     },
-    grade() {
-      try {
-        this.$axios
-          .$post(`/users/${this.$auth.user._id}/scores/${this.uuid}`, {
-            // uuid: this.quiz.uuid,
-            score: this.finalGrade,
-          })
-          .then((data) => {
-            if (data && data.score) {
-              this.highScore = data.score
-            }
-          })
-      } catch (error) {
-        console.log(error)
-      }
-    },
+    // grade() {
+    //   try {
+    //     this.$axios
+    //       .$post(`/users/${this.$auth.user._id}/scores/${this.uuid}`, {
+    //         // uuid: this.quiz.uuid,
+    //         score: this.finalGrade,
+    //       })
+    //       .then((data) => {
+    //         if (data && data.score) {
+    //           this.highScore = data.score
+    //         }
+    //       })
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // },
   },
 }
 </script>
-
-<style lang="postcss">
-.btn {
-  @apply font-bold py-2 px-4 rounded-b-md;
-}
-.btn-blue {
-  @apply bg-blue-800 text-white;
-}
-.btn:hover {
-  @apply bg-blue-300;
-}
-.quiz-header {
-  @apply bg-blue-800 text-white font-bold text-center py-2 px-4;
-}
-</style>
