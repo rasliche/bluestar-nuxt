@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      # TODO This needs to be changed for production
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+
+  # api:
+  #   image: node
+  #   depends_on:
+  #     - db
+  #   user: node
+  #   restart: unless-stopped
+  #   working_dir: /home/node/app
+  #   environment:
+  #     NODE_ENV: development
+  #     PGUSER: postgres
+  #     PGPASSWORD: example
+  #     PGHOST: localhost
+  #     PGPORT: 5432
+  #   volumes:
+  #     - ./:/home/node/app
+  #   expose:
+  #     - 3001
+  #   command: ["./wait-for-postgres.sh", "db", "npm", "start"]
