@@ -7,20 +7,7 @@
       <button
         ref="button"
         type="button"
-        class="
-          flex
-          w-full
-          rounded
-          shadow
-          appearance-none
-          border-blue-200 border
-          py-2
-          px-3
-          text-gray-700
-          leading-tight
-          focus:outline-none focus:shadow-outline
-          bg-white
-        "
+        class="flex w-full rounded shadow appearance-none border-blue-200 border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white"
         @click="open"
       >
         <span v-if="value !== null" class="flex-auto">{{ value }}</span>
@@ -40,16 +27,7 @@
       <div
         v-show="isOpen"
         ref="dropdown"
-        class="
-          absolute
-          w-full
-          px-2
-          py-1
-          rounded-md
-          bg-gray-800
-          text-gray-200
-          z-10
-        "
+        class="absolute w-full px-2 py-1 rounded-md bg-gray-800 text-gray-200 z-10"
       >
         <input
           ref="search"

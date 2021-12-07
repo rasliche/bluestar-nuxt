@@ -1,13 +1,6 @@
 <template>
   <div
-    class="
-      inline-block
-      h-8
-      w-8
-      border-4 border-t-0 border-b-0 border-blue-400
-      rounded-full
-      simple-spinner
-    "
+    class="inline-block h-8 w-8 border-4 border-t-0 border-b-0 border-blue-400 rounded-full simple-spinner"
   ></div>
 </template>
 

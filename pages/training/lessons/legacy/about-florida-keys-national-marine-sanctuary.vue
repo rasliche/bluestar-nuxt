@@ -110,12 +110,7 @@
       <CitationsSource :anchor="'onms'">
         <a
           href="sanctuaries.noaa.gov"
-          class="
-            border-b-2 border-blue-500
-            transition-colors
-            duration-500
-            hover:bg-blue-500
-          "
+          class="border-b-2 border-blue-500 transition-colors duration-500 hover:bg-blue-500"
         >
           Office of National Marine Sanctuaries Website
         </a>
@@ -123,12 +118,7 @@
       <CitationsSource :anchor="'fknms'">
         <a
           href="floridakeys.noaa.gov"
-          class="
-            border-b-2 border-blue-500
-            transition-colors
-            duration-500
-            hover:bg-blue-500
-          "
+          class="border-b-2 border-blue-500 transition-colors duration-500 hover:bg-blue-500"
         >
           Florida Keys National Marine Sanctuary Website
         </a>

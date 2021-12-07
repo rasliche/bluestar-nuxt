@@ -1,17 +1,6 @@
 <template>
   <div
-    class="
-      flex
-      justify-between
-      rounded-sm
-      shadow-md
-      p-2
-      opacity-75
-      transition-opacity
-      ease-in-out
-      duration-300
-      hover:opacity-100
-    "
+    class="flex justify-between rounded-sm shadow-md p-2 opacity-75 transition-opacity ease-in-out duration-300 hover:opacity-100"
     :class="[
       { 'bg-green-200 text-green-900': notification.type === 'success' },
       { 'bg-yellow-200 text-yellow-900': notification.type === 'warn' },

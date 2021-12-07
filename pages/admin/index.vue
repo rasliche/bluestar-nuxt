@@ -21,12 +21,7 @@
           <li v-for="operator in operators" :key="operator._id">
             <nuxt-link
               :to="`/operators/${operator._id}`"
-              class="
-                text-blue-600
-                hover:text-blue-800
-                visited:text-purple-600
-                underline
-              "
+              class="text-blue-600 hover:text-blue-800 visited:text-purple-600 underline"
               >{{ operator.name }}</nuxt-link
             >
           </li>

@@ -18,12 +18,7 @@
           <td class="border">
             <nuxt-link
               :to="`/operators/${operator._id}`"
-              class="
-                underline
-                text-blue-600
-                hover:text-blue-800
-                visited:text-purple-600
-              "
+              class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
               >More Info</nuxt-link
             >
             <!-- Prettier is dumb -->

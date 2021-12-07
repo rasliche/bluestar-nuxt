@@ -88,27 +88,27 @@ module.exports = {
    ** Auth module configuration
    ** See https://auth.nuxtjs.org/options
    */
-  // auth: {
-  //   scopeKey: 'roles',
-  //   strategies: {
-  //     auth0: {
-  //       domain: '',
-  //       clientId: '',
-  //       audience: ''
-  //     },
-  //     local: {
-  //       endpoints: {
-  //         login: { url: '/auth/login', method: 'post', propertyName: false },
-  //         logout: false,
-  //         user: { url: '/users/me', method: 'get', propertyName: false },
-  //       },
-  //       // tokenRequired: true,
-  //       // tokenType: 'bearer',
-  //       // globalToken: true,
-  //       //autoFetchUser: true
-  //     },
-  //   },
-  // },
+  auth: {
+    scopeKey: 'roles',
+    strategies: {
+      auth0: {
+        domain: '',
+        clientId: '',
+        audience: ''
+      },
+      // local: {
+      //   endpoints: {
+      //     login: { url: '/auth/login', method: 'post', propertyName: false },
+      //     logout: false,
+      //     user: { url: '/users/me', method: 'get', propertyName: false },
+      //   },
+        // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        //autoFetchUser: true
+      // },
+    },
+  },
   router: {
     // middleware: ['auth'],
   },
@@ -137,8 +137,8 @@ module.exports = {
         })
       }
     },
-    cache: true,
-    hardSource: true,
-    parallel: true,
+    // cache: true,
+    // hardSource: true,
+    // parallel: true,
   },
 }

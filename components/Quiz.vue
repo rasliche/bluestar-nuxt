@@ -20,18 +20,7 @@
         {{ answer.text }}
       </button>
       <button
-        class="
-          quiz-submit
-          block
-          text-center
-          font-bold
-          py-2
-          px-4
-          rounded-b-md
-          bg-blue-800
-          text-white
-          hover:bg-blue-300
-        "
+        class="quiz-submit block text-center font-bold py-2 px-4 rounded-b-md bg-blue-800 text-white hover:bg-blue-300"
         :disabled="!readyForNextQuestion"
         @click="submitButtonPressed"
       >
@@ -53,15 +42,7 @@
         <em>Your best score was {{ `${Math.round(highScore * 100)}%` }}</em>
       </p>
       <button
-        class="
-          retry-button
-          font-bold
-          py-2
-          px-4
-          rounded-b-md
-          bg-blue-800
-          text-white
-        "
+        class="retry-button font-bold py-2 px-4 rounded-b-md bg-blue-800 text-white"
         @click="reset"
       >
         Try Again

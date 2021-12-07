@@ -18,24 +18,14 @@
             <td class="border">
               <a
                 :href="`mailto:${user.email}`"
-                class="
-                  underline
-                  text-blue-600
-                  hover:text-blue-800
-                  visited:text-purple-600
-                "
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
                 >{{ user.email }}</a
               >
             </td>
             <td class="border">
               <nuxt-link
                 :to="`/users/${user._id}`"
-                class="
-                  underline
-                  text-blue-600
-                  hover:text-blue-800
-                  visited:text-purple-600
-                "
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
                 >View Profile</nuxt-link
               >
             </td>
@@ -58,24 +48,14 @@
             <td class="border">
               <a
                 :href="`mailto:${user.email}`"
-                class="
-                  underline
-                  text-blue-600
-                  hover:text-blue-800
-                  visited:text-purple-600
-                "
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
                 >{{ user.email }}</a
               >
             </td>
             <td class="border">
               <nuxt-link
                 :to="`/users/${user._id}`"
-                class="
-                  underline
-                  text-blue-600
-                  hover:text-blue-800
-                  visited:text-purple-600
-                "
+                class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
                 >View Profile</nuxt-link
               >
             </td>

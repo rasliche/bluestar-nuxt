@@ -14,12 +14,7 @@
           <td class="border">
             <nuxt-link
               :to="`/users/${user._id}`"
-              class="
-                underline
-                text-blue-600
-                hover:text-blue-800
-                visited:text-purple-600
-              "
+              class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
               >{{ user.name }}</nuxt-link
             >
           </td>
@@ -32,64 +27,28 @@
             >
               <button
                 v-if="getRole(user.roles) == 'User'"
-                class="
-                  bg-blue-500
-                  hover:bg-blue-700
-                  text-white
-                  font-bold
-                  py-2
-                  px-4
-                  rounded-full
-                  mx-2
-                "
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-2"
                 @click="changeRole(user._id, 'manager')"
               >
                 Promote to Manager
               </button>
               <button
                 v-if="getRole(user.roles) == 'Manager'"
-                class="
-                  bg-blue-500
-                  hover:bg-blue-700
-                  text-white
-                  font-bold
-                  py-2
-                  px-4
-                  rounded-full
-                  mx-2
-                "
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-2"
                 @click="changeRole(user._id, 'admin')"
               >
                 Promote To Admin
               </button>
               <button
                 v-if="getRole(user.roles) == 'Admin'"
-                class="
-                  bg-blue-500
-                  hover:bg-blue-700
-                  text-white
-                  font-bold
-                  py-2
-                  px-4
-                  rounded-full
-                  mx-2
-                "
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-2"
                 @click="changeRole(user._id, 'manager')"
               >
                 Demote to Manager
               </button>
               <button
                 v-if="getRole(user.roles) == 'Manager'"
-                class="
-                  bg-blue-500
-                  hover:bg-blue-700
-                  text-white
-                  font-bold
-                  py-2
-                  px-4
-                  rounded-full
-                  mx-2
-                "
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-2"
                 @click="changeRole(user._id, 'user')"
               >
                 Demote to User

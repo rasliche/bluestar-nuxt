@@ -23,16 +23,7 @@
       <!-- Responsive Menu Button -->
       <div class="md:hidden">
         <button
-          class="
-            block
-            p-2
-            border
-            rounded
-            text-blue-400
-            focus:text-white
-            hover:text-white
-            focus:outline-none
-          "
+          class="block p-2 border rounded text-blue-400 focus:text-white hover:text-white focus:outline-none"
           @click="isOpen = !isOpen"
         >
           <svg
@@ -58,27 +49,12 @@
 
     <div
       :class="isOpen ? 'block' : 'hidden'"
-      class="
-        w-full
-        flex-grow
-        px-2
-        pb-4
-        md:pb-0 md:flex md:items-center md:w-auto
-      "
+      class="w-full flex-grow px-2 pb-4 md:pb-0 md:flex md:items-center md:w-auto"
     >
       <div class="md:flex-grow">
         <nuxt-link
           to="/training"
-          class="
-            block
-            p-2
-            mt-2
-            mr-4
-            md:inline-block md:mt-0
-            text-blue-400
-            rounded
-            hover:bg-blue-100
-          "
+          class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           Training
         </nuxt-link>
@@ -109,16 +85,7 @@
         <nuxt-link
           v-if="this.$auth.hasScope('admin')"
           to="/admin"
-          class="
-            block
-            p-2
-            mt-2
-            mr-4
-            md:inline-block md:mt-0
-            text-blue-400
-            rounded
-            hover:bg-blue-100
-          "
+          class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           Admin
         </nuxt-link>
@@ -128,63 +95,27 @@
         <nuxt-link
           v-if="this.$auth.loggedIn"
           to="/users/me"
-          class="
-            block
-            p-2
-            mt-2
-            mr-4
-            md:inline-block md:mt-0
-            text-blue-400
-            rounded
-            hover:bg-blue-100
-          "
+          class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           {{ this.$auth.user.name }}
         </nuxt-link>
         <nuxt-link
           v-if="!this.$auth.loggedIn"
           to="/login"
-          class="
-            block
-            p-2
-            mt-2
-            mr-4
-            md:inline-block md:mt-0
-            text-blue-400
-            rounded
-            hover:bg-blue-100
-          "
+          class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           Login
         </nuxt-link>
         <nuxt-link
           v-if="!this.$auth.loggedIn"
           to="/register"
-          class="
-            block
-            p-2
-            mt-2
-            mr-4
-            md:inline-block md:mt-0
-            text-blue-400
-            rounded
-            hover:bg-blue-100
-          "
+          class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
         >
           Register
         </nuxt-link>
         <button
           v-if="this.$auth.loggedIn"
-          class="
-            block
-            p-2
-            mt-2
-            mr-4
-            md:inline-block md:mt-0
-            text-blue-400
-            rounded
-            hover:bg-blue-100
-          "
+          class="block p-2 mt-2 mr-4 md:inline-block md:mt-0 text-blue-400 rounded hover:bg-blue-100"
           @click="logout"
         >
           Logout
