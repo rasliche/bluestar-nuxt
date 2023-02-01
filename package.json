@@ -44,7 +44,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.9.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.13",
+    "mongoose": "^5.13.15",
     "nuxt": "^2.13.3",
     "vuelidate": "^0.7.6"
   },
